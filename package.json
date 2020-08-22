@@ -1,0 +1,28 @@
+{
+    "name": "Sistema_Barbearia",
+    "version": "1.0.0",
+    "description": "Projeto final de curso - SENAI",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "nodemon src/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JoaoCFN/Sistema_Barbearia.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/JoaoCFN/Sistema_Barbearia/issues"
+    },
+    "homepage": "https://github.com/JoaoCFN/Sistema_Barbearia#readme",
+    "dependencies": {
+        "nunjucks": "^3.2.2",
+        "xpress": "^2.4.6"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
+}
