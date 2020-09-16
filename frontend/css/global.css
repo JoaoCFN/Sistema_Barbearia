@@ -1,0 +1,17 @@
+/* Texts */
+.sb-txt-primary{
+    color: var(--primary);
+}
+
+.sb-txt-secondary{
+    color: var(--secondary);
+}
+
+/* Background */
+.sb-bg-primary{
+    background-color: var(--primary);
+}
+
+.sb-bg-secondary{
+    background-color: var(--secondary);
+}

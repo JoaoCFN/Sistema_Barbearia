@@ -5,11 +5,15 @@
 }
 
 :root{
-
+    --primary: #202024;
+    --secondary: #FFC107;
+    --white: #fff;
 }
 
 #root{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: var(--black);
 }
+
