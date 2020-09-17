@@ -8,12 +8,12 @@
     --primary: #202024;
     --secondary: #FFC107;
     --white: #fff;
+    --black: #000;
 }
 
 #root{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: var(--black);
 }
 
