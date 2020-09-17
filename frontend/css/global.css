@@ -1,44 +1,10 @@
-/* 
-    TODAS AS CLASSES GLOBAIS DESTE PROJETO TEM 
-    SB COM PRÉFIXO PARA DIFERENCIAR.
-*/
-
-/* Flex */
-.sb-content{
-    flex: 1;
-}
-
-.sb-flex-between{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Fonts*/
-.sb-montserrat{
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Texts Colors */
+/* Texts */
 .sb-txt-primary{
     color: var(--primary);
 }
 
 .sb-txt-secondary{
     color: var(--secondary);
-}
-
-.sb-txt-white{
-    color: var(--white);
-}
-
-/* Text weight */
-.sb-w-600{
-    font-weight: 600;
-}
-
-.sb-w-700{
-    font-weight: 700;
 }
 
 /* Background */
@@ -49,8 +15,3 @@
 .sb-bg-secondary{
     background-color: var(--secondary);
 }
-
-.sb-bg-black{
-    background-color: var(--black);
-}
-
