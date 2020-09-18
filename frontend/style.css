@@ -1,5 +1,9 @@
 @import "css/global.css";
 
+/* Telas */
+/* Registro */
+@import "css/registro/registro.css";
+
 @import "css/root.css";
 
 @import "css/media-queries.css";

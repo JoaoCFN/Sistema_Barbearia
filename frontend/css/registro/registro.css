@@ -1,0 +1,36 @@
+.registro{
+    background: url("../../assets/images/back-registro.jpg") fixed;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    background-color: var(--black);
+}
+
+.registro .card a:hover{
+    color: rgba(255, 193, 7, .8);
+}
+
+.registro .icone_dentro_input {
+    position: relative;
+}
+
+.registro .icone_dentro_input input{
+    padding-left: 40px;
+    height: 3rem;
+    color: var(--white);
+}
+
+.registro .icone_dentro_input i, ion-icon{
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    padding: 0px 10px;
+    color: var(--white);
+}
+
+.registro .card .area_alt, i{
+    text-align: center;
+}
+
+
