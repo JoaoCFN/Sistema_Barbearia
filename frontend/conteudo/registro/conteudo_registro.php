@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-sm-12 align-self-center mt-4">
-                <div class="card sb-card">
+                <div class="card sb-card mb-3">
                     <div class="card-body">
                         <h4 class="sb-txt-white sb-text-md">
                             Crie sua conta 
                         </h4>
 
-                        <form class="pt-3 " id="form_registro">
+                        <form class="pt-3" id="form_registro">
                             <!-- campo de nome -->
                             <div class="form-group icone_dentro_input">
                                 <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
@@ -112,7 +112,7 @@
                             </div>
 
                             <button 
-                                class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width" 
+                                class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-1" 
                             >
                                 <i class="fa fa-google"></i>
                                 <span class="ml-1">Google</span>
