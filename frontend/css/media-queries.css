@@ -2,3 +2,12 @@
 @media screen and (max-width: 576px){
     
 }
+
+/* Extra Large */
+@media screen and (min-width: 1400px){
+    .registro img {
+        height: 100vh;
+        width: auto;
+    }
+}
+

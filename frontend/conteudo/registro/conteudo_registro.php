@@ -1,7 +1,7 @@
 <section class="registro sb-bg-black sb-content">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-sm-12 align-self-center mt-4">
+            <div class="col-md-5 col-sm-12 align-self-center mt-4 mb-4">
                 <div class="card sb-card mb-3">
                     <div class="card-body">
                         <h4 class="sb-txt-white sb-text-md">
@@ -27,11 +27,24 @@
                                 <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
                                 <input 
                                     type="text" 
-                                    class="form-control sb-form-input" 
+                                    class="form-control sb-form-input maskTelefone" 
                                     id="registro_telefone" 
                                     placeholder="Telefone"
                                 >
                                 <ion-icon name="call-outline" id="icone_telefone">
+                                </ion-icon>
+                            </div>
+
+                            <!-- campo de data nascimento -->
+                            <div class="form-group icone_dentro_input">
+                                <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
+                                <input 
+                                    type="text" 
+                                    class="form-control sb-form-input maskDataNascimento" 
+                                    id="registro_data_nascimento" 
+                                    placeholder="Data Nascimento"
+                                >
+                                <ion-icon name="calendar-outline" id="icone_data_nascimento">
                                 </ion-icon>
                             </div>
 
@@ -40,7 +53,7 @@
                                 <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
                                 <input 
                                     type="text" 
-                                    class="form-control sb-form-input" 
+                                    class="form-control sb-form-input maskCPF" 
                                     id="registro_cpf" 
                                     placeholder="CPF"
                                 >
@@ -80,13 +93,13 @@
                                 <input 
                                     onkeyup="this.value=this.value.replace(/[' ']/g,'')" type="password" 
                                     class="form-control sb-form-input" 
-                                    id="registro_senha" 
+                                    id="registro_confirmar_senha" 
                                     placeholder="Confirme sua senha"
                                 >
                                 <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
 
-                            <h6 class="sb-txt-white text-justify">
+                            <h6 class="sb-txt-white text-justify pt-2 pb-2">
                                 Ao se registrar, você aceita 
                                 <a href="#" class="sb-txt-secondary text-decoration-none">
                                     termos de uso
@@ -98,6 +111,7 @@
                             </h6>
 
                             <button 
+                                type="submit"
                                 class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-2" 
                             >
                                 Cadastrar
@@ -120,6 +134,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-7 col-sm-12 align-self-center">
+                <img src="./assets/images/back-registro.jpg" alt="registro" id="img-registro">
             </div>
         </div>
     </div>

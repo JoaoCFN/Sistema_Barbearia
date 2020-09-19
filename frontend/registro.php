@@ -28,5 +28,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Ionic Icons -->
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <!-- JS -->
+    <script type="module" src="js/registro/registro.js"></script>
+    <!-- JQUERY MASK -->
+    <script src="js/jquery.mask.min.js"></script>
+    <!-- ARQUIVO DE MASKS PARA INPUTS -->
+    <script src="js/mask_forms.js"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>
