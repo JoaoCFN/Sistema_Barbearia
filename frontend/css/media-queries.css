@@ -1,13 +1,49 @@
 /* Small */
 @media screen and (max-width: 576px){
+
+    
+}
+
+/* Medium */
+@media screen and (max-width: 768px){
+    /* Registro */
+    #banner-registro,
+    #banner-registro-barbearia{
+        display: none;
+    }
     
 }
 
 /* Extra Large */
 @media screen and (min-width: 1400px){
+    /* Registro */
     .registro img {
         height: 100vh;
         width: auto;
     }
+
+    .registro_barbearia img{
+        height: 100vh;
+        width: auto;
+    }
 }
+
+/* Extra Large */
+@media screen and (min-width: 1400px){
+    /* Registro */
+    .registro img {
+        height: 100vh;
+        width: auto;
+    }
+
+    .registro_barbearia img{
+        height: 100vh;
+        width: auto;
+    }
+}
+
+
+
+
+
 

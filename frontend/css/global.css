@@ -41,6 +41,10 @@
 }
 
 /* Font Size */
+.sb-text-sm{
+    font-size: 18px;
+}
+
 .sb-text-md{
     font-size: 24px;
 }

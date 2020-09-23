@@ -135,7 +135,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 col-sm-12 align-self-center">
+            <div class="col-md-7 col-sm-12 align-self-center" id="banner-registro">
                 <img src="./assets/images/back-registro.jpg" alt="registro" id="img-registro">
             </div>
         </div>
