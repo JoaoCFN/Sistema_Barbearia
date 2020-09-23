@@ -1,29 +1,29 @@
-.registro .card{
+.registro_barbearia .card{
     margin: 0 auto;
-    width: 25rem;
+    width: 100%;
     max-width: 90%;
 }
 
-.registro img{
+.registro_barbearia img{
     width: 100%;
     height: 100%;
 }
 
-.registro .card a:hover{
+.registro_barbearia .card a:hover{
     color: rgba(255, 193, 7, .8);
 }
 
-.registro .icone_dentro_input {
+.registro_barbearia .icone_dentro_input {
     position: relative;
 }
 
-.registro .icone_dentro_input input{
+.registro_barbearia .icone_dentro_input input{
     padding-left: 40px;
     height: 3rem;
     color: var(--white);
 }
 
-.registro .icone_dentro_input i, ion-icon{
+.registro_barbearia .icone_dentro_input i, ion-icon{
     font-size: 20px;
     position: absolute;
     left: 0;
@@ -32,8 +32,12 @@
     color: var(--white);
 }
 
-.registro .card .area_alt, i{
+.registro_barbearia .card .area_alt, i{
     text-align: center;
+}
+
+.registro_barbearia #registro_uf{
+    text-transform: uppercase;
 }
 
 
