@@ -28,3 +28,22 @@
     }
 }
 
+/* Extra Large */
+@media screen and (min-width: 1400px){
+    /* Registro */
+    .registro img {
+        height: 100vh;
+        width: auto;
+    }
+
+    .registro_barbearia img{
+        height: 100vh;
+        width: auto;
+    }
+}
+
+
+
+
+
+
