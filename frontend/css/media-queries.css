@@ -1,6 +1,8 @@
 /* Small */
 @media screen and (max-width: 576px){
-
+    .registro_barbearia{
+        padding-top: 8%;
+    }
     
 }
 

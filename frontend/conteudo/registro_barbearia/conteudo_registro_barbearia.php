@@ -1,7 +1,7 @@
 <section class="registro_barbearia sb-bg-black sb-content">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-12 align-self-center mt-3 mb-3">
+            <div class="col-md-6 col-sm-12 align-self-center mt-2 mb-2">
                 <div class="card sb-card mb-3">
                     <div class="card-body">
                         <h4 class="sb-txt-white sb-text-md">
