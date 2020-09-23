@@ -1,0 +1,41 @@
+.login{
+    /* background: url("../../assets/images/back-login.jpg") fixed;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 100vh; */
+    background-color: var(--black);
+}
+
+.login .card{
+    margin: 0 auto;
+    width: 25rem;
+    max-width: 90%;
+}
+
+.login img{
+    width: 100%;
+    height: 100%;
+}
+
+.login .card a:hover{
+    color: rgba(255, 193, 7, .8);
+}
+
+.login .icone_dentro_input {
+    position: relative;
+}
+
+.login .icone_dentro_input input{
+    padding-left: 40px;
+    height: 3rem;
+    color: var(--white);
+}
+
+.login .icone_dentro_input i, ion-icon{
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    padding: 0px 10px;
+    color: var(--white);
+}
