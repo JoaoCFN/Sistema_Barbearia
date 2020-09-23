@@ -79,6 +79,31 @@
         if(uf.value.length == 0) return addMsgAlert("Estado inválido", "O campo de estado está vazio");
     }
 
+    cep.addEventListener("change", () => {
+        if(cep.value.length == 9){
+            buscaCEP(cep.value);
+        }
+    })
+
+    const buscaCEP = (cep) => {
+        const cepConv = String(cep).replace("-", "");
+        console.log(cepConv);
+        fetch(`https://viacep.com.br/ws/${cepConv}/json`)
+        .then(response => response.json())
+        .then(data => {
+            /* Se rua for undefined, todos os outros serão também. 
+            logo o CEP é inválido ou não consta na base de dados do via CEP
+            */
+            if (data.logradouro != undefined){
+                console.log(data);
+                rua.value = `${data.logradouro}`;
+                bairro.value = `${data.bairro}`;
+                cidade.value = `${data.localidade}`;
+                uf.value = `${data.uf}`;
+            }
+        })     
+    }
+
     // BARRA O ENVIO CASO AINDA TIVERMOS CAMPOS INVÁLIDOS
     formRegistro.addEventListener("submit", event => {
         if(validacaoRegistro() == false) event.preventDefault();
