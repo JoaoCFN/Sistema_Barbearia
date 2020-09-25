@@ -1,7 +1,7 @@
 <section class="login sb-bg-black sb-content">
     <div class="container">
         <div class="row">
-        <div class="col-md-7 col-sm-12 align-self-center">
+        <div class="col-md-7 col-sm-12 align-self-center" id="banner-registro">
             <img src="./assets/images/back-login.jpg" alt="login" id="img-login">
         </div>
         <div class="col-md-5 col-sm-12 align-self-center mt-4 mb-4">
@@ -26,7 +26,8 @@
                             <div class="form-group icone_dentro_input">
                                 <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
                                 <input 
-                                    onkeyup="this.value=this.value.replace(/[' ']/g,'')" type="password" 
+                                    onkeyup="this.value=this.value.replace(/[' ']/g,'')" 
+                                    type="password" 
                                     class="form-control sb-form-input" 
                                     id="login_senha" 
                                     placeholder="Sua senha"
@@ -50,13 +51,8 @@
                                     Registre- se
                                 </a>.
                             </h6>
-                            <div class="sb-grid">
-                                <div class="sb-division-line"></div>
-                                <h6 class="form-text sb-txt-white pt-3 pb-2">
-                                    Entrar com 
-                                </h6>
-                                <div class="sb-division-line"></div>
-                            </div>
+                            <div class="sb-division-line"></div>
+                            <h6>Ou entre com</h6>
                             <button 
                                 class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-1" 
                             >
