@@ -1,9 +1,21 @@
 /* Small */
 @media screen and (max-width: 576px){
+    /* Registro */
+    .login{
+        display: flex;
+        align-items: center;
+    }
+
+    .registro{
+        display: flex;
+        align-items: center;
+    }
+
     .registro_barbearia{
         padding-top: 8%;
+        display: flex;
+        align-items: center;
     }
-    
 }
 
 /* Medium */

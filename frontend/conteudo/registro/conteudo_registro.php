@@ -125,12 +125,13 @@
                                 <div class="sb-division-line"></div>
                             </div>
 
-                            <button 
+                            <a 
+                                href="#"
                                 class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-1" 
                             >
                                 <i class="fa fa-google"></i>
                                 <span class="ml-1">Google</span>
-                            </button>
+                            </a>
                         </form>
                     </div>
                 </div>
