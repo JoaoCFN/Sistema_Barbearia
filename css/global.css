@@ -71,6 +71,10 @@
     font-weight: 700;
 }
 
+.sb-w-900{
+    font-weight: 900;
+}
+
 /* Background */
 .sb-bg-primary{
     background-color: var(--primary) !important;
@@ -156,6 +160,12 @@
     height: 1px;
     padding-top: 5px;
     border-bottom: solid 1px var(--white);
+}
+
+
+/* Descolar do menu fixo no topo*/
+.gap-to-menu{
+    margin-top: max(130px, 8vh);
 }
 
 /* Navbar */

@@ -17,7 +17,7 @@
   </head>
   <body>
 
-    <div id="root" class="index">
+    <div id="root" class="index sb-bg-black">
         <?php require_once "conteudo/navbar.php"; ?>
 
         <?php require_once "conteudo/index/header.php"; ?>
