@@ -10,7 +10,7 @@
             showConfirmButton: false
         });
         setTimeout(function() {
-            window.location.href = `http://localhost/sistema_barbearia/frontend/${endpoint}.php`
+            window.location.href = `http://localhost/sistema_barbearia/${endpoint}.php`
         }, 3000);
     }
     btnRegistro.addEventListener("click", (e) => {

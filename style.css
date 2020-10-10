@@ -1,8 +1,14 @@
 @import "css/global.css";
 
+/* Index */
+@import "css/index/index.css";
+
 /* Telas */
 /* Registro */
 @import "css/registro/registro.css";
+
+/* Login */
+@import "css/login/login.css";
 
 /* Registro Barbearia */
 @import "css/registro_barbearia/registro_barbearia.css";
@@ -11,6 +17,4 @@
 
 @import "css/media-queries.css";
 
-/* Login */
 
-@import "css/login/login.css";

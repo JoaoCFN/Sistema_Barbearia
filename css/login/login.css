@@ -1,5 +1,6 @@
 .login{
     background-color: var(--black);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .login .card{

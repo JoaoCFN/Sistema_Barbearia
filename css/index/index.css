@@ -1,0 +1,19 @@
+.index{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sb-navbar .nav-item{
+    padding: 0 10px;
+}
+
+.sb-navbar .logo{
+    width: 140px;
+}
+
+.sb-navbar .nav-item .nav-link{
+    color: var(--white);
+}
+
+.sb-navbar .nav-item .nav-link:hover{
+    color: gray;
+}
