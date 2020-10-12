@@ -8,7 +8,7 @@
                             Crie sua conta 
                         </h4>
 
-                        <form class="pt-3" id="form_registro">
+                        <form class="pt-3" id="form_registro" method="post">
                             <!-- campo de nome -->
                             <div class="form-group icone_dentro_input">
                                 <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
@@ -17,6 +17,7 @@
                                     class="form-control sb-form-input" 
                                     id="registro_nome" 
                                     placeholder="Seu nome"
+                                    name="nome"
                                 >
                                 <ion-icon name="person-outline" id="icone_nome">
                                 </ion-icon>
@@ -30,6 +31,7 @@
                                     class="form-control sb-form-input maskTelefone" 
                                     id="registro_telefone" 
                                     placeholder="Telefone"
+                                    name="telefone"
                                 >
                                 <ion-icon name="call-outline" id="icone_telefone">
                                 </ion-icon>
@@ -43,6 +45,7 @@
                                     class="form-control sb-form-input maskDataNascimento" 
                                     id="registro_data_nascimento" 
                                     placeholder="Data Nascimento"
+                                    name="data_de_nascimento"
                                 >
                                 <ion-icon name="calendar-outline" id="icone_data_nascimento">
                                 </ion-icon>
@@ -56,6 +59,7 @@
                                     class="form-control sb-form-input maskCPF" 
                                     id="registro_cpf" 
                                     placeholder="CPF"
+                                    name="cpf"
                                 >
                                 <ion-icon name="card-outline" id="icone_cpf">
                                 </ion-icon>
@@ -70,6 +74,7 @@
                                     class="form-control sb-form-input" 
                                     id="registro_email" 
                                     placeholder="E-mail"
+                                    name="email"
                                 >
                                 <ion-icon name="mail-outline" id="icone_email">
                                 </ion-icon>
@@ -83,6 +88,7 @@
                                     class="form-control sb-form-input" 
                                     id="registro_senha" 
                                     placeholder="Sua senha"
+                                    name="senha"
                                 >
                                 <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
@@ -112,7 +118,8 @@
 
                             <button 
                                 type="submit"
-                                class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-2" 
+                                class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-2"
+                                name="cadastrar" 
                             >
                                 Cadastrar
                             </button>
@@ -125,13 +132,12 @@
                                 <div class="sb-division-line"></div>
                             </div>
 
-                            <a 
-                                href="#"
+                            <button 
                                 class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-1" 
                             >
                                 <i class="fa fa-google"></i>
                                 <span class="ml-1">Google</span>
-                            </a>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -142,3 +148,30 @@
         </div>
     </div>
 </section>
+
+
+<?php
+
+$conn = mysqli_connect("localhost","root","", "dbtcc");
+
+
+if(isset($_POST['cadastrar'])){
+    $nome = mysqli_real_escape_string($conn, $_POST['nome']);
+    $telefone = mysqli_real_escape_string($conn, $_POST['telefone']); //mysqli_real_escape_string($conn, $_POST['nome']) evitar sql injection
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $senha = md5(mysqli_real_escape_string($conn, $_POST['senha']));
+    $datanasc = mysqli_real_escape_string($conn, $_POST['data_de_nascimento']);
+    $cpf = mysqli_real_escape_string($conn, $_POST['cpf']);
+
+    if(strlen($nome <3) || strlen($telefone<11) || strlen($email<11) || strlen($senha<9) || strlen($datanasc<8) || strlen($cpf<11) ){
+        echo '<script>window.alert("Houve algum erro no seu Cadastro.");</script>"';
+    }else{
+        $insert = "INSERT INTO user (nome, telefone ,email, senha, data_de_nascimento ,cpf) VALUES ('$nome','$telefone', '$email', '$senha', '$datanasc', '$cpf') ";
+
+        $run_insert = mysqli_query($conn, $insert);
+        echo '<script>window.alert("Cadastro realizado com sucesso!");</script>"';
+    }
+}
+
+
+?>
