@@ -8,7 +8,8 @@
             />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fa fa-times icon-close"></i>
+            <i class="fa fa-bars icon-open"></i>
         </button>
 
         <div class="collapse navbar-collapse " id="menu">
@@ -17,13 +18,13 @@
                     <a class="nav-link" href="#">HOME</a>
                 </li>
                 <li class="nav-item align-self-center">
-                    <a class="nav-link" href="#">SOBRE</a>
+                    <a class="nav-link" id="scroll-sobre" href="#sobre">SOBRE</a>
                 </li>
                 <li class="nav-item align-self-center">
                     <a class="nav-link" href="#">VANTAGENS</a>
                 </li>
                 <li class="nav-item align-self-center">
-                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="#">
+                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="login.php">
                         SOU CLIENTE 
                     </a>
                 </li>

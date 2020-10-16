@@ -16,6 +16,14 @@
         display: flex;
         align-items: center;
     }
+
+    .sb-navbar .logo{
+        width: 120px;
+    }
+
+    .gap-to-menu{
+        margin-top: max(110px, 8vh);
+    }
 }
 
 /* Medium */
@@ -25,7 +33,14 @@
     #banner-registro-barbearia{
         display: none;
     }
-    
+
+    .header-index h5{
+        padding: 0 32px;
+    }
+
+    #header-text{
+        margin-bottom: 100px;
+    }
 }
 
 /* Extra Large */
