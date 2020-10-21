@@ -170,11 +170,16 @@ if(isset($_POST['cadastrar'])){
     $queryEmail = "select email from user where cpf = '{$email}'";
     $resultEmail = mysqli_query($conn, $queryEmail);
     $rowEmail = mysqli_num_rows($resultEmail);
+    //
+    $queryTel = "select telefone from user where telefone = '{$telefone}'";
+    $resultTel = mysqli_query($conn, $queryTel);
+    $rowTel = mysqli_num_rows($resultTel);
 
-    if ($rowCpf == 1 || $rowEmail ==1 ) {
+    if ($rowCpf == 1 || $rowEmail ==1 || $rowTel ==1) {
         require_once "conteudo/registro/alert.php";
-    // }elseif(strlen($nome)<3 || strlen($telefone)<3 || strlen($email<3) || strlen($senha)<3 || strlen($datanasc)<3 || strlen($cpf)<3 ){
-    //     echo '<script>window.alert("Houve algum erro no seu Cadastro.");</script>"';
+    }elseif(strlen($nome)<3 || strlen($telefone)<3 || strlen($email)<3 || strlen($senha)<3 || strlen($datanasc)<3 || strlen($cpf)<3 ){
+        echo '<script>window.alert("Houve algum erro no seu Cadastro.");</script>"';
+
     }else{
         $insert = "INSERT INTO user (nome, telefone ,email, senha, data_de_nascimento ,cpf) VALUES ('$nome','$telefone', '$email', '$senha', '$datanasc', '$cpf') ";
 

@@ -5,7 +5,7 @@
 Swal.fire({
   icon: 'error',
   title: 'Oops...',
-  text: 'Telefone, E-mail ou CPF já cadastrado'
+  text: 'Preencha os campos exigidos.'
 })
 
 </script>
