@@ -8,7 +8,7 @@
                             Registre sua barbearia 
                         </h4>
 
-                        <form class="pt-3" id="form_registro">
+                        <form class="pt-3" id="form_registro" method="POST" action="conexao.php">
                             <h6 class="sb-txt-white sb-text-sm pb-2">
                                  Pessoal
                             </h6>
@@ -26,6 +26,7 @@
                                                 class="form-control sb-form-input" 
                                                 id="registro_nome" 
                                                 placeholder="Nome completo"
+                                                name="usuario"
                                             >
                                             <ion-icon name="person-outline" id="icone_nome">
                                             </ion-icon>
@@ -41,6 +42,7 @@
                                             class="form-control sb-form-input maskCPF" 
                                             id="registro_cpf" 
                                             placeholder="CPF"
+                                            name="cpf"
                                         >
                                         <ion-icon name="card-outline" id="icone_cpf">
                                         </ion-icon>
@@ -59,6 +61,7 @@
                                         class="form-control sb-form-input" 
                                         id="registro_email" 
                                         placeholder="E-mail"
+                                        name="email"
                                     >
                                     <ion-icon name="mail-outline" id="icone_email">
                                     </ion-icon>
@@ -76,6 +79,7 @@
                                             class="form-control sb-form-input" 
                                             id="registro_senha" 
                                             placeholder="Sua senha"
+                                            name="senha"
                                         >
                                         <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                                     </div>
@@ -89,6 +93,7 @@
                                             class="form-control sb-form-input" 
                                             id="registro_confirmar_senha" 
                                             placeholder="Confirme sua senha"
+                                            name="confSenha"
                                         >
                                         <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                                     </div>
@@ -107,6 +112,7 @@
                                             class="form-control sb-form-input" 
                                             id="registro_nome_barbearia" 
                                             placeholder="Nome da barbearia"
+                                            name="nameBar"
                                         >
                                         <ion-icon name="home-outline" id="icone_nome_barbearia"></ion-icon>
                                     </div>
@@ -120,6 +126,7 @@
                                             class="form-control sb-form-input maskTelefone" 
                                             id="registro_telefone" 
                                             placeholder="Telefone"
+                                            name="telBar"
                                         >
                                         <ion-icon name="call-outline" id="icone_telefone">
                                         </ion-icon>
@@ -136,6 +143,7 @@
                                             class="form-control sb-form-input maskCEP" 
                                             id="registro_cep" 
                                             placeholder="CEP"
+                                            name="cepBar"
                                         >
                                         <ion-icon name="location-outline" id="icone_cep"></ion-icon>
                                     </div>
@@ -147,6 +155,7 @@
                                             class="form-control sb-form-input maskCNPJ" 
                                             id="registro_cnpj" 
                                             placeholder="CNPJ"
+                                            name="cnpjBar"
                                         >
                                         <ion-icon name="card-outline" id="icone_cnpj"></ion-icon>
                                     </div>
@@ -162,6 +171,7 @@
                                             class="form-control sb-form-input" 
                                             id="registro_rua" 
                                             placeholder="Rua"
+                                            name="ruaBar"
                                         >
                                         <ion-icon name="map-outline" id="icone_rua"></ion-icon>
                                     </div>
@@ -173,6 +183,7 @@
                                             class="form-control sb-form-input" 
                                             id="registro_numero" 
                                             placeholder="Nº"
+                                            name="nBar"
                                         >
                                         <ion-icon name="map-outline" id="icone_numero"></ion-icon>
                                     </div>
@@ -184,6 +195,7 @@
                                             class="form-control sb-form-input" 
                                             id="registro_bairro" 
                                             placeholder="Bairro"
+                                            name="bairroBar"
                                         >
                                         <ion-icon name="map-outline" id="icone_bairro"></ion-icon>
                                     </div>
@@ -199,6 +211,7 @@
                                             class="form-control sb-form-input" 
                                             id="registro_cidade" 
                                             placeholder="Cidade"
+                                            name="cidadeBar"
                                         >
                                         <ion-icon name="map-outline" id="icone_cidade"></ion-icon>
                                     </div>
@@ -210,6 +223,7 @@
                                             class="form-control sb-form-input maskUF" 
                                             id="registro_uf" 
                                             placeholder="UF"
+                                            name="ufBar"
                                         >
                                         <ion-icon name="map-outline" id="icone_estado"></ion-icon>
                                     </div>
