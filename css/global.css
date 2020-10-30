@@ -29,6 +29,11 @@
     user-select: none;
 }
 
+/* Block */
+.sb-d-block{
+    display: block;
+}
+
 /* Width */
 .sb-full-width{
     width: 100%;
@@ -157,6 +162,27 @@
     background-color: var(--secondary);
     color: var(--primary) !important;
 }
+
+
+.sb-btn-social-midia{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    text-align: center;
+}
+
+.sb-btn-social-midia i{
+    font-size: 20px;
+}
+
+.sb-btn-social-midia:hover{
+    color: var(--black);
+    background: var(--white);
+}
+
 
 /* Line */
 .sb-division-line{

@@ -1,0 +1,25 @@
+.footer{
+    width: 100%;
+    height: auto;
+    background: url("../assets/images/bg-rodape.jpg");
+    background-color: var(--black);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer img{
+    width: 190px;
+}
+
+.footer h6{
+    font-size: 24px;
+}
+
+.footer a:hover{
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    color: #212529;
+}
+

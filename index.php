@@ -22,6 +22,8 @@
         <?php require_once "conteudo/index/header.php"; ?>
 
         <?php require_once "conteudo/index/conteudo_index.php"; ?>
+
+        <?php require_once "conteudo/footer.php"; ?>
     </div>
 
     <!-- Optional JavaScript -->
