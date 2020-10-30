@@ -63,6 +63,10 @@
 }
 
 /* Text weight */
+.sb-w-400{
+    font-weight: 400;
+}
+
 .sb-w-600{
     font-weight: 600;
 }
@@ -168,8 +172,13 @@
     margin-top: max(130px, 8vh);
 }
 
-/* Navbar */
-.sb-navbar{
+/* Margin */
+.sb-mt-50{
+    margin-top: 50px;
+}
+
+.sb-no-margin{
+    margin: 0;
 }
 
 

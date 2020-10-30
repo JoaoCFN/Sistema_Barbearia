@@ -21,7 +21,7 @@
                     <a class="nav-link" id="scroll-sobre" href="#sobre">SOBRE</a>
                 </li>
                 <li class="nav-item align-self-center">
-                    <a class="nav-link" href="#">VANTAGENS</a>
+                    <a class="nav-link" id="scroll-vantagens" href="#vantagens">VANTAGENS</a>
                 </li>
                 <li class="nav-item align-self-center">
                     <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="login.php">

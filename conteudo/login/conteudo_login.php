@@ -68,11 +68,19 @@ if(isset($_POST['entrar'])){
                                 >
                                 <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
+                            
                             <h6 class="sb-txt-white text-justify pt-2 pb-2">
                                 <a href="#" class="sb-txt-secondary text-decoration-none">
                                     Esqueci minha senha 
                                 </a> 
                             </h6>
+                            <h6 class="sb-txt-white text-justify pt-2 pb-2">
+                                Não tem uma conta?  
+                                <a href="#" class="sb-txt-secondary text-decoration-none" id="registre-se">
+                                    Registre- se
+                                </a>.
+                            </h6>
+
                             <button 
                                 type="submit"
                                 class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-2"
@@ -80,12 +88,7 @@ if(isset($_POST['entrar'])){
                             >
                                 Entrar
                             </button>
-                            <h6 class="sb-txt-white text-justify pt-2 pb-2">
-                                Não tem uma conta?  
-                                <a href="#" class="sb-txt-secondary text-decoration-none">
-                                    Registre- se
-                                </a>.
-                            </h6>
+                            
                             <div class="sb-grid">
                                 <div class="sb-division-line"></div>
                                 <h6 class="form-text sb-txt-white pt-3 pb-2">

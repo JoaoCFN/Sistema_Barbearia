@@ -70,3 +70,29 @@
     color: var(--secondary);
 }
 
+.content-index .vantagens{
+    text-align: center;
+}
+
+.content-index .vantagens img{
+    width: 100px;
+    height: auto;
+    text-align: center;
+}
+
+.content-index .colaboradores{
+    text-align: center;
+}
+
+.content-index .colaboradores img{
+    border-radius: 50%;
+    width: 200px;
+    height: auto;
+}
+
+.content-index .colaboradores .redes-sociais a{
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+}
+

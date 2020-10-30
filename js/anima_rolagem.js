@@ -3,8 +3,10 @@
 (function anima_rolagem() {
     // capturo todos o elementos que tem no href um # na frente
     const sobreOption = document.querySelector("#scroll-sobre");
+    const vantagensOption = document.querySelector("#scroll-vantagens");
 
     sobreOption.addEventListener("click", scroll_on_click); 
+    vantagensOption.addEventListener("click", scroll_on_click); 
     
     // função que realiza o scroll suave
     function smoothScrollTo(endX, endY, duration) {
@@ -41,7 +43,7 @@
         let id = elemento.getAttribute("href");
         // // o queryselector é usando para capturar o elemento que possui o id especificado na variável id
         // // offsetTop retorna a altura do elemento com esse id em relação ao topo da página
-        let to = document.querySelector(id).offsetTop - 120;
+        let to = document.querySelector(id).offsetTop - 140;
         // // função que realiza o scroll suave
         // // x, y e a duração
         smoothScrollTo(0, to, 700);
