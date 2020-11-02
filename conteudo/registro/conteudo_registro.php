@@ -159,6 +159,7 @@ if(isset($_POST['cadastrar'])){
     $nome = mysqli_real_escape_string($conn, $_POST['nome']);
     $telefone = mysqli_real_escape_string($conn, $_POST['telefone']); //mysqli_real_escape_string($conn, $_POST['nome']) evitar sql injection
     $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $email = strtolower($email); // DEIXA TDS OS CARACTERES MINUSCULO, POIS SE DEIXAR NORMAL VEI PODER TER "TESTE@EMAIL.COM" E "teste@email.com"
     $senha = md5(mysqli_real_escape_string($conn, $_POST['senha']));
     $datanasc = mysqli_real_escape_string($conn, $_POST['data_de_nascimento']);
     $cpf = mysqli_real_escape_string($conn, $_POST['cpf']);
