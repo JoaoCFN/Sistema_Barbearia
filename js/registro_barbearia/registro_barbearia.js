@@ -87,7 +87,6 @@
 
     const buscaCEP = (cep) => {
         const cepConv = String(cep).replace("-", "");
-        console.log(cepConv);
         fetch(`https://viacep.com.br/ws/${cepConv}/json`)
         .then(response => response.json())
         .then(data => {
