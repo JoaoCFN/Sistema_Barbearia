@@ -53,6 +53,7 @@ CREATE TABLE `barbearia` (
   `cep` varchar(45) NOT NULL,
   `cnpj` varchar(45) NOT NULL,
   `rua` varchar(45) NOT NULL,
+  `num_bar`varchar(10) NOT NULL,
   `bairro` varchar(45) NOT NULL,
   `cidade` varchar(45) NOT NULL,
   `uf` varchar(45) NOT NULL
