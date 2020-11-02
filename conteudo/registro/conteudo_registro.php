@@ -41,8 +41,8 @@
                             <div class="form-group icone_dentro_input">
                                 <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
                                 <input 
-                                    type="text" 
-                                    class="form-control sb-form-input maskDataNascimento" 
+                                    type="date" 
+                                    class="form-control sb-form-input " 
                                     id="registro_data_nascimento" 
                                     placeholder="Data Nascimento"
                                     name="data_de_nascimento"

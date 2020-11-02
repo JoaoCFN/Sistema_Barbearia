@@ -247,21 +247,6 @@
                             >
                                 Cadastrar
                             </button>
-
-                            <!-- <div class="sb-grid">
-                                <div class="sb-division-line"></div>
-                                <h6 class="form-text sb-txt-white pt-3 pb-2">
-                                    Ou 
-                                </h6>
-                                <div class="sb-division-line"></div>
-                            </div>
-
-                            <button 
-                                class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-1" 
-                            >
-                                <i class="fa fa-google"></i>
-                                <span class="ml-1">Google</span>
-                            </button> -->
                         </form>
                     </div>
                 </div>
