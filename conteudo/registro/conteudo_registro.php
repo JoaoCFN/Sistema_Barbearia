@@ -168,7 +168,7 @@ if(isset($_POST['cadastrar'])){
     $resultCpf = mysqli_query($conn, $queryCpf);
     $rowCpf = mysqli_num_rows($resultCpf);
     //
-    $queryEmail = "select email from user where cpf = '{$email}'";
+    $queryEmail = "select email from user where email = '{$email}'";
     $resultEmail = mysqli_query($conn, $queryEmail);
     $rowEmail = mysqli_num_rows($resultEmail);
     //
