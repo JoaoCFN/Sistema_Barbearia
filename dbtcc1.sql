@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2020 at 09:07 PM
+-- Generation Time: Nov 06, 2020 at 12:12 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbtcc`
+-- Database: `dbtcc1`
 --
 
 -- --------------------------------------------------------
@@ -53,10 +53,10 @@ CREATE TABLE `barbearia` (
   `cep` varchar(45) NOT NULL,
   `cnpj` varchar(45) NOT NULL,
   `rua` varchar(45) NOT NULL,
-  `num_bar`varchar(10) NOT NULL,
   `bairro` varchar(45) NOT NULL,
   `cidade` varchar(45) NOT NULL,
-  `uf` varchar(45) NOT NULL
+  `uf` varchar(45) NOT NULL,
+  `avatar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
