@@ -8,7 +8,7 @@
                 />
             </div>
             <div class="col-sm-12 col-md-4 pt-2 sb-order-1">
-                <h6 class="sb-txt-secondary sb-w-900">
+                <h6 class="sb-txt-secondary sb-w-700">
                     CONTATO
                 </h6>
                 <div>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-4 pt-3 sb-order-2">
-                <h6 class="sb-txt-secondary sb-w-900">
+                <h6 class="sb-txt-secondary sb-w-700">
                     REDES SOCIAIS
                 </h6>
                 <div>

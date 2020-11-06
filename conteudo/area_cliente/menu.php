@@ -13,19 +13,13 @@
         </button>
 
         <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav ml-auto sb-txt-secondary sb-w-700">
+            <ul class="navbar-nav ml-auto sb-w-700">
                 <li class="nav-item align-self-center">
-                    <a class="nav-link" href="index.php">HOME</a>
+                    <a class="nav-link" href="#">MEU PERFIL</a>
                 </li>
                 <li class="nav-item align-self-center">
-                    <a class="nav-link" id="scroll-sobre" href="#sobre">SOBRE</a>
-                </li>
-                <li class="nav-item align-self-center">
-                    <a class="nav-link" id="scroll-vantagens" href="#vantagens">VANTAGENS</a>
-                </li>
-                <li class="nav-item align-self-center">
-                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="login.php">
-                        SOU CLIENTE 
+                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="#">
+                        SAIR 
                     </a>
                 </li>
             </ul>

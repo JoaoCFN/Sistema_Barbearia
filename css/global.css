@@ -56,15 +56,15 @@
 
 /* Texts Colors */
 .sb-txt-primary{
-    color: var(--primary);
+    color: var(--primary) !important;
 }
 
 .sb-txt-secondary{
-    color: var(--secondary);
+    color: var(--secondary) !important;
 }
 
 .sb-txt-white{
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 /* Text weight */

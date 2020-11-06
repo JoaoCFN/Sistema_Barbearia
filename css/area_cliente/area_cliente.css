@@ -1,0 +1,15 @@
+.area-cliente{
+    margin-top: 3rem;
+}
+
+.area-cliente .card-title{
+    font-size: 22px;
+}
+
+.area-cliente-card{
+    width: 18rem;
+    height: auto;
+    background: var(--primary);
+}
+
+
