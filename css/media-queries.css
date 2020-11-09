@@ -68,34 +68,7 @@
     }
 }
 
-/* Extra Large */
-@media screen and (min-width: 1400px){
-    /* Registro */
-    .registro img {
-        height: 100vh;
-        width: auto;
-    }
-
-    .registro_barbearia img{
-        height: 100vh;
-        width: auto;
-    }
-}
-
-/* Extra Large */
-@media screen and (min-width: 1400px){
-    /* Registro */
-    .registro img {
-        height: 100vh;
-        width: auto;
-    }
-
-    .registro_barbearia img{
-        height: 100vh;
-        width: auto;
-    }
-}
-
+/* Large */
 @media screen and (min-width: 1200px){
     .area-cliente-card{
         width: 17rem;
@@ -109,6 +82,23 @@
         top: 146px;
     }
 }
+
+/* Extra Large */
+@media screen and (min-width: 1400px){
+    /* Registro */
+    .registro img {
+        height: 100vh;
+        width: auto;
+    }
+
+    .registro_barbearia img{
+        height: 100vh;
+        width: auto;
+    }
+}
+
+
+
 
 
 

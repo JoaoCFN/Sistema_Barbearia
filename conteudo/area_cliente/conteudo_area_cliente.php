@@ -138,5 +138,80 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-pesquisa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title sb-txt-secondary sb-w-700">
+                            Pesquisar barbearias
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true" class="sb-txt-white">
+                                &times;
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
+                                    Nome
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control sb-form-input" id="inputNome" placeholder="Digite o nome da barbearia">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
+                                    Cidade
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control sb-form-input">
+                                        <option>Selecione a cidade</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
+                                    Horário
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control sb-form-input">
+                                        <option>Selecione o horário desejado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
+                                    Status
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-control sb-form-input" value="Selecione o status">
+                                        <option>Selecione o status de funcionamento</option>
+                                        <option>Aberto</option>
+                                        <option>Fechado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary sb-w-700" data-dismiss="modal">
+                                    Fechar
+                                </button>
+                                <button type="submit" class="btn sb-btn-secondary sb-w-700">
+                                    Pesquisar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <button class="btn-pesquisa btn-position-fixed" data-toggle="modal" data-target="#modal-pesquisa">
+        <i class="fa fa-search-plus" aria-hidden="true"></i>
+    </button>
 </section>
+
