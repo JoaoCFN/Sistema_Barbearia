@@ -24,13 +24,16 @@
     .gap-to-menu{
         margin-top: max(110px, 8vh);
     }
+
+    
 }
 
 /* Medium */
 @media screen and (max-width: 768px){
     /* Registro */
     #banner-registro,
-    #banner-registro-barbearia{
+    #banner-registro-barbearia,
+    #banner-login{
         display: none;
     }
 
@@ -43,6 +46,28 @@
     }
 }
 
+/* Large */
+@media (min-width: 768px) and (max-width: 1200px){
+    .area-cliente-card .status-aberto,
+    .area-cliente-card .status-fechado{
+        text-align: center;
+
+        position: absolute;
+        top: calc(100% - 360px);
+    }
+}
+
+/* Large */
+@media (min-width: 992px) and (max-width: 1200px){
+    .area-cliente-card .status-aberto,
+    .area-cliente-card .status-fechado{
+        text-align: center;
+
+        position: absolute;
+        top: calc(100% - 310px);
+    }
+}
+
 /* Extra Large */
 @media screen and (min-width: 1400px){
     /* Registro */
@@ -68,6 +93,20 @@
     .registro_barbearia img{
         height: 100vh;
         width: auto;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .area-cliente-card{
+        width: 17rem;
+    }
+
+    .area-cliente-card .status-aberto,
+    .area-cliente-card .status-fechado{
+        text-align: center;
+
+        position: absolute;
+        top: 146px;
     }
 }
 

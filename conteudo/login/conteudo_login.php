@@ -34,7 +34,7 @@ if(isset($_POST['entrar'])){
 <section class="login sb-bg-black sb-content">
     <div class="container">
         <div class="row">
-        <div class="col-md-7 col-sm-12 align-self-center">
+        <div class="col-md-7 col-sm-12 align-self-center" id="banner-login">
             <img src="./assets/images/back-login.jpg" alt="login" id="img-login">
         </div>
         <div class="col-md-5 col-sm-12 align-self-center mt-4 mb-4">
