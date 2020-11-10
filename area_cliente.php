@@ -33,6 +33,8 @@
     <!-- JS -->
     <!-- SWEET ALERT -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <!-- <script src="js/anima_rolagem.js"></script> -->
+    <script src="js/area_cliente/area_cliente.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/mask_forms.js"></script>
   </body>
 </html>

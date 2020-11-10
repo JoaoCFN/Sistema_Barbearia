@@ -1,5 +1,6 @@
 <section class="gap-to-menu container">
     <div class="area-cliente">
+        <!-- Cards -->
         <div class="row">
             <div class="col-md-3 col-sm-12 mb-4">
                 <div class="card area-cliente-card">
@@ -139,7 +140,7 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal Pesquisa -->
         <div class="modal fade" id="modal-pesquisa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -154,7 +155,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="form-pesquisa">
+                            <!-- Nome -->
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
                                     Nome
@@ -163,6 +165,8 @@
                                     <input type="text" class="form-control sb-form-input" id="inputNome" placeholder="Digite o nome da barbearia">
                                 </div>
                             </div>
+
+                            <!-- Cidade -->
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
                                     Cidade
@@ -173,6 +177,8 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <!-- Horário -->
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
                                     Horário
@@ -183,6 +189,8 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <!-- Status -->
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
                                     Status
@@ -195,15 +203,19 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary sb-w-700" data-dismiss="modal">
-                                    Fechar
-                                </button>
-                                <button type="submit" class="btn sb-btn-secondary sb-w-700">
-                                    Pesquisar
-                                </button>
-                            </div>
                         </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary sb-w-700" data-dismiss="modal">
+                            Fechar
+                        </button>
+                        <button 
+                            type="submit" 
+                            class="btn sb-btn-secondary sb-w-700"
+                            form="form-pesquisa"
+                        >
+                            Pesquisar
+                        </button>
                     </div>
                 </div>
             </div>

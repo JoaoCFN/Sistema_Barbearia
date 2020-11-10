@@ -40,8 +40,21 @@
     width: 86px;
 }
 
-.area-cliente .modal-content{
+.area-cliente .modal-content,
+#modal-perfil .modal-content{
     background: var(--primary);
+}
+
+#modal-perfil .modal-content input{
+    cursor: not-allowed;
+}
+
+.btn-salvar{
+    text-align: right;
+}
+
+.swal2-cancel{
+    margin-right: 15px;
 }
 
 .btn-pesquisa {

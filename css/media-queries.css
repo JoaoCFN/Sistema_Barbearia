@@ -25,6 +25,10 @@
         margin-top: max(110px, 8vh);
     }
 
+    .area-cliente{
+        margin-top: 1rem;
+        justify-content: center;
+    }
     
 }
 

@@ -7,6 +7,4 @@ window.addEventListener("load", () => {
     $('.maskDataNascimento').mask('00/00/0000');
     $('.maskUF').mask('AA');
 })
-// $(document).ready(function () {
-    
-// })
+

@@ -208,3 +208,17 @@
 }
 
 
+/* Behavior */
+.sb-d-none{
+    display: none;
+}
+
+.sb-opacity-0{
+    opacity: 0;
+}
+
+.sb-cursor-text{
+    cursor: text !important;
+}
+
+
