@@ -1,8 +1,15 @@
 .navbarStyle {
     background-color: black;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
 }
 
 .nav-link {
     color: white !important;
     font-size: x-large;
+    padding-left: 95%;
+    padding-top: 2%;
 }

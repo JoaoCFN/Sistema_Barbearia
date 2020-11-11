@@ -1,13 +1,25 @@
 <div class="sidebar">
     <ul class="sidebar-content">
-        <li class="align-self-center">
-            <a class="nav-link" href="#">Home</a>
+        <li class="logo">
+            <a class="navbar-brand " href="#">
+                <img src="../../assets/images/logo-invertida.png" width="100px" alt="logo" class="logo" />
+            </a>
         </li>
         <li class="align-self-center">
-            <a class="nav-link" id="scroll-sobre" href="#sobre">Minha Barbearia</a>
+            <a class="nav-link sidebarLinks" href="#">
+                <fa-icon [icon]="faHome"></fa-icon> Home</a>
         </li>
         <li class="align-self-center">
-            <a class="nav-link" id="scroll-vantagens" href="#vantagens">Serviços Agendados</a>
+            <a class="nav-link sidebarLinks" id="scroll-sobre" href="#sobre">
+                <fa-icon [icon]="faCut"></fa-icon> Barbearia</a>
+        </li>
+        <li class="align-self-center">
+            <a class="nav-link navItem sidebarLinks" id="scroll-vantagens" href="#vantagens">Serviços Agendados</a>
+        </li>
+        <li>
+            <a class="nav-link close">
+                <fa-icon id="closeSideBar" [icon]="faArrowCircleLeft"></fa-icon>
+            </a>
         </li>
     </ul>
 </div>

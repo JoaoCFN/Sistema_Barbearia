@@ -1,8 +1,49 @@
-.sideRow {
-    margin-right: 0px;
-    margin-left: 0px;
-}
-
 .sidebar {
     padding: 0px;
+}
+
+.content {
+    background-color: #f0edeb;
+}
+
+.col-2 {
+    margin: 0% !important;
+    flex: none !important;
+}
+
+.col-2 {
+    max-width: 250px !important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.4fr 1.6fr 1fr 1fr;
+    grid-template-rows: 0.4fr 1.6fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "Sidebar Header Header Header" "Sidebar Conteudo Conteudo Conteudo" "Sidebar Conteudo Conteudo Conteudo";
+}
+
+.Sidebar {
+    grid-area: Sidebar;
+}
+
+.Header {
+    grid-area: Header;
+}
+
+.Conteudo {
+    grid-area: Conteudo;
+    background: #f0f0f0;
+}
+
+.Sidebar {
+    grid-area: Sidebar;
+}
+
+.Header {
+    grid-area: Header;
+}
+
+.Conteudo {
+    grid-area: Conteudo;
 }
