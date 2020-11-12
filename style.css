@@ -16,6 +16,9 @@
 /* Área do cliente */
 @import "css/area_cliente/area_cliente.css";
 
+/* Barbearia */
+@import "css/barbearia/barbearia.css";
+
 @import "css/footer.css";
 
 @import "css/root.css";

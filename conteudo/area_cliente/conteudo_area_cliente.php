@@ -30,7 +30,7 @@
                                 <span class="ml-1">Feira de Santana - BA</span>
                             </p>            
                         </div>
-                        <a href="#" class="btn sb-btn-secondary sb-w-700 sb-full-width">
+                        <a href="barbearia.php" class="btn sb-btn-secondary sb-w-700 sb-full-width">
                             Agendar
                         </a>
                     </div>
