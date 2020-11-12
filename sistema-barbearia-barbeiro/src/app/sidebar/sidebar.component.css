@@ -15,23 +15,27 @@
     text-align: center;
     padding-bottom: 30%;
     padding-top: 7%;
+    margin-left: 10px;
 }
 
 .sidebarLinks {
     font-family: 'Montserrat', sans-serif;
     color: white;
+    font-size: 15px;
+    text-align: center;
 }
 
 .sidebarLinks:hover {
     font-family: 'Montserrat', sans-serif;
     color: black;
     background-color: #ffc107;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     transition: all .3s ease-in-out 0s;
 }
 
 #closeSideBar {
-    margin-right: -90px;
+    margin-right: -15px;
     background: #454545;
     color: #A8A8A8;
     text-align: center;
@@ -48,5 +52,3 @@
     margin-top: 10px;
     padding-top: 4px;
 }
-
-.navItem {}

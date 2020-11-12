@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.4fr 1.6fr 1fr 1fr;
+    grid-template-rows: 0.4fr 2.4fr 0.2fr;
+    gap: 0px 0px;
+    grid-template-areas: "Sidebar Header Header Header" "Sidebar Conteudo Conteudo Conteudo" "Sidebar Rodape Rodape Rodape";
+}
+
+.Sidebar {
+    grid-area: Sidebar;
+}
+
+.Header {
+    grid-area: Header;
+}
+
+.Rodape {
+    grid-area: Rodape;
+    background-color: black;
+}
+
+.Conteudo {
+    grid-area: Conteudo;
+    background: #e6e6e6;
+}
+
+.Rodape>div>h6 {
+    color: white;
+    text-align: end;
+}
