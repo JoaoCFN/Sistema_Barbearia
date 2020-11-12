@@ -10,6 +10,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppTitleComponent } from './app-title/app-title.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
+    AppTitleComponent,
 
 
   ],

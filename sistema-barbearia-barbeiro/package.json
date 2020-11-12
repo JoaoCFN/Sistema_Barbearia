@@ -23,6 +23,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "bootstrap": "4.1.1",
+    "chart.js": "^2.9.4",
+    "ng2-charts": "^2.4.2",
     "ngx-bootstrap": "^6.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
