@@ -48,6 +48,19 @@
     #header-text{
         margin-bottom: 100px;
     }
+
+    .barbearia .sb-float-right{
+        float: none;
+    }
+
+    .barbearia .sb-mt-3{
+        margin-top: 0;
+        margin-bottom: .5rem;
+    }
+
+    .barbearia .sb-mt-2{
+        margin-top: 0;
+    }
 }
 
 /* Large */
