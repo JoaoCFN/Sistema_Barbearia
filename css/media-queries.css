@@ -53,7 +53,7 @@
         float: none;
     }
 
-    .barbearia .sb-mt-3{
+    .barbearia .sb-mt-5{
         margin-top: 0;
         margin-bottom: .5rem;
     }
@@ -61,6 +61,24 @@
     .barbearia .sb-mt-2{
         margin-top: 0;
     }
+
+    .barbearia #nome-barbearia{
+        margin-top: 2rem;
+    }
+
+    .barbearia #status{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .barbearia .agendamento{
+        margin-top: 2rem !important;
+    }
+
+    .barbearia .informacoes{
+        text-align: center;
+    }
+
 }
 
 /* Large */

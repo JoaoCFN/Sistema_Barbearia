@@ -50,14 +50,13 @@
     float: right;
 }
 
-.barbearia .sb-mt-3{
-    margin-top: 1rem;
+.barbearia .sb-mt-5{
+    margin-top: 3rem;
 }
 
 .barbearia .sb-mt-2{
     margin-top: .5rem;
 }
-
 
 .barbearia .agendamento .content {
     width: 95%;
@@ -95,7 +94,7 @@
     border: none;
     background-color: transparent;
     outline: none !important;
-    cursor: pointer;
+    cursor: default;
 }
 @media (min-width: 500px) {
     .barbearia .agendamento .multisteps-form__progress-btn {
@@ -155,6 +154,7 @@ color:var(--secondary);
 
 .barbearia .agendamento .multisteps-form__form {
     position: relative;
+    background: var(--primary) !important;
 }
 
 .barbearia .agendamento .multisteps-form__panel {

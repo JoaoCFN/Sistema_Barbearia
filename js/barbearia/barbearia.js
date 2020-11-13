@@ -22,7 +22,7 @@ const removeClasses = (elemSet, className) => {
     
 };
   
-  //return exect parent node of the element
+//return exect parent node of the element
 const findParent = (elem, parentClass) => {
     
     let currentNode = elem;
