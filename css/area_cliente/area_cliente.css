@@ -41,7 +41,8 @@
 }
 
 .area-cliente .modal-content,
-#modal-perfil .modal-content{
+#modal-perfil .modal-content,
+#modal-agendamentos .modal-content{
     background: var(--primary);
 }
 

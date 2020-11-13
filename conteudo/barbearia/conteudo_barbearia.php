@@ -213,8 +213,19 @@
                                                     Confirmar serviço
                                                 </h3>
                                                 <div class="multisteps-form__content">
-                                                    <div class="form-row mt-4">
-                                                        <textarea class="multisteps-form__textarea form-control" placeholder="Additional Comments and Requirements"></textarea>
+                                                    <div class="mt-3 mb-3">
+                                                        <h5 class="multisteps-form__title sb-txt-white sb-w-500">
+                                                            Nome: Teste
+                                                        </h5>
+                                                        <h5 class="multisteps-form__title sb-txt-white sb-w-500">
+                                                            Data: 01/01/2021
+                                                        </h5>
+                                                        <h5 class="multisteps-form__title sb-txt-white sb-w-500">
+                                                            Horário: 09H30
+                                                        </h5>
+                                                        <h5 class="multisteps-form__title sb-txt-white sb-w-500">
+                                                            Serviço: Corte de Cabelo
+                                                        </h5>
                                                     </div>
                                                     <div class="button-row d-flex mt-4">
                                                         <button class="btn sb-btn-secondary-default js-btn-prev sb-w-700" type="button" title="Prev">
