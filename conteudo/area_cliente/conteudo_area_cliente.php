@@ -363,7 +363,7 @@
     </div>
 
     <button class="btn-pesquisa btn-position-fixed" data-toggle="modal" data-target="#modal-pesquisa">
-        <i class="fa fa-search-plus" aria-hidden="true"></i>
+        <i class="fa fa-search" aria-hidden="true"></i>
     </button>
 </section>
 
