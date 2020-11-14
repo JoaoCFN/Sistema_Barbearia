@@ -53,7 +53,7 @@
             </div>
         </div>
 
-
+        <!-- Agendamento -->
         <div class="agendamento mt-5">
             <!--PEN CONTENT     -->
             <div class="content">
@@ -91,34 +91,18 @@
                                     <div class="col-12 col-lg-8 m-auto">
                                         <form class="multisteps-form__form">
                                             <!--Dia-->
-                                            <div class="multisteps-form__panel shadow p-4 rounded js-active" data-animation="scaleIn">
+                                            <div class="multisteps-form__panel shadow p-4 rounded js-active">
                                                 <h3 class="multisteps-form__title sb-txt-white sb-w-900">
                                                     Escolha o dia desejado
                                                 </h3>
                                                 <div class="multisteps-form__content">
-                                                    <div class="form-row mt-4">
-                                                        <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="text" placeholder="First Name"/>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="text" placeholder="Last Name"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row mt-4">
-                                                        <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="text" placeholder="Login"/>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="email" placeholder="Email"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row mt-4">
-                                                        <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="password" placeholder="Password"/>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="password" placeholder="Repeat Password"/>
-                                                        </div>
+                                                    <div class="mt-4">
+                                                       <input 
+                                                        class="datepicker sb-form-input sb-full-width pl-3"
+                                                        placeholder="Clique para selecionar o dia"
+                                                        type="date"
+                                                        id="dia-agendamento"
+                                                       />
                                                     </div>
                                                     <div class="button-row d-flex mt-4">
                                                         <button class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" type="button" title="Prev">
@@ -129,34 +113,17 @@
                                             </div>
 
                                             <!--Horário-->
-                                            <div class="multisteps-form__panel shadow p-4 rounded" data-animation="scaleIn">
+                                            <div class="multisteps-form__panel shadow p-4 rounded">
                                                 <h3 class="multisteps-form__title sb-txt-white sb-w-900">
                                                     Escolha o horário desejado
                                                 </h3>
                                                 <div class="multisteps-form__content">
-                                                    <div class="form-row mt-4">
-                                                        <div class="col">
-                                                        <input class="multisteps-form__input form-control" type="text" placeholder="Address 1"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row mt-4">
-                                                        <div class="col">
-                                                        <input class="multisteps-form__input form-control" type="text" placeholder="Address 2"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row mt-4">
-                                                        <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="text" placeholder="City"/>
-                                                        </div>
-                                                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                                                        <select class="multisteps-form__select form-control">
-                                                            <option selected="selected">State...</option>
-                                                            <option>...</option>
-                                                        </select>
-                                                        </div>
-                                                        <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="text" placeholder="Zip"/>
-                                                        </div>
+                                                    <div class="mt-4">
+                                                       <input 
+                                                        class="timepicker sb-form-input sb-full-width pl-3"
+                                                        placeholder="Clique para selecionar o horário"
+                                                        id="horario-agendamento"
+                                                       />
                                                     </div>
                                                     <div class="button-row d-flex mt-4">
                                                         <button class="btn sb-btn-secondary-default js-btn-prev sb-w-700" type="button" title="Prev">

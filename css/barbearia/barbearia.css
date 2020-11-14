@@ -58,6 +58,12 @@
     margin-top: .5rem;
 }
 
+.barbearia #dia-agendamento,
+.barbearia #horario-agendamento{
+    height: 3rem;
+    border-radius: .25rem;
+}
+
 .barbearia .agendamento .content {
     width: 95%;
     margin: 0 auto 50px;

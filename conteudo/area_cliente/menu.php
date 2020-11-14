@@ -63,6 +63,8 @@
                     Não há agendamentos feitos
                 </h5>
 
+                <!-- Card para agendamento marcado -->
+                <!-- Descomentar quando for implementar o back -->
                 <!-- <div class="row">
                     <div class="col-sm-12 mt-1 mb-1">
                         <div class="card shadow-sm sb-bg-black">
@@ -165,22 +167,6 @@
                                 class="form-control-plaintext sb-form-input pl-2" 
                                 value="2000-01-01"
                                 id="input-data-nascimento"
-                                readonly 
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label sb-txt-white">
-                            Email:
-                        </label>
-                        <div class="col-sm-8">
-                            <input 
-                                type="email" 
-                                class="form-control-plaintext sb-form-input pl-2" 
-                                value="teste@teste.com"
-                                id="input-email"
                                 readonly 
                             >
                         </div>
