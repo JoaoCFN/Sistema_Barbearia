@@ -50,8 +50,8 @@
     <script src="assets/datepicker/legacy.js"></script>
     <script src="assets/datepicker/translate/pt_BR.js"></script>
 
-    <script src="js/barbearia/barbearia_steps.js"></script>
     <script src="js/barbearia/barbearia_form.js"></script>
+    <script src="js/barbearia/barbearia_steps.js"></script>
 
     <script>
       // Horário

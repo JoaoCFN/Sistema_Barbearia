@@ -100,7 +100,6 @@
                                                        <input 
                                                             class="datepicker sb-form-input sb-full-width pl-3"
                                                             placeholder="Clique para selecionar o dia"
-                                                            type="date"
                                                             id="dia-agendamento"
                                                             data-target-title="btn-dia"
                                                             onChange="handleButton(this);"
