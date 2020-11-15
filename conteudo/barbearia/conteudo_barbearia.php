@@ -103,7 +103,7 @@
                                                             type="date"
                                                             id="dia-agendamento"
                                                             data-target-title="btn-dia"
-                                                            onChange="ativarBtn(this);"
+                                                            onChange="handleButton(this);"
                                                        />
                                                     </div>
                                                     <div class="button-row d-flex mt-4">
@@ -132,7 +132,7 @@
                                                             placeholder="Clique para selecionar o horário"
                                                             id="horario-agendamento"
                                                             data-target-title="btn-horario"
-                                                            onChange="ativarBtn(this);"
+                                                            onChange="handleButton(this);"
                                                        />
                                                     </div>
                                                     <div class="button-row d-flex mt-4">

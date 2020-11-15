@@ -1,15 +1,19 @@
 // Data
 $('.datepicker').pickadate({
-  formatSubmit: 'yyyy/mm/dd',
-  hiddenPrefix: 'prefix__',
-  hiddenSuffix: '__suffix'
+    formatSubmit: 'yyyy/mm/dd',
+    hiddenPrefix: 'prefix__',
+    hiddenSuffix: '__suffix',
+    klass: {
+        navPrev: 'picker__nav--next',
+        navNext: 'picker__nav--prev',
+    }
 })
 
-function ativarBtn(e){
-    const btnAttribute = e.getAttribute("data-target-title");
+function handleButton(target){
+    const btnAttribute = target.getAttribute("data-target-title");
     const btn = document.querySelector(`#${btnAttribute}`);
-    // console.log(e.value);
-    if(e.value.length > 0){
+    
+    if(target.value.length > 0){
         btn.removeAttribute("disabled");
     } 
     else{
