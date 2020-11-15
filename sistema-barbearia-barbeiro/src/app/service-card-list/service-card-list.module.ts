@@ -6,6 +6,7 @@ import { CashCardComponent } from './cash-card/cash-card.component';
 import { RequestServiceCardComponent } from './request-service-card/request-service-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChartsModule } from 'ng2-charts';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,6 +16,7 @@ import { ChartsModule } from 'ng2-charts';
     CommonModule,
     FontAwesomeModule,
     ChartsModule,
+    FormsModule,
   ],
   exports:[
     ServiceCardListComponent

@@ -15,7 +15,7 @@ export class ServiceCardComponent implements OnInit {
   faClock=faClock
 
   public lineChartData: ChartDataSets[] = [
-    { data: [400, 433, 322, 558, 446, 785, 223], label: 'Mês' },
+    { data: [4200, 4354, 5422, 5648, 4546, 7285, 2233], label: 'Mês' },
   ];
   public lineChartLabels: Label[] = ['01','02','03','04','05','06','07'];
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt,faEye } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-service-card-list',
@@ -8,6 +8,7 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 })
 export class ServiceCardListComponent implements OnInit {
   faCalendarAlt = faCalendarAlt
+  faEye = faEye
   constructor() { }
 
   ngOnInit(): void {
