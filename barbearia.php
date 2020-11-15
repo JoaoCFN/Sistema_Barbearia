@@ -58,6 +58,7 @@
       $('.timepicker').pickatime({
           format: 'H:i',
           // Delimitador de horas
+          // Modificar quando for implementar o backend
           min: [8,0],
           max: [18,0],
       })

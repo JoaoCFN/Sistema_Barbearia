@@ -98,14 +98,22 @@
                                                 <div class="multisteps-form__content">
                                                     <div class="mt-4">
                                                        <input 
-                                                        class="datepicker sb-form-input sb-full-width pl-3"
-                                                        placeholder="Clique para selecionar o dia"
-                                                        type="date"
-                                                        id="dia-agendamento"
+                                                            class="datepicker sb-form-input sb-full-width pl-3"
+                                                            placeholder="Clique para selecionar o dia"
+                                                            type="date"
+                                                            id="dia-agendamento"
+                                                            data-target-title="btn-dia"
+                                                            onChange="ativarBtn(this);"
                                                        />
                                                     </div>
                                                     <div class="button-row d-flex mt-4">
-                                                        <button class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" type="button" title="Prev">
+                                                        <button 
+                                                            class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" 
+                                                            type="button" 
+                                                            title="Prev"
+                                                            id="btn-dia"
+                                                            disabled
+                                                        >
                                                             Próximo
                                                         </button>
                                                     </div>
@@ -120,16 +128,24 @@
                                                 <div class="multisteps-form__content">
                                                     <div class="mt-4">
                                                        <input 
-                                                        class="timepicker sb-form-input sb-full-width pl-3"
-                                                        placeholder="Clique para selecionar o horário"
-                                                        id="horario-agendamento"
+                                                            class="timepicker sb-form-input sb-full-width pl-3"
+                                                            placeholder="Clique para selecionar o horário"
+                                                            id="horario-agendamento"
+                                                            data-target-title="btn-horario"
+                                                            onChange="ativarBtn(this);"
                                                        />
                                                     </div>
                                                     <div class="button-row d-flex mt-4">
                                                         <button class="btn sb-btn-secondary-default js-btn-prev sb-w-700" type="button" title="Prev">
                                                             Anterior
                                                         </button>
-                                                        <button class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" type="button" title="Prev">
+                                                        <button 
+                                                            class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" 
+                                                            type="button" 
+                                                            title="Prev"
+                                                            id="btn-horario"
+                                                            disabled
+                                                        >
                                                             Próximo
                                                         </button>
                                                     </div>
@@ -162,11 +178,16 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="button-row d-flex mt-4 col-12">
-
                                                             <button class="btn sb-btn-secondary-default js-btn-prev sb-w-700" type="button" title="Prev">
                                                                 Anterior
                                                             </button>
-                                                            <button class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" type="button" title="Prev">
+                                                            <button 
+                                                                class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" 
+                                                                type="button" 
+                                                                title="Prev"
+                                                                id="btn-servico"
+                                                                disabled
+                                                            >
                                                                 Próximo
                                                             </button>
                                                         </div>

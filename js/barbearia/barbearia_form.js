@@ -1,13 +1,18 @@
 // Data
-$('.datepicker').pickadate()
+$('.datepicker').pickadate({
+  formatSubmit: 'yyyy/mm/dd',
+  hiddenPrefix: 'prefix__',
+  hiddenSuffix: '__suffix'
+})
 
-
-
-// var $input = $('.datepicker')
-// $input.pickadate();
-
-// input.get('select');
-// const teste = document.querySelector("#dia-agendamento");
-// setTimeout(() => {
-//     picker.get();
-// }, 5000)
+function ativarBtn(e){
+    const btnAttribute = e.getAttribute("data-target-title");
+    const btn = document.querySelector(`#${btnAttribute}`);
+    // console.log(e.value);
+    if(e.value.length > 0){
+        btn.removeAttribute("disabled");
+    } 
+    else{
+        btn.setAttribute("disabled", "disabled");
+    }
+}
