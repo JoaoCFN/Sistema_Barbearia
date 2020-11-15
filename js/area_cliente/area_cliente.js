@@ -10,7 +10,6 @@
     const campoNome = document.querySelector("#modal-perfil #input-nome");
     const campoTelefone = document.querySelector("#modal-perfil #input-telefone");
     const campoDataNascimento = document.querySelector("#modal-perfil #input-data-nascimento");
-    const campoEmail = document.querySelector("#modal-perfil #input-email");
     
     // estado inicial
     btnSalvar.classList.add("sb-d-none");
@@ -26,9 +25,6 @@
 
         campoDataNascimento.removeAttribute("readonly");
         campoDataNascimento.classList.add("sb-cursor-text");
-
-        campoEmail.removeAttribute("readonly");
-        campoEmail.classList.add("sb-cursor-text");
     });
 
     btnSalvar.addEventListener("click", (e) => {

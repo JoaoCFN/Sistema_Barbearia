@@ -150,6 +150,13 @@
     border: 1px solid var(--secondary);
 }
 
+.sb-btn-secondary-default{
+    background-color: var(--secondary);
+    color: var(--primary);
+    transition: all 0.3s ease-out;
+    text-align: center;
+}
+
 .sb-btn-outline-secondary{
     background-color: transparent;
     color: var(--secondary) !important;
@@ -162,7 +169,6 @@
     background-color: var(--secondary);
     color: var(--primary) !important;
 }
-
 
 .sb-btn-social-midia{
     width: 40px;
@@ -183,6 +189,18 @@
     background: var(--white);
 }
 
+.sb-btn-green{
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s ease-out;
+    text-align: center;
+}
+
+.sb-btn-green:hover{
+    /* background-color: var(--white); */
+    color: var(--white);
+    /* border: 1px solid var(--green); */
+}
 
 /* Line */
 .sb-division-line{
@@ -207,7 +225,6 @@
     margin: 0;
 }
 
-
 /* Behavior */
 .sb-d-none{
     display: none;
@@ -220,5 +237,7 @@
 .sb-cursor-text{
     cursor: text !important;
 }
+
+
 
 

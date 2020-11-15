@@ -11,6 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Font awesome CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- DATE PICKER -->
+    <link rel="stylesheet" href="assets/datepicker/themes/default.css">
+    <link rel="stylesheet" href="assets/datepicker/themes/default.date.css">
+    <link rel="stylesheet" href="assets/datepicker/themes/default.time.css">
+    <link rel="stylesheet" href="assets/datepicker/themes/rtl.css">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
   </head>
@@ -22,7 +27,6 @@
         <?php require_once "conteudo/barbearia/conteudo_barbearia.php"; ?>
 
         <?php require_once "conteudo/footer.php"; ?>
-
     </div>
 
     <!-- Optional JavaScript -->
@@ -39,5 +43,25 @@
     <script src="js/area_cliente/area_cliente.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/mask_forms.js"></script>
+    <!-- DATE PICKER -->
+    <script src="assets/datepicker/picker.js"></script>
+    <script src="assets/datepicker/picker.time.js"></script>
+    <script src="assets/datepicker/picker.date.js"></script>
+    <script src="assets/datepicker/legacy.js"></script>
+    <script src="assets/datepicker/translate/pt_BR.js"></script>
+
+    <script src="js/barbearia/barbearia_form.js"></script>
+    <script src="js/barbearia/barbearia_steps.js"></script>
+
+    <script>
+      // Horário
+      $('.timepicker').pickatime({
+          format: 'H:i',
+          // Delimitador de horas
+          // Modificar quando for implementar o backend
+          min: [8,0],
+          max: [17,30],
+      })
+    </script>
   </body>
 </html>

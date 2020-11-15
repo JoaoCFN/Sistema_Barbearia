@@ -1,6 +1,6 @@
 <section class="gap-to-menu container">
     <div class="area-cliente">
-        <!-- Cards -->
+        <!-- Cards Linha 1-->
         <div class="row">
             <div class="col-md-3 col-sm-12 mb-4">
                 <div class="card area-cliente-card">
@@ -30,7 +30,7 @@
                                 <span class="ml-1">Feira de Santana - BA</span>
                             </p>            
                         </div>
-                        <a href="barbearia.php" class="btn sb-btn-secondary sb-w-700 sb-full-width">
+                        <a href="#" class="btn sb-btn-secondary sb-w-700 sb-full-width">
                             Agendar
                         </a>
                     </div>
@@ -132,7 +132,7 @@
                                 <span class="ml-1">Feira de Santana - BA</span>
                             </p>            
                         </div>
-                        <a href="#" class="btn sb-btn-secondary sb-w-700 sb-full-width">
+                        <a href="barbearia.php" class="btn sb-btn-secondary sb-w-700 sb-full-width">
                             Agendar
                         </a>
                     </div>
@@ -223,7 +223,7 @@
     </div>
 
     <button class="btn-pesquisa btn-position-fixed" data-toggle="modal" data-target="#modal-pesquisa">
-        <i class="fa fa-search-plus" aria-hidden="true"></i>
+        <i class="fa fa-search" aria-hidden="true"></i>
     </button>
 </section>
 
