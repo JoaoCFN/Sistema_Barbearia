@@ -1,11 +1,14 @@
 <div class="grid-container">
-    <app-header class="Header"></app-header>
     <app-sidebar class="Sidebar"></app-sidebar>
-    <app-app-title class="Titulo"></app-app-title>
+
     <div class="Conteudo row" style="margin: 0px;">
         <div class="col-md-12 mt-3 pad-3">
+            <div class="row">
+                <div *ngFor="let item of basicCard" class="col-lg-3 col-md-6 col-sm-6">
+                    <app-card [card]=item></app-card>
+                </div>
+            </div>
 
-            <app-service-card-list></app-service-card-list>
         </div>
     </div>
     <app-footer class="Rodape"></app-footer>

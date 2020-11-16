@@ -1,0 +1,26 @@
+<mat-card>
+
+    <div class="row">
+        <div class="col-md-1 headerIcon">
+            <p>
+                <fa-icon [icon]="faMoneyBillWave" size="xs"></fa-icon>
+            </p>
+        </div>
+        <div class="col-md-11 text-right">
+            <p class="card-category">
+                {{card.title}}
+            </p>
+            <p class="card-data">
+                {{card.data}}
+            </p>
+        </div>
+        <hr>
+        <div class="col-md-12 cd-footer">
+            <p>
+                <fa-icon [icon]="faEye" size="xs"></fa-icon>
+                {{card.footer}}
+            </p>
+        </div>
+    </div>
+
+</mat-card>

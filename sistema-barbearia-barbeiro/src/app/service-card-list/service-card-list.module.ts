@@ -7,12 +7,14 @@ import { RequestServiceCardComponent } from './request-service-card/request-serv
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card'
 
 
 
 @NgModule({
   declarations: [ServiceCardListComponent, ServiceCardComponent, CashCardComponent, RequestServiceCardComponent],
   imports: [
+    MatCardModule,
     CommonModule,
     FontAwesomeModule,
     ChartsModule,
