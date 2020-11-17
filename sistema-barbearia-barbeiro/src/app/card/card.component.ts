@@ -1,6 +1,6 @@
 import { BasicCard } from './../model/basic-card';
 import { Component, Input, OnInit } from '@angular/core';
-import { faEye, faMoneyBillWave,faEllipsisH,faClock } from '@fortawesome/free-solid-svg-icons';
+import { faCheck,faEye, faMoneyBillWave,faEllipsisH,faClock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-card',
@@ -17,6 +17,8 @@ export class CardComponent implements OnInit {
   faEye = faEye
   faEllipsisH = faEllipsisH
   faClock=faClock
+  faCheck = faCheck
+
 
 
   constructor() { }

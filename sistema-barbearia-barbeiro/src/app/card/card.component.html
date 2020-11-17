@@ -3,7 +3,10 @@
     <div class="row">
         <div class="col-md-1 headerIcon">
             <p>
-                <fa-icon [icon]="faMoneyBillWave" size="xs"></fa-icon>
+                <fa-icon *ngIf="card.cardType == 1" [icon]="faClock"></fa-icon>
+                <fa-icon *ngIf="card.cardType == 2" [icon]="faMoneyBillWave"></fa-icon>
+                <fa-icon *ngIf="card.cardType == 3" [icon]="faCheck"></fa-icon>
+
             </p>
         </div>
         <div class="col-md-11 text-right">
@@ -17,7 +20,7 @@
         <hr>
         <div class="col-md-12 cd-footer">
             <p>
-                <fa-icon [icon]="faEye" size="xs"></fa-icon>
+                <fa-icon [icon]="faEye"></fa-icon>
                 {{card.footer}}
             </p>
         </div>

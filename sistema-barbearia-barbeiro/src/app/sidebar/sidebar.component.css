@@ -13,8 +13,8 @@
 
 hr {
     background-color: white;
-    padding: 0.5px;
-    width: 90%;
+    padding: 0.3px;
+    width: 85%;
     margin-bottom: 25px;
 }
 
@@ -28,7 +28,7 @@ hr {
 .sidebarLinks {
     font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ hr {
     font-family: 'Montserrat', sans-serif;
     color: black;
     background-color: #ffc107;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     transition: all .3s ease-in-out 0s;
 }

@@ -14,7 +14,9 @@ basicCard : BasicCard[]
 
   ngOnInit(): void {
     this.basicCard = [
-      new BasicCard('Serviços agendados para o dia','42',faMoneyBillWave,'Visualizar os serviços diarios.',faEye),
+      new BasicCard('Serviços agendados para o dia','42','Visualizar os serviços diarios.',1),
+      new BasicCard('Lucro diario','85 R$','Visualizar valores de todos serviços.',2),
+      new BasicCard('Serviço mais requisitado','Barba e cabelo','Todos os serviços realizados no dia.',3),
     ]
   }
 

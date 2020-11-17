@@ -30,9 +30,10 @@
 }
 
 .card-data {
-    font-size: 45pt;
+    font-size: 30pt;
     padding-top: 15px;
     padding-bottom: 15px;
+    line-height: 1px;
 }
 
 hr {
