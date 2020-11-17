@@ -157,62 +157,91 @@
                                                     Informe o serviço desejado
                                                 </h3>
                                                 <div class="multisteps-form__content">
-                                                    <div class="row">
-                                                        <div class="col-12 col-md-6 mt-4">
-                                                            <div class="card shadow-sm">
-                                                                <div class="card-body">
-                                                                <h5 class="card-title">Item Title</h5>
-                                                                <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-md-6 mt-4">
-                                                            <div class="card shadow-sm">
-                                                                <div class="card-body">
-                                                                <h5 class="card-title">Item Title</h5>
-                                                                <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="button-row d-flex mt-4 col-12">
-                                                            <button class="btn sb-btn-secondary-default js-btn-prev sb-w-700" type="button" title="Prev">
-                                                                Anterior
-                                                            </button>
-                                                            <button 
-                                                                class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" 
-                                                                type="button" 
-                                                                title="Prev"
-                                                                id="btn-servico"
-                                                                disabled
+                                                    <div class="servicos mt-3">
+                                                        <div class="input-container">
+                                                            <input 
+                                                                id="1" 
+                                                                type="checkbox" 
+                                                                value="Corte de cabelo"
+                                                                data-target-title="btn-servico"
+                                                                onChange="handleCheck(this);"
                                                             >
-                                                                Próximo
-                                                            </button>
+                                                            <label for="1">
+                                                                <span>
+                                                                    Corte de cabelo
+                                                                    <span>
+                                                                        R$ 17,00
+                                                                    </span>
+                                                                </span>
+                                                            </label>
                                                         </div>
+
+                                                        <div class="input-container">
+                                                            <input 
+                                                                id="2" 
+                                                                type="checkbox" 
+                                                                value="Corte de barba"
+                                                                data-target-title="btn-servico"
+                                                                onChange="handleCheck(this);"
+                                                            >
+                                                            <label for="2">
+                                                                <span>
+                                                                    Corte de barba
+                                                                    <span>
+                                                                        R$ 10,00
+                                                                    </span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="input-container">
+                                                            <input 
+                                                                id="3" 
+                                                                type="checkbox" 
+                                                                value="Cabelo + Barba"
+                                                                data-target-title="btn-servico"
+                                                                onChange="handleCheck(this);"
+                                                            >
+                                                            <label for="3">
+                                                                <span>
+                                                                    Cabelo + Barba
+                                                                    <span>
+                                                                        R$ 30,00
+                                                                    </span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>                                       
+                                                </div>
+                                                <div class="row">
+                                                    <div class="button-row d-flex mt-4 col-12">
+                                                        <button class="btn sb-btn-secondary-default js-btn-prev sb-w-700" type="button" title="Prev">
+                                                            Anterior
+                                                        </button>
+                                                        <button 
+                                                            class="btn sb-btn-secondary-default js-btn-next sb-w-700 ml-auto" 
+                                                            type="button" 
+                                                            title="Prev"
+                                                            id="btn-servico"
+                                                            disabled
+                                                        >
+                                                            Próximo
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <!--single form panel-->
+                                            <!--Confirmar Serviço-->
                                             <div class="multisteps-form__panel shadow p-4 rounded" data-animation="scaleIn">
                                                 <h3 class="multisteps-form__title sb-txt-white sb-w-900">
                                                     Confirmar serviço
                                                 </h3>
                                                 <div class="multisteps-form__content">
-                                                    <div class="mt-3 mb-3">
+                                                    <div class="mt-3 mb-3" >
                                                         <h5 class="multisteps-form__title sb-txt-white sb-w-500">
                                                             Nome: Teste
                                                         </h5>
-                                                        <h5 class="multisteps-form__title sb-txt-white sb-w-500">
-                                                            Data: 01/01/2021
-                                                        </h5>
-                                                        <h5 class="multisteps-form__title sb-txt-white sb-w-500">
-                                                            Horário: 09H30
-                                                        </h5>
-                                                        <h5 class="multisteps-form__title sb-txt-white sb-w-500">
-                                                            Serviço: Corte de Cabelo
-                                                        </h5>
+                                                        <div id="confirmar-servico-content"></div>
                                                     </div>
                                                     <div class="button-row d-flex mt-4">
                                                         <button class="btn sb-btn-secondary-default js-btn-prev sb-w-700" type="button" title="Prev">
@@ -233,5 +262,6 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 

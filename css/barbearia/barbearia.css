@@ -248,4 +248,58 @@ color:var(--secondary);
             transform: scale(1);
 }
 
+/* Serviços */
+.barbearia .servicos .input-container {
+    position: relative;
+    display: inline-block;
+    width: 190px;
+    height: 80px;
+}
+  
+.barbearia .servicos input[type="checkbox"] {
+    display: none;
+}
+  
+.barbearia .servicos input[type="checkbox"]:checked + label {
+    background-color: #555;
+}
+  
+.barbearia .servicos label {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 5px;
+    padding: 0 10px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    background-color: var(--black);
+    border-radius: 4px;
+    font-weight: 700;
+}
+  
+.barbearia .servicos label:hover {
+    cursor: pointer;
+    -webkit-transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -ms-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+}
+  
+.barbearia .servicos label:hover, 
+.barbearia .servicos input[type="checkbox"]:checked + label:hover {
+    background-color: #555;
+}
+  
+.barbearia .servicos label span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+  
+
 
