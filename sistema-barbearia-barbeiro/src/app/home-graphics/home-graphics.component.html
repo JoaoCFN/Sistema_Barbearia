@@ -1,12 +1,12 @@
+<div class="graph">
+    <canvas baseChart width="830px" height="140px" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+
 <div class="graph-body">
     <h3 class="pt-2">
         <fa-icon [icon]="faCut"></fa-icon> Serviços diarios </h3>
     <hr>
     <h6>
         <fa-icon [icon]="faClock"></fa-icon> Atualizado a x minutos atras</h6>
-</div>
-
-<div class="graph">
-    <canvas baseChart width="830px" height="140px" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
-      </canvas>
 </div>
