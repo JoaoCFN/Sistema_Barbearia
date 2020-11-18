@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "", "dbtcc1");
+    $conn = mysqli_connect("localhost", "root", "", "dbtcc");
     $nome = mysqli_real_escape_string($conn, $_POST['usuario']);
     $telefone = mysqli_real_escape_string($conn, $_POST['telBar']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);

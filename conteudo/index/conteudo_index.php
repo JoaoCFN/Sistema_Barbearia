@@ -58,7 +58,7 @@
             </h3>
             <div class="row">
                 <div class="col-md-3 col-sm-12 mt-3 mb-3">
-                    <img src="https://via.placeholder.com/200x200">
+                    <img src="assets/images/eliabe.png">
                     <div class="text-center mt-4">
                         <h4 class="sb-txt-secondary sb-w-700 pb-1">
                             Eliabe Soares
@@ -67,7 +67,11 @@
                             Desenvolvedor Back-End
                         </p>
                         <div class="redes-sociais mt-2">
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://github.com/EliabeSilva" 
+                                class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-github"></i>
                             </a>
                             <a href="#" class="pr-2">
@@ -80,7 +84,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-12 mt-3 mb-3">
-                    <img src="https://via.placeholder.com/200x200">
+                    <img src="assets/images/genivaldo.png">
                     <div class="text-center mt-4">
                         <h4 class="sb-txt-secondary sb-w-700 pb-1">
                             Genivaldo Alves
@@ -89,7 +93,10 @@
                             Desenvolvedor Back-End
                         </p>
                         <div class="redes-sociais mt-2">
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://github.com/geniinho" class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-github"></i>
                             </a>
                             <a href="#" class="pr-2">
@@ -102,7 +109,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-12 mt-3 mb-3">
-                    <img src="https://via.placeholder.com/200x200">
+                    <img src="assets/images/joao.png">
                     <div class="text-center mt-4">
                         <h4 class="sb-txt-secondary sb-w-700 pb-2">
                             João Neto
@@ -111,20 +118,31 @@
                             Desenvolvedor Front-End
                         </p>
                         <div class="redes-sociais mt-2">
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://github.com/JoaoCFN" 
+                                class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-github"></i>
                             </a>
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://www.instagram.com/jcneto_12" class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-instagram"></i>
                             </a>
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://www.linkedin.com/in/joao-carlos-ferreira-neto" 
+                                class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-12 mt-3 mb-3">
-                    <img src="https://via.placeholder.com/200x200">
+                    <img src="assets/images/rafa.png">
                     <div class="text-center mt-4">
                         <h4 class="sb-txt-secondary sb-w-700 pb-2">
                             Rafael Araújo
@@ -133,7 +151,11 @@
                             Desenvolvedor Front-End
                         </p>
                         <div class="redes-sociais mt-2">
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://github.com/bl4nc" 
+                                class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-github"></i>
                             </a>
                             <a href="#" class="pr-2">
