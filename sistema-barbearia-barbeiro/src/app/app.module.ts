@@ -14,6 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AppTitleComponent } from './app-title/app-title.component';
 import { CardComponent } from './card/card.component';
 import { CardMComponent } from './card-m/card-m.component';
+import { HomeGraphicsComponent } from './home-graphics/home-graphics.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { CardMComponent } from './card-m/card-m.component';
     AppTitleComponent,
     CardComponent,
     CardMComponent,
+    HomeGraphicsComponent,
 
 
   ],
@@ -35,7 +38,8 @@ import { CardMComponent } from './card-m/card-m.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    ServiceCardListModule
+    ServiceCardListModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
