@@ -19,6 +19,7 @@ import { ChartsModule } from 'ng2-charts';
 import { MyBarbershopComponent } from './my-barbershop/my-barbershop.component';
 import { GeneralBarberDataComponent } from './general-barber-data/general-barber-data.component';
 import { OperationDataComponent } from './operation-data/operation-data.component';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -47,6 +48,7 @@ import { OperationDataComponent } from './operation-data/operation-data.componen
     ChartsModule,
     FormsModule,
     MaterialModule,
+    IonicModule.forRoot(),
 
 
   ],

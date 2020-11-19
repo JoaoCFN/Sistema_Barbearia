@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faArrowCircleLeft,faHome, faCut,faClock,faPlus,faEye } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleLeft, faHome, faCut, faClock, faPlus, faEye, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   faClock = faClock;
   faPlus = faPlus;
   faEye = faEye
+  faSignOutAlt = faSignOutAlt
 
 
   constructor() { }
