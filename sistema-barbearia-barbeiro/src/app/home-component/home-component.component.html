@@ -4,8 +4,8 @@
       <app-card [card]=item></app-card>
     </div>
   </div>
-<div class="mt-5 pb-5">
-  <app-home-graphics></app-home-graphics>
+<div *ngFor="let item of graficos" class="mt-5 pb-5">
+  <app-home-graphics [basicGraphic]="item"  ></app-home-graphics>
 </div>
 
 

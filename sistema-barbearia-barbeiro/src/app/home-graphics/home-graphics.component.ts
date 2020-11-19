@@ -17,22 +17,32 @@ export class HomeGraphicsComponent implements OnInit {
   faCut = faCut;
   faClock = faClock;
   faMoneyBillWave = faMoneyBillWave;
-  @Input() basicGraphic: BasicGraphics = (null);
+  @Input() public basicGraphic: BasicGraphics
+
+data: number[]
+
+
+  public getData(){
+this.data = this.basicGraphic.data
+  }
+
+
+
+
 
   constructor() { }
 
+  ngOnInit(): void {
+   //var data = new BasicGraphics(this.basicGraphic.title,this.basicGraphic.data,this.basicGraphic.label,this.basicGraphic.graphType)
+  this.getData()
+  }
 
+  public lineChartData: ChartDataSets[]
+  public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  /*public lineChartOptions: (ChartOptions & { annotation: any }) = {
+    responsive: true,
+  };*/
 
-  public lineChartData: ChartDataSets[] = [
-    {
-      data:this.basicGraphic.data,
-      label: 'Quantidade Serviços',
-      yAxisID: 'y-axis-1',
-    },
-  ];
-  public lineChartLabels: Label[] = [
-    this.basicGraphic.label,
-  ];
   public lineChartOptions: ChartOptions & { annotation: any } = {
     responsive: true,
     scales: {
@@ -87,30 +97,6 @@ export class HomeGraphicsComponent implements OnInit {
   };
 
   public lineChartColors: Color[] = [
-    /*{ // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },*/
     {
       //green
       //backgroundColor: '#43A047',
@@ -121,20 +107,11 @@ export class HomeGraphicsComponent implements OnInit {
       pointHoverBorderColor: 'rgba(148,159,177,0.8)',
     },
   ];
-  public lineChartLegend = false;
-  public lineChartType: ChartType = 'line';
-  //public lineChartPlugins = [pluginAnnotations];
 
-  // events
-  public chartClicked({
-    event,
-    active,
-  }: {
-    event: MouseEvent;
-    active: {}[];
-  }): void {
-    console.log(event, active);
-  }
+
+  public lineChartLegend = false;
+  public lineChartType = 'line';
+  public lineChartPlugins = [];
 
   public chartHovered({
     event,
@@ -145,8 +122,7 @@ export class HomeGraphicsComponent implements OnInit {
   }): void {
     console.log(event, active);
   }
-
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  ngOnInit(): void { }
+
 }
