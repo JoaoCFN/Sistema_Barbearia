@@ -1,3 +1,4 @@
+import { BasicGraphics } from './../model/basic-graphics';
 import { BasicCard } from './../model/basic-card';
 import { Component, OnInit } from '@angular/core';
 import { faEye, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +12,8 @@ export class HomeComponentComponent implements OnInit {
 
   constructor() { }
 basicCard : BasicCard[]
+graphCortes : BasicGraphics
+graphDinheiro : BasicGraphics
 
   ngOnInit(): void {
     this.basicCard = [

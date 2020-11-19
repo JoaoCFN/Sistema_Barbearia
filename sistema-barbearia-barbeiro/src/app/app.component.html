@@ -1,5 +1,12 @@
-<div class="">
-    <app-sidebar class="Sidebar"></app-sidebar>
-    <router-outlet class="Conteudo"></router-outlet>
-    <app-footer class="Footer"></app-footer>
-</div>
+<mat-drawer-container style=" background-color: #f0edeb;" class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" [opened]=true>
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+
+  </div>
+
+</mat-drawer-container>
+

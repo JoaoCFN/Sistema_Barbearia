@@ -1,13 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { BasicGraphics } from './../model/basic-graphics';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective, Color, Label } from 'ng2-charts';
 import {
-  faArrowCircleLeft,
-  faHome,
   faCut,
   faClock,
-  faPlus,
-  faEye,
+  faMoneyBillWave,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -18,28 +16,22 @@ import {
 export class HomeGraphicsComponent implements OnInit {
   faCut = faCut;
   faClock = faClock;
+  faMoneyBillWave = faMoneyBillWave;
+  @Input() basicGraphic: BasicGraphics = (null);
 
-  constructor() {}
+  constructor() { }
+
+
 
   public lineChartData: ChartDataSets[] = [
     {
-      data: [6, 10, 12, 7, 8, 13, 12, 13, 16, 16, 8],
+      data:this.basicGraphic.data,
       label: 'Quantidade Serviços',
       yAxisID: 'y-axis-1',
     },
   ];
   public lineChartLabels: Label[] = [
-    '08h',
-    '09h',
-    '10h',
-    '11h',
-    '12h',
-    '13h',
-    '14h',
-    '15h',
-    '16h',
-    '17h',
-    '18h',
+    this.basicGraphic.label,
   ];
   public lineChartOptions: ChartOptions & { annotation: any } = {
     responsive: true,
@@ -156,5 +148,5 @@ export class HomeGraphicsComponent implements OnInit {
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

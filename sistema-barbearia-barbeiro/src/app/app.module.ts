@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ServiceCardListModule } from './service-card-list/service-card-list.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { CardComponent } from './card/card.component';
 import { CardMComponent } from './card-m/card-m.component';
 import { HomeGraphicsComponent } from './home-graphics/home-graphics.component';
 import { ChartsModule } from 'ng2-charts';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { ChartsModule } from 'ng2-charts';
     FontAwesomeModule,
     ServiceCardListModule,
     ChartsModule,
+    MatSidenavModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

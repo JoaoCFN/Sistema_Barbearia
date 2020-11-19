@@ -1,11 +1,11 @@
 export class BasicGraphics {
 
-  constructor(public title :string,
-    public data: any,
+  constructor(public title: string,
+    public data: [],
     //public headerIcon: IconDefinition,
-    public footer:string,
+    public label: [],
     //public footerIcon: IconDefinition,
-    public cardType: number,) {
+    public graphType: number,) {
 
 
   }

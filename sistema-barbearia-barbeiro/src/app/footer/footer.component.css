@@ -1,11 +1,8 @@
 div>h6 {
-    color: white;
+    color: black;
     text-align: center;
-    padding: 15px;
-    margin-top: 7px;
+    padding: 20px;
+    margin-top: 10px;
     font-size: 11pt;
 }
 
-div {
-    background-color: black;
-}

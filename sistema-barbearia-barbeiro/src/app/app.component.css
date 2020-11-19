@@ -1,21 +1,14 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: 0.6fr 1.2fr 1fr 1fr;
-    grid-template-rows: 1fr 1.8fr 0.2fr;
-    gap: 0px 0px;
-    grid-template-areas: "Sidebar Conteudo Conteudo Conteudo" "Sidebar Conteudo Conteudo Conteudo" "Sidebar Rodape Rodape Rodape";
+.example-container {
+  width: 100%;
+  height: 100%;
+
 }
 
-.Sidebar {
-    grid-area: Sidebar;
+.example-sidenav-content {
+  /*display: flex;*/
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.Rodape {
-    grid-area: Rodape;
-    background-color: #c7c7c7;
-}
 
-.Conteudo {
-    grid-area: Conteudo;
-    background: #e6e6e6;
-}
