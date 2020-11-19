@@ -1,13 +1,10 @@
 <div class="home-main col-md-12 mt-3 pad-3 pt-5">
-  <div class="row">
-    <div *ngFor="let item of basicCard" class="col-lg-4 col-md-8 col-sm-8">
-      <app-card [card]=item></app-card>
+    <div class="row">
+        <div *ngFor="let item of basicCard" class="col-lg-4 col-md-8 col-sm-8">
+            <app-card [card]=item></app-card>
+        </div>
     </div>
-  </div>
-<div *ngFor="let item of graficos" class="mt-5 pb-5">
-  <app-home-graphics [basicGraphic]="item"  ></app-home-graphics>
-</div>
-
-
-
+    <div *ngFor="let item of graficos" class="mt-5 ">
+        <app-home-graphics [basicGraphic]="item"></app-home-graphics>
+    </div>
 </div>

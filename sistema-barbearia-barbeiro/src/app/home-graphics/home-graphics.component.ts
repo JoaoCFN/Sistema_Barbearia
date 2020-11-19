@@ -45,15 +45,27 @@ this.data = this.basicGraphic.data
 
   public lineChartOptions: ChartOptions & { annotation: any } = {
     responsive: true,
+    layout: {
+      padding: {
+          left: 15,
+          right: 15,
+          top: 20,
+          bottom: 10
+      }
+  },
+
     scales: {
       // We use this empty structure as a placeholder for dynamic theming.
       xAxes: [
         {
+
           ticks: {
             fontColor: 'white',
             fontStyle: 'normal',
           },
-        },
+        },{
+          display:false
+        }
       ],
       yAxes: [
         {
