@@ -1,6 +1,5 @@
 import { MaterialModule } from './material/material.module';
-import { MyBarbershopModule } from './my-barbershop/my-barbershop.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +16,9 @@ import { AppTitleComponent } from './app-title/app-title.component';
 import { CardComponent } from './card/card.component';
 import { HomeGraphicsComponent } from './home-graphics/home-graphics.component';
 import { ChartsModule } from 'ng2-charts';
+import { MyBarbershopComponent } from './my-barbershop/my-barbershop.component';
+import { GeneralBarberDataComponent } from './general-barber-data/general-barber-data.component';
+import { OperationDataComponent } from './operation-data/operation-data.component';
 
 
 
@@ -32,21 +34,25 @@ import { ChartsModule } from 'ng2-charts';
     AppTitleComponent,
     CardComponent,
     HomeGraphicsComponent,
+    MyBarbershopComponent,
+    GeneralBarberDataComponent,
+    OperationDataComponent,
   ],
   imports: [
-
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
     ChartsModule,
     FormsModule,
-    MyBarbershopModule,
     MaterialModule,
 
 
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent],
   exports: [
   MaterialModule,

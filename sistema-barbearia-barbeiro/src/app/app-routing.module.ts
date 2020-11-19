@@ -1,7 +1,7 @@
-import { MyBarbershopComponent } from './my-barbershop/my-barbershop.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { MyBarbershopComponent } from './my-barbershop/my-barbershop.component';
 
 
 const routes: Routes = [
