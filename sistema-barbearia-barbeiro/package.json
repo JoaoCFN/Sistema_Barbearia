@@ -32,6 +32,8 @@
     "chart.js": "^2.9.4",
     "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.22",
+    "datatables.net-responsive": "^2.2.6",
+    "datatables.net-responsive-dt": "^2.2.6",
     "jquery": "^3.5.1",
     "ng2-charts": "^2.4.2",
     "ngx-bootstrap": "^6.1.0",

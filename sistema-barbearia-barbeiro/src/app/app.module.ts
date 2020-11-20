@@ -21,6 +21,8 @@ import { OperationDataComponent } from './operation-data/operation-data.componen
 import { IonicModule } from '@ionic/angular';
 import { BarbershopProfileComponent } from './barbershop-profile/barbershop-profile.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { DataTablesModule } from 'angular-datatables';
+import { ServiceRegisterComponent } from './service-register/service-register.component';
 
 
 
@@ -41,6 +43,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
     OperationDataComponent,
     BarbershopProfileComponent,
     ScheduleComponent,
+    ServiceRegisterComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -54,6 +57,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
     IonicModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
+    DataTablesModule,
 
 
   ],
