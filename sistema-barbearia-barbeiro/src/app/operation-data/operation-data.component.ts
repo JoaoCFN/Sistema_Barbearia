@@ -1,15 +1,12 @@
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
-import {MatChipInputEvent} from '@angular/material/chips';
-import { faCogs } from '@fortawesome/free-solid-svg-icons';
+import {Component, ElementRef, ViewChild,OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import { faCogs, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 
-/**
- * @title Chips Autocomplete
- */
+export interface dias_semana {
+  dia: string;
+  trabalha: boolean
+}
 
 @Component({
   selector: 'app-operation-data',
@@ -17,62 +14,37 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./operation-data.component.css']
 })
 export class OperationDataComponent {
-
-
   faCogs = faCogs
+  segunda  = false;
+  faPencilAlt = faPencilAlt
+  teste : string = ''
 
-  visible = true;
-  selectable = true;
-  removable = true;
-  separatorKeysCodes: number[] = [ENTER, COMMA];
-  fruitCtrl = new FormControl();
-  filteredFruits: Observable<string[]>;
-  fruits: string[] = ['Lemon'];
-  allFruits: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
+isEdit : boolean = true
 
-  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
-  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+ dias:dias_semana[] = [
+    {dia: 'Segunda-Feira',trabalha:false},
+    {dia: 'Terça-Feira' ,trabalha:false},
+    {dia: 'Quarta-Feira',trabalha:false},
+    {dia: 'Quinta-Feira',trabalha:false},
+    {dia: 'Sexta-Feira',trabalha:false},
+    {dia: 'Sabado',trabalha:false},
+    {dia: 'Domingo',trabalha:false},
+  ]
 
   constructor() {
-    this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
-        startWith(null),
-        map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));
   }
 
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
-
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.fruits.push(value.trim());
-    }
-
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
-
-    this.fruitCtrl.setValue(null);
-  }
-
-  remove(fruit: string): void {
-    const index = this.fruits.indexOf(fruit);
-
-    if (index >= 0) {
-      this.fruits.splice(index, 1);
+  isEditing(){
+    if (this.isEdit){
+      this.isEdit = false
+      console.log (this.isEdit)
+    }else{
+      this.isEdit = true
+      console.log (this.isEdit)
     }
   }
 
-  selected(event: MatAutocompleteSelectedEvent): void {
-    this.fruits.push(event.option.viewValue);
-    this.fruitInput.nativeElement.value = '';
-    this.fruitCtrl.setValue(null);
+  ngOnInit(): void {
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.allFruits.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
-  }
 }

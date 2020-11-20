@@ -1,85 +1,61 @@
 <div class="profile-header">
-  <h2>
-    <fa-icon [icon]="faHome"></fa-icon> DADOS GERAIS
-  </h2>
+    <h2>
+        <fa-icon [icon]="faHome"></fa-icon> DADOS GERAIS
+    </h2>
 </div>
 <div class="profile">
-  <form class="example-form">
-    <table class="example-full-width" cellspacing="3">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Nome estabelecimento</mat-label>
-            <input matInput disabled value="Barbearia do Zé">
+    <form class="example-form ">
+        <div class="row pt-1 pb-1 mb-2">
+            <div class="col-md-4" style="text-align: center;">
+                <mat-label>Nome estabelecimento</mat-label>
+                <input type="text" disabled class="form-control" value="Barbearia do seu Zé">
+            </div>
 
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Usuário</mat-label>
-            <input matInput disabled value="ze_barber">
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input matInput disabled value="ze_barber@gmail.com">
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Estado</mat-label>
-            <input matInput disabled value="BA">
+            <div class="col-md-4" style="text-align: center;">
+                <mat-label>Usuário</mat-label>
+                <input type="text" disabled class="form-control" value="ze_barber">
+            </div>
 
+            <div class="col-md-4" style="text-align: center;">
+                <mat-label>Email</mat-label>
+                <input type="text" disabled class="form-control" value="ze_barber@gmail.com">
+            </div>
+        </div>
 
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Cidade</mat-label>
-            <input matInput disabled value="Feira de Santana">
+        <div class="row pt-1 pb-1 mb-2">
+            <div class="col-md-4" style="text-align: center;">
+                <mat-label>Estado</mat-label>
+                <input type="text" disabled class="form-control" value="BA">
+            </div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <mat-label>Cidade</mat-label>
+                <input type="text" disabled class="form-control" value="Feira de Santana">
+            </div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <mat-label>CEP</mat-label>
+                <input class="form-control" maxlength="9" disabled placeholder="Ex. 00000-000" #cep value="44051-682">
+            </div>
+        </div>
 
 
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>CEP</mat-label>
-            <input maxlength="9" disabled placeholder="Ex. 00000-000" matInput #cep value="44051-682">
+        <div class="row pt-1 pb-1 mb-2">
+            <div class="col-md-8" style="text-align: center;">
+                <mat-label>Endereço</mat-label>
+                <input type="text" disabled class="form-control" value="George Americo, Rua É">
+            </div>
 
-            <mat-hint align="end">{{cep.value.length}} / 9</mat-hint>
-          </mat-form-field>
-        </td>
+            <div class="col-md-4" style="text-align: center;">
+                <mat-label>Número</mat-label>
+                <input type="number" disabled class="form-control" value="1997">
+            </div>
+        </div>
 
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Endereço</mat-label>
-            <input matInput disabled value="George Américo">
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width">
-            <mat-label>Número</mat-label>
-            <input matInput disabled value="1966">
-
-          </mat-form-field>
-        </td>
-      </tr>
-
-    </table>
-
-    <div style="text-align: end;">
-      <button class="btn btn-primary" style="width: 33%;">
+        <div style="text-align: end;">
+            <button class="btn btn-primary" style="width: 33%;">
         Editar
       </button>
-    </div>
-  </form>
+        </div>
+    </form>
 </div>

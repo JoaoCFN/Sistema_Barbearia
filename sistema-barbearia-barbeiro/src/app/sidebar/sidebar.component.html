@@ -1,41 +1,10 @@
-<!--
-
-
-<div class="sidebar">
-    <ul class="sidebar-content">
-        <li class="logo">
-            <a routerLink="" class="navbar-brand " href="#">
-                <img src="../../assets/images/logo-invertida.png" width="100px" alt="logo" class="logo" />
-            </a>
-        </li>
-        <hr>
-        <li class="align-self-center">
-            <a routerLink="" class="nav-link sidebarLinks" href="#">
-                <fa-icon [icon]="faEye"></fa-icon> Visão Geral
-            </a>
-        </li>
-        <li class="align-self-center">
-            <a routerLink="/minha-barbearia" class="nav-link sidebarLinks" id="scroll-sobre" href="#sobre">
-                <fa-icon [icon]="faCut"></fa-icon> Minha barbearia
-            </a>
-        </li>
-        <li class="align-self-center">
-            <a routerLink="/servicos-agendados" class="nav-link navItem sidebarLinks" id="scroll-vantagens" href="#vantagens">
-                <fa-icon [icon]="faClock"></fa-icon> Serviços Agendados
-            </a>
-        </li>
-        <li class="align-self-center">
-            <a routerLink="/cadastrar-servicos" class="nav-link navItem sidebarLinks" id="scroll-vantagens" href="#vantagens">
-                <fa-icon [icon]="faPlus"></fa-icon> Cadastrar Serviços
-            </a>
-        </li>
-
-    </ul>
-</div>
--->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mr-5 pr-5" routerLink=""> <img src="../../assets/images/logo-invertida.png" width="100px" alt="logo" class="logo" /></a>
+    <button aria-controls="dropdown-basic" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="mx-auto collapse navbar-collapse" id="navbarText">
+        <ul id="navbar-collapse" class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a routerLink="" class="nav-link">
                     <fa-icon [icon]="faEye"></fa-icon> Visão Geral</a>
@@ -53,20 +22,13 @@
                     <fa-icon [icon]="faPlus"></fa-icon> Cadastrar Serviços</a>
             </li>
         </ul>
+
+
+        <span class="navbar-text">
+          <a class="nav-link itemNav" href="#" style="font-size: 16pt;">
+            <fa-icon [icon]="faSignOutAlt"></fa-icon>
+        </a>
+    </span>
     </div>
-    <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto" routerLink=""> <img src="../../assets/images/logo-invertida.png" width="250px" alt="logo" class="logo" /></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link itemNav" href="#" style="font-size: 22pt;">
-                    <fa-icon [icon]="faSignOutAlt"></fa-icon>
-                </a>
-            </li>
-        </ul>
-    </div>
+
 </nav>

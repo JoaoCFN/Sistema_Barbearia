@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,6 +19,8 @@ import { MyBarbershopComponent } from './my-barbershop/my-barbershop.component';
 import { GeneralBarberDataComponent } from './general-barber-data/general-barber-data.component';
 import { OperationDataComponent } from './operation-data/operation-data.component';
 import { IonicModule } from '@ionic/angular';
+import { BarbershopProfileComponent } from './barbershop-profile/barbershop-profile.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 
@@ -38,6 +39,8 @@ import { IonicModule } from '@ionic/angular';
     MyBarbershopComponent,
     GeneralBarberDataComponent,
     OperationDataComponent,
+    BarbershopProfileComponent,
+    ScheduleComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -49,6 +52,8 @@ import { IonicModule } from '@ionic/angular';
     FormsModule,
     MaterialModule,
     IonicModule.forRoot(),
+    BrowserModule,
+    BrowserAnimationsModule,
 
 
   ],
@@ -57,7 +62,6 @@ import { IonicModule } from '@ionic/angular';
   ],
   bootstrap: [AppComponent],
   exports: [
-  MaterialModule,
   ]
 })
 export class AppModule { }

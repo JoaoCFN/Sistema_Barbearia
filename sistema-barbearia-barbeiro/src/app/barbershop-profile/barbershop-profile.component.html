@@ -1,0 +1,44 @@
+<div class="mb-5 mr-5 ml-5">
+    <div class="profile-header">
+        <h2>
+            <fa-icon [icon]="faCut"></fa-icon> Perfil da Barbearia
+        </h2>
+    </div>
+    <div class="profile">
+        <form class="example-form">
+            <form>
+                <section class="example-section row">
+                    <div class="col-md-7">
+                        <a type="button" (click)="isEditing()">
+                            <h2>Sobre a barbearia
+                                <fa-icon [icon]="faPencilAlt"></fa-icon>
+                            </h2>
+                        </a>
+                        <br>
+                        <textarea [disabled]="isEdit" class="form-control is-invalid" id="validationTextarea" placeholder="Ex. Tenho uma bela e requisitada barbearia." [required]="isEdit" rows="6"></textarea>
+                        <button [disabled]="isEdit" type="button" class="btn btn-primary mt-5"> Salvar Alteração</button>
+                    </div>
+
+                    <div class="col-md-4 mr-5" style="text-align: center;">
+                        <h2>Sua melhor foto
+                            <fa-icon [icon]="faCamera"></fa-icon>
+                        </h2>
+                        <div>
+                            <img class="img-thumbnail" width="400" src="assets\images\Cliente-sem-ft.png">
+                        </div>
+
+                        <button class="mt-3 mb-5 btn btn-primary" type="button">
+                            Alterar imagem
+                          </button>
+
+                    </div>
+
+                </section>
+            </form>
+
+
+        </form>
+    </div>
+
+
+</div>
