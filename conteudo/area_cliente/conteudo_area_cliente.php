@@ -2,7 +2,86 @@
     <div class="area-cliente">
         <!-- Cards Linha 1-->
         <div class="row">
-            <div class="col-md-3 col-sm-12 mb-4">
+            <?php 
+                $conn = mysqli_connect("localhost", "root", "", "dbtcc");
+                date_default_timezone_set('America/Sao_Paulo');
+                $horarioAtual = date("H:i");
+
+                $queryBarbearias = "CALL PROC_SEL_BARBEARIAS()";
+                $resultBarbearias = mysqli_query($conn, $queryBarbearias);
+
+                while ($rowBarbearias = mysqli_fetch_array($resultBarbearias)) {
+                    // Campos
+                    $nomeBarbearia = $rowBarbearias[0];
+                    $horarioAbertura = $rowBarbearias[1];
+                    $horarioFechamento = $rowBarbearias[2];
+                    $telefone = $rowBarbearias[3];
+                    $cidade = $rowBarbearias[4];                 
+
+                    if ($horarioAtual >= $horarioAbertura && $horarioAtual < $horarioFechamento){
+                        $status = "aberto";
+                        $statusText = "Aberto";
+                    }
+                    else{
+                        $status = "fechado";
+                        $statusText = "Fechado";
+                    }
+
+                    $cssStatus = "status-{$status}";  
+
+                    // if(strlen($horarioAbertura) == 0 && strlen($horarioFechamento) == 0){
+                    //     $horarioAberturaConv = "Sem horário cadastrado";
+                    //     $horarioFechamentoConv = "";
+                    // }
+                    // else{
+                        
+                    // Pega apenas o primeiro dígito do horário de abertura
+                    $horarioAberturaConv = substr($horarioAbertura, 1, 4);
+                    // Pega apenas o primeiro dígito do horário de fechamento
+                    $horarioFechamentoConv = substr($horarioFechamento, 0, 5);
+
+                    echo "
+                        <div class='col-md-3 col-sm-12 mb-4'>
+                            <div class='card area-cliente-card'>
+                                <img 
+                                    class='card-img-top' 
+                                    src='https://i.ibb.co/6cSfrM6/cliente-sem-ft.png' 
+                                    alt='Imagem de capa do card'
+                                />
+                                <div class='$cssStatus sb-txt-black sb-w-700'>
+                                    $statusText
+                                </div>
+                                <div class='card-body sb-txt-white'>
+                                    <h5 class='card-title sb-w-700 sb-txt-secondary'>
+                                        $nomeBarbearia
+                                    </h5>
+                                    <div class='card-text'>
+                                        <p>
+                                            <i class='fa fa-clock-o'></i>
+                                            <span class='ml-1'>
+                                                $horarioAberturaConv - $horarioFechamentoConv
+                                            </span>
+                                        </p>    
+                                        <p>
+                                            <i class='fa fa-phone'></i>
+                                            <span class='ml-1'>$telefone</span>
+                                        </p>        
+                                        <p>
+                                            <i class='fa fa-map-marker'></i>
+                                            <span class='ml-1'>$cidade</span>
+                                        </p>            
+                                    </div>
+                                    <a href='#' class='btn sb-btn-secondary sb-w-700 sb-full-width'>
+                                        Agendar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ";
+                }
+            ?>
+
+            <!-- <div class="col-md-3 col-sm-12 mb-4">
                 <div class="card area-cliente-card">
                     <img 
                         class="card-img-top" 
@@ -35,109 +114,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-12 mb-4">
-                <div class="card area-cliente-card">
-                    <img 
-                        class="card-img-top" 
-                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
-                        alt="Imagem de capa do card"
-                    />
-                    <div class="status-aberto sb-txt-black sb-w-700">
-                        Aberto
-                    </div>
-                    <div class="card-body sb-txt-white">
-                        <h5 class="card-title sb-w-700 sb-txt-secondary">
-                            Nome da barbearia
-                        </h5>
-                        <div class="card-text">
-                            <p>
-                                <i class="fa fa-clock-o"></i>
-                                <span class="ml-1">8H - 18H</span>
-                            </p>    
-                            <p>
-                                <i class="fa fa-phone"></i>
-                                <span class="ml-1">(75) 98888-7777</span>
-                            </p>        
-                            <p>
-                                <i class="fa fa-map-marker"></i>
-                                <span class="ml-1">Feira de Santana - BA</span>
-                            </p>            
-                        </div>
-                        <a href="#" class="btn sb-btn-secondary sb-w-700 sb-full-width">
-                            Agendar
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 mb-4">
-                <div class="card area-cliente-card">
-                    <img 
-                        class="card-img-top" 
-                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
-                        alt="Imagem de capa do card"
-                    />
-                    <div class="status-aberto sb-txt-black sb-w-700">
-                        Aberto
-                    </div>
-                    <div class="card-body sb-txt-white">
-                        <h5 class="card-title sb-w-700 sb-txt-secondary">
-                            Nome da barbearia
-                        </h5>
-                        <div class="card-text">
-                            <p>
-                                <i class="fa fa-clock-o"></i>
-                                <span class="ml-1">8H - 18H</span>
-                            </p>    
-                            <p>
-                                <i class="fa fa-phone"></i>
-                                <span class="ml-1">(75) 98888-7777</span>
-                            </p>        
-                            <p>
-                                <i class="fa fa-map-marker"></i>
-                                <span class="ml-1">Feira de Santana - BA</span>
-                            </p>            
-                        </div>
-                        <a href="#" class="btn sb-btn-secondary sb-w-700 sb-full-width">
-                            Agendar
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 mb-4">
-                <div class="card area-cliente-card">
-                    <img 
-                        class="card-img-top" 
-                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
-                        alt="Imagem de capa do card"
-                    />
-                    <div class="status-fechado sb-txt-black sb-w-700">
-                        Fechado
-                    </div>
-                    <div class="card-body sb-txt-white">
-                        <h5 class="card-title sb-w-700 sb-txt-secondary">
-                            Nome da barbearia
-                        </h5>
-                        <div class="card-text">
-                            <p>
-                                <i class="fa fa-clock-o"></i>
-                                <span class="ml-1">8H - 18H</span>
-                            </p>    
-                            <p>
-                                <i class="fa fa-phone"></i>
-                                <span class="ml-1">(75) 98888-7777</span>
-                            </p>        
-                            <p>
-                                <i class="fa fa-map-marker"></i>
-                                <span class="ml-1">Feira de Santana - BA</span>
-                            </p>            
-                        </div>
-                        <a href="barbearia.php" class="btn sb-btn-secondary sb-w-700 sb-full-width">
-                            Agendar
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- Modal Pesquisa -->

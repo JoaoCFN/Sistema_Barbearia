@@ -46,6 +46,10 @@
     background: var(--primary);
 }
 
+.area-cliente-card .card-title{
+    font-size: 20px;
+}
+
 #modal-perfil .modal-content input{
     cursor: not-allowed;
 }
