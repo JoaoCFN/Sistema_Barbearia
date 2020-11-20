@@ -75,7 +75,7 @@ CREATE TABLE `barbearia` (
   `horario_abertura` time DEFAULT NULL,
   `horario_fechamento` time DEFAULT NULL,
   PRIMARY KEY (`barbearia_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `barbearia` (
 
 LOCK TABLES `barbearia` WRITE;
 /*!40000 ALTER TABLE `barbearia` DISABLE KEYS */;
-INSERT INTO `barbearia` VALUES (8,'Almeida','111.111.111-11','barbearia_almeida@hotmail.com','b400de1f64beb532d80982347ebb5989','Barbearia Almeida','(75) 98116-6233','44032-568','11.111.111/1111-11','Rua Professora Bertholina Carneiro','353 ','Campo Limpo','Feira de Santana','BA','08:00:00','19:00:00'),(9,'Marcão','222.222.222-22','barbearia_marcao@hotmail.com','131adea421048c8644ed90e41b2fee77','Barbearia Sr. Marcão','(75) 99283-7999','44033-103','22.222.222/2222-22','Rua Desembarque','298','Campo Limpo','Feira de Santana','BA','08:00:00','18:00:00'),(10,'Guto ','333.333.333-33','guto_barbearia@gmail.com','25798ef6bed8c2875edf7121b9fcd18a','Guto Barbearia','(75) 99164-6434','44021-225','33.333.333/3333-33','Rua Arivaldo de Carvalho','54','Sobradinho','Feira de Santana','BA','09:00:00','19:00:00'),(11,'Siqueira','444.444.444-44','siqueira@gmail.com','45d0b1d56f056433c894563d4e20c89f','Barbearia Siqueira','(75) 98143-1976','44050-024','44.444.444/4444-44','Rua Intendente Abdon','7654','Queimadinha','Feira de Santana','BA','09:00:00','18:00:00'),(12,'Matheus','555.555.555-55','matheus_cortes@gmail.com','e56b6eea9b0bc782bbb9ea6098ead641','Matheus Cortes','(75) 98143-7191','44028-279','55.555.555/5555-55','Rua Olhos Verdes','149 ','Gabriela','Feira de Santana','BA','08:00:00','19:20:00');
+INSERT INTO `barbearia` VALUES (8,'Almeida','111.111.111-11','barbearia_almeida@hotmail.com','b400de1f64beb532d80982347ebb5989','Barbearia Almeida','(75) 98116-6233','44032-568','11.111.111/1111-11','Rua Professora Bertholina Carneiro','353 ','Campo Limpo','Feira de Santana','BA','08:00:00','19:00:00'),(9,'Marcão','222.222.222-22','barbearia_marcao@hotmail.com','131adea421048c8644ed90e41b2fee77','Barbearia Sr. Marcão','(75) 99283-7999','44033-103','22.222.222/2222-22','Rua Desembarque','298','Campo Limpo','Feira de Santana','BA','08:00:00','18:00:00'),(10,'Guto ','333.333.333-33','guto_barbearia@gmail.com','25798ef6bed8c2875edf7121b9fcd18a','Guto Barbearia','(75) 99164-6434','44021-225','33.333.333/3333-33','Rua Arivaldo de Carvalho','54','Sobradinho','Feira de Santana','BA','09:00:00','19:00:00'),(11,'Siqueira','444.444.444-44','siqueira@gmail.com','45d0b1d56f056433c894563d4e20c89f','Barbearia Siqueira','(75) 98143-1976','44050-024','44.444.444/4444-44','Rua Intendente Abdon','7654','Queimadinha','Feira de Santana','BA','09:00:00','18:00:00'),(12,'Matheus','555.555.555-55','matheus_cortes@gmail.com','e56b6eea9b0bc782bbb9ea6098ead641','Matheus Cortes','(75) 98143-7191','44028-279','55.555.555/5555-55','Rua Olhos Verdes','149 ','Gabriela','Feira de Santana','BA','08:00:00','19:20:00'),(13,'Figueredo','666.666.666-66','figueredo@hotmail.com','2fdc2b916cbaac14a0339f076a71111d','Barbearia Figueredo','(75) 98347-1670','44053-654','66.666.666/6666-66','Rua Gérson','11 ','Cidade Nova','Feira de Santana','BA',NULL,NULL),(14,'Primos','777.777.777-77','primos_barbershop@hotmail.com','8b4521bba5f609ca1b20530190f91c52','Primos Barber Shop','(75) 98245-8944','44021-225','77.777.777/7777-77','Rua Arivaldo de Carvalho','1299 ','Sobradinho','Feira de Santana','BA',NULL,NULL),(15,'Dielson','888.888.888-88','dielson@gmail.com','25f9e794323b453885f5181f1b624d0b','Dielson barbearia','(75) 99277-6848','44024-336','88.888.888/8888-88','Rua Paulo Afonso','74','Jardim Cruzeiro','Feira de Santana','BA',NULL,NULL),(16,'Allan','999.999.999-99','allan@hotmail.com','d41222a59835f1805e182164ddf470e1','Barbearia Allabarber','(75) 98120-4535','44059-720','99.999.999/9999-99','Rua Papagaio','80','Papagaio','Feira de Santana','BA',NULL,NULL);
 /*!40000 ALTER TABLE `barbearia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +180,5 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-20 19:20:29
+-- Dump completed on 2020-11-20 19:36:22
+

@@ -29,16 +29,16 @@
 
                     $cssStatus = "status-{$status}";  
 
-                    // if(strlen($horarioAbertura) == 0 && strlen($horarioFechamento) == 0){
-                    //     $horarioAberturaConv = "Sem horário cadastrado";
-                    //     $horarioFechamentoConv = "";
-                    // }
-                    // else{
-                        
-                    // Pega apenas o primeiro dígito do horário de abertura
-                    $horarioAberturaConv = substr($horarioAbertura, 1, 4);
-                    // Pega apenas o primeiro dígito do horário de fechamento
-                    $horarioFechamentoConv = substr($horarioFechamento, 0, 5);
+                    if(strlen($horarioAbertura) == 0 && strlen($horarioFechamento) == 0){
+                        $horarioAberturaConv = "Sem horário cadastrado";
+                        $horarioFechamentoConv = "";
+                    }
+                    else{
+                        // Pega apenas o primeiro dígito do horário de abertura
+                        $horarioAberturaConv = substr($horarioAbertura, 1, 4)." - ";
+                        // Pega apenas o primeiro dígito do horário de fechamento
+                        $horarioFechamentoConv = substr($horarioFechamento, 0, 5);
+                    }
 
                     echo "
                         <div class='col-md-3 col-sm-12 mb-4'>
@@ -59,7 +59,8 @@
                                         <p>
                                             <i class='fa fa-clock-o'></i>
                                             <span class='ml-1'>
-                                                $horarioAberturaConv - $horarioFechamentoConv
+                                                $horarioAberturaConv
+                                                $horarioFechamentoConv
                                             </span>
                                         </p>    
                                         <p>
