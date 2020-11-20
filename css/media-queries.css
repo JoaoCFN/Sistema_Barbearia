@@ -130,6 +130,11 @@
         height: 100vh;
         width: auto;
     }
+
+    .header-index{
+        height: 80vh;
+        background-size: 100%;
+    }
 }
 
 

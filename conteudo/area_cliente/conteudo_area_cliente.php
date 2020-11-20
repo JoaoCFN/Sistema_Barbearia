@@ -6,7 +6,7 @@
                 <div class="card area-cliente-card">
                     <img 
                         class="card-img-top" 
-                        src="https://via.placeholder.com/286x180" 
+                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
                         alt="Imagem de capa do card"
                     />
                     <div class="status-aberto sb-txt-black sb-w-700">
@@ -40,7 +40,7 @@
                 <div class="card area-cliente-card">
                     <img 
                         class="card-img-top" 
-                        src="https://via.placeholder.com/286x180" 
+                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
                         alt="Imagem de capa do card"
                     />
                     <div class="status-aberto sb-txt-black sb-w-700">
@@ -74,7 +74,7 @@
                 <div class="card area-cliente-card">
                     <img 
                         class="card-img-top" 
-                        src="https://via.placeholder.com/286x180" 
+                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
                         alt="Imagem de capa do card"
                     />
                     <div class="status-aberto sb-txt-black sb-w-700">
@@ -108,7 +108,7 @@
                 <div class="card area-cliente-card">
                     <img 
                         class="card-img-top" 
-                        src="https://via.placeholder.com/286x180" 
+                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
                         alt="Imagem de capa do card"
                     />
                     <div class="status-fechado sb-txt-black sb-w-700">

@@ -230,7 +230,7 @@
                                 </div>
                             </div>
 
-                            <h6 class="sb-txt-white text-justify pt-2 pb-2">
+                            <!-- <h6 class="sb-txt-white text-justify pt-2 pb-2">
                                 Ao se registrar, você aceita 
                                 <a href="#" class="sb-txt-secondary text-decoration-none">
                                     termos de uso
@@ -239,7 +239,7 @@
                                 <a href="#" class="sb-txt-secondary text-decoration-none">
                                     política de privacidade
                                 </a>.
-                            </h6>
+                            </h6> -->
 
                             <button 
                                 type="submit"

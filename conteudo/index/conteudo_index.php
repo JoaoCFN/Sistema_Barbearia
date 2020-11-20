@@ -1,4 +1,4 @@
-<section class="content-index mt-4 mb-4">
+<section class="content-index mt-3">
     <div class="container">
         <div class="sobre" id="sobre">
             <div class="row">
@@ -7,7 +7,7 @@
                         Sobre
                     </h3>
                     <p class="sb-txt-white sb-w-500 text-justify">
-                        Lorem ipsum, dolor sit amet consectetur  elit. Officiis provident sunt voluptatibus! <span>adipisicing</span> Totam magni nemo voluptates blanditiis error laborum ipsa placeat magnam, cupiditate repudiandae dolor optio, reprehenderit dolores rem quod!
+                        O House of Barber é um sistema online e 100% gratuito que possibilita aos donos de barbearia, o <span> gerenciamento e divulgação </span> de suas barbearias e oferta aos clientes, os serviços dos diversos estabelecimentos cadastrados na nossa plataforma. 
                     </p>
                 </div>
                 <div class="col-sm-12 col-md-7 align-self-center">
@@ -28,7 +28,7 @@
                         Organização
                     </h3>
                     <p class="sb-txt-white sb-w-400 text-justify">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, totam! Unde expedita itaque excepturi corporis sunt ullam.
+                        Tenha um melhor controle e organização dos seus serviços e dos seus clientes fazendo com que o seu estabelecimento seja muito mais produtivo.
                     </p>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -37,7 +37,7 @@
                         Divulgação
                     </h3>
                     <p class="sb-txt-white sb-w-400 text-justify">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, totam! Unde expedita itaque excepturi corporis sunt ullam.
+                        Exiba o seu estabelecimento para diversas pessoas potencialmente interessadas no seu serviço e aumente o seu número de clientes.
                     </p>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -46,7 +46,7 @@
                         Facilidade
                     </h3>
                     <p class="sb-txt-white sb-w-400 text-justify">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, totam! Unde expedita itaque excepturi corporis sunt ullam.
+                        O House of Barber é um sistema simples e intuitivo, onde todas a ações são de simples coomprensão e execução. Chega de mais dores de cabeça!
                     </p>
                 </div>
             </div>
@@ -99,10 +99,16 @@
                             >
                                 <i class="fa fa-github"></i>
                             </a>
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://www.instagram.com/euamophebo/" class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-instagram"></i>
                             </a>
-                            <a href="#" class="pr-2">
+                            <a 
+                                href="https://www.linkedin.com/in/genivaldo-alves-de-souza-filho-441261180/" class="pr-2"
+                                target="_blank"
+                            >
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </div>

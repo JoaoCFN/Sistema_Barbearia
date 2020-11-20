@@ -12,13 +12,18 @@
                     CONTATO
                 </h6>
                 <div>
-                    <a href="#" class="sb-txt-white sb-d-block sb-w-400 mt-3 mb-3" id="email">
+                    <a 
+                        href="mailto:contatohouseofbarber@gmail.com" 
+                        class="sb-txt-white sb-d-block sb-w-400 mt-3 mb-3" id="email"
+                    >
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <span class="ml-1">contatohouseofbarbar@gmail.com</span>
+                        <span class="ml-1">
+                            contatohouseofbarber@gmail.com
+                        </span>
                     </a>
                     <a href="#" class="sb-txt-white sb-w-400 mt-2">
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        <span class="ml-1">(75) 99999-9999</span>
+                        <span class="ml-1">(XX) XXXXX-XXXX</span>
                     </a>
                 </div>
             </div>
