@@ -13,7 +13,7 @@
                 <div class="col-sm-12 col-md-7 align-self-center">
                     <img 
                         class="sobre-img p-4"
-                        src="assets/images/sobre-img.png" 
+                        src="assets/images/layout-index.png" 
                         alt="Imagem da seção sobre"
                     />
                 </div>
