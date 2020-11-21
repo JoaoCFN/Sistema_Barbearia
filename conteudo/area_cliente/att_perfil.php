@@ -1,8 +1,7 @@
 <?php
     // include "msg.php";
     session_start(); 
-
-    $mysqli = new mysqli("localhost", "root", "", "dbtcc");
+    include "../../config/config.php";
 
     $nome = mysqli_real_escape_string($mysqli, $_POST['nome']);
     $telefone = mysqli_real_escape_string($mysqli, $_POST['telefone']); 
