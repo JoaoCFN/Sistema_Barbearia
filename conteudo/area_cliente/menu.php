@@ -123,54 +123,69 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="form-perfil">
-                    <!-- Nome -->
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label sb-txt-white">
-                            Nome:
-                        </label>
-                        <div class="col-sm-8">
-                            <input 
-                                type="text" 
-                                class="form-control-plaintext sb-form-input pl-2" 
-                                value="João Carlos Ferreira Neto"
-                                id="input-nome"
-                                readonly 
-                            >
-                        </div>
-                    </div>
+                <form id="form-perfil" method="POST" action="conteudo/area_cliente/att_perfil.php">
+                    <?php 
+                        $conn1 = mysqli_connect("localhost", "root", "", "dbtcc");
 
-                    <!-- Telefone -->
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label sb-txt-white">
-                            Telefone:
-                        </label>
-                        <div class="col-sm-8">
-                            <input 
-                                type="text" 
-                                class="form-control-plaintext sb-form-input pl-2 maskTelefone" 
-                                value="(75) 97999-8888"
-                                id="input-telefone"
-                                readonly 
-                            >
-                        </div>
-                    </div>
+                        $queryUsuarioLogado = "CALL PROC_SEL_USUARIO({$_SESSION['user_id']})";
 
-                    <!-- Data de Nascimento -->
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-5 col-form-label sb-txt-white">
-                            Data de Nascimento:
-                        </label>
-                        <div class="col-sm-7">
-                            <input 
-                                type="date" 
-                                class="form-control-plaintext sb-form-input pl-2" 
-                                value="2000-01-01"
-                                id="input-data-nascimento"
-                                readonly 
-                            >
-                        </div>
-                    </div>
+                        $resultUsuarioLogado = mysqli_query($conn1, $queryUsuarioLogado);
+
+                        $dadosUsuarioLogado = mysqli_fetch_assoc($resultUsuarioLogado);
+
+                        echo "
+                            <!-- Nome -->
+                            <div class='form-group row'>
+                                <label for='inputPassword' class='col-sm-4 col-form-label sb-txt-white'>
+                                    Nome:
+                                </label>
+                                <div class='col-sm-8'>
+                                    <input 
+                                        type='text' 
+                                        class='form-control-plaintext sb-form-input pl-2' 
+                                        value='{$dadosUsuarioLogado['nome']}'
+                                        name='nome'
+                                        id='input-nome'
+                                        readonly 
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Telefone -->
+                            <div class='form-group row'>
+                                <label for='inputPassword' class='col-sm-4 col-form-label sb-txt-white'>
+                                    Telefone:
+                                </label>
+                                <div class='col-sm-8'>
+                                    <input 
+                                        type='text' 
+                                        class='form-control-plaintext sb-form-input pl-2 maskTelefone' 
+                                        value='{$dadosUsuarioLogado['telefone']}'
+                                        name='telefone'
+                                        id='input-telefone'
+                                        readonly 
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Data de Nascimento -->
+                            <div class='form-group row'>
+                                <label for='inputPassword' class='col-sm-5 col-form-label sb-txt-white'>
+                                    Data de Nascimento:
+                                </label>
+                                <div class='col-sm-7'>
+                                    <input 
+                                        type='date' 
+                                        class='form-control-plaintext sb-form-input pl-2' 
+                                        value='{$dadosUsuarioLogado['data_de_nascimento']}'
+                                        name='data-nascimento'
+                                        id='input-data-nascimento'
+                                        readonly 
+                                    >
+                                </div>
+                            </div>
+                        ";
+                    ?>
 
                     <div class="btn-salvar">
                         <button 

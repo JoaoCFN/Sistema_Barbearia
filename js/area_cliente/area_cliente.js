@@ -61,3 +61,22 @@
         })
     })
 })();
+
+
+// function SwalAlert(icon, title, text, location){
+//     // Swal.fire({
+//     //     icon: 'error',
+//     //     title: 'Oops...',
+//     //     text: 'Houve um problema na atualização do seu cadastro, tente novamente mais tarde'
+//     // }).then(function() {
+//     //       window.location = "area_cliente.php";
+//     // });
+
+//     Swal.fire({
+//         icon: icon,
+//         title: title,
+//         text: text
+//     }).then(function() {
+//           window.location = location;
+//     });
+// }

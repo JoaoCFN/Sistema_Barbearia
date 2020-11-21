@@ -11,16 +11,18 @@ if(isset($_POST['entrar'])){
         exit();
     }else{
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $senha  = md5(mysqli_real_escape_string($conn, $_POST['senha']));
+        $senha = md5(mysqli_real_escape_string($conn, $_POST['senha']));
 
         $query = " SELECT * FROM user WHERE email = '$email' and senha = '$senha' ";
 
         $result = mysqli_query($conn, $query);
 
+        $dadosUsuario = mysqli_fetch_assoc($result);
+
         $row = mysqli_num_rows($result);
 
         if($row == 1){
-            $_SESSION['email'] = $email;
+            $_SESSION = $dadosUsuario;
             header("Location: area_cliente.php");
             exit();
         }else{
@@ -29,10 +31,6 @@ if(isset($_POST['entrar'])){
         }
     }
 }
-
-
-
-
 
 ?>
 
