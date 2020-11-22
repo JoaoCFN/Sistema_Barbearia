@@ -68,6 +68,10 @@
 
                     if($rowAgendamento > 0){
                         while($dadosAgendamento = mysqli_fetch_array($resultAgendamento)){
+
+                            $dataFormat = date("d/m/Y", strtotime($dadosAgendamento["data_agendamento"]));
+                            $horarioFormat = substr($dadosAgendamento["horario_agendamento"], 0, 5);
+                            
                             echo "
                                 <div class='row'>
                                     <div class='col-sm-12 mt-1 mb-1'>
@@ -79,13 +83,13 @@
                                                 <h6 class='sb-txt-white sb-w-500'>
                                                     <i class='fa fa-calendar'></i>
                                                     <span class='ml-1'>
-                                                        Data: {$dadosAgendamento["data_agendamento"]}
+                                                        Data: {$dataFormat}
                                                     </span>
                                                 </h6>
                                                 <h6 class='sb-txt-white sb-w-500'>
                                                     <i class='fa fa-clock-o'></i>
                                                     <span class='ml-1'>
-                                                        Horário: {$dadosAgendamento["horario_agendamento"]}
+                                                        Horário: {$horarioFormat}
                                                     </span>
                                                 </h6>
                                                 <h6 class='sb-txt-white sb-w-500'>

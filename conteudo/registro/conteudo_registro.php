@@ -105,17 +105,6 @@
                                 <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
 
-                            <!-- <h6 class="sb-txt-white text-justify pt-2 pb-2">
-                                Ao se registrar, você aceita 
-                                <a href="#" class="sb-txt-secondary text-decoration-none">
-                                    termos de uso
-                                </a> e a 
-                                nossa 
-                                <a href="#" class="sb-txt-secondary text-decoration-none">
-                                    política de privacidade
-                                </a>.
-                            </h6> -->
-
                             <button 
                                 type="submit"
                                 class="btn fa-btn sb-btn-secondary sb-w-700 sb-full-width mt-2"
@@ -123,7 +112,7 @@
                             >
                                 Cadastrar
                             </button>
-
+<!-- 
                             <div class="sb-grid">
                                 <div class="sb-division-line"></div>
                                 <h6 class="form-text sb-txt-white pt-3 pb-2">
@@ -137,7 +126,7 @@
                             >
                                 <i class="fa fa-google"></i>
                                 <span class="ml-1">Google</span>
-                            </button>
+                            </button> -->
                         </form>
                     </div>
                 </div>

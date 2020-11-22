@@ -12,11 +12,12 @@
 
                 while ($rowBarbearias = mysqli_fetch_array($resultBarbearias)) {
                     // Campos
-                    $nomeBarbearia = $rowBarbearias[0];
-                    $horarioAbertura = $rowBarbearias[1];
-                    $horarioFechamento = $rowBarbearias[2];
-                    $telefone = $rowBarbearias[3];
-                    $cidade = $rowBarbearias[4];                 
+                    $idBarbearia = $rowBarbearias[0];
+                    $nomeBarbearia = $rowBarbearias[1];
+                    $horarioAbertura = $rowBarbearias[2];
+                    $horarioFechamento = $rowBarbearias[3];
+                    $telefone = $rowBarbearias[4];
+                    $cidade = $rowBarbearias[5];                 
 
                     if ($horarioAtual >= $horarioAbertura && $horarioAtual < $horarioFechamento){
                         $status = "aberto";
@@ -72,7 +73,7 @@
                                             <span class='ml-1'>$cidade</span>
                                         </p>            
                                     </div>
-                                    <a href='#' class='btn sb-btn-secondary sb-w-700 sb-full-width'>
+                                    <a href='barbearia.php?id=$idBarbearia' class='btn sb-btn-secondary sb-w-700 sb-full-width'>
                                         Agendar
                                     </a>
                                 </div>
