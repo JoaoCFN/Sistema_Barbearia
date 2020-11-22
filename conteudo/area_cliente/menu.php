@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item align-self-center">
-                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="#">
+                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="logout.php">
                         SAIR 
                     </a>
                 </li>
