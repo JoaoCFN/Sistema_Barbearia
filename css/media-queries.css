@@ -88,7 +88,7 @@
         text-align: center;
 
         position: absolute;
-        top: calc(100% - 360px);
+        top: 70px;
     }
 }
 
@@ -99,7 +99,7 @@
         text-align: center;
 
         position: absolute;
-        top: calc(100% - 310px);
+        top: 107px;
     }
 }
 
