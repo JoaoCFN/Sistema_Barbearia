@@ -107,8 +107,9 @@
                                                 <h6 class='sb-w-500 sb-txt-white'>
                                                     <i class='fa fa-map-marker'></i>
                                                     <span class='ml-1'>
+                                                        Endereço:
                                                         {$dadosAgendamento["rua"]} | 
-                                                        {$dadosAgendamento["num_bar"]} | 
+                                                        Nº {$dadosAgendamento["num_bar"]} | 
                                                         {$dadosAgendamento["bairro"]}
                                                     </span>
                                                 </h6>
@@ -134,13 +135,6 @@
                         ";
                     }
                 ?>
-                <!-- <h5 class="sb-txt-white sb-w-500">
-                    Não há agendamentos feitos
-                </h5> -->
-
-                <!-- Card para agendamento marcado -->
-                <!-- Descomentar quando for implementar o back -->
-                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary sb-w-700" data-dismiss="modal">
