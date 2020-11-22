@@ -1,32 +1,35 @@
 <?php
+
 session_start();
 
 $conn = mysqli_connect("localhost","root","", "dbtcc");
 
-
 if(isset($_POST['entrar'])){
-
-    if(empty($_POST['email']) || empty($_POST['senha'])) {
-        require "conteudo/login/alert_login.php";
+    
+    if(empty($_POST['email']) || empty($_POST['senha'])){
+        require_once "conteudo/login/alert_login_vazio.php";
+        exit();
     }else{
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $senha = md5(mysqli_real_escape_string($conn, $_POST['senha']));
 
-        $query = "SELECT email,senha from user where email = '{$email}' and senha = '{$senha}'";
+        $query = " SELECT * FROM user WHERE email = '$email' and senha = '$senha' ";
 
         $result = mysqli_query($conn, $query);
+
+        $dadosUsuario = mysqli_fetch_assoc($result);
+
         $row = mysqli_num_rows($result);
-        if ($row == 1) {
-            $_SESSION['email'] = $email;
-            echo "Olá, {$email}";
+
+        if($row == 1){
+            $_SESSION = $dadosUsuario;
+            header("Location: area_cliente.php");
+            exit();
+        }else{
+            header("Location: login.php");
             exit();
         }
-        if ($row == 0) {
-            require "conteudo/login/alert_senha.php";
-        }
-
     }
-
 }
 
 ?>
