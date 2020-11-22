@@ -1,5 +1,4 @@
 <?php
-    // include "msg.php";
     session_start(); 
     include "../../config/config.php";
 
@@ -11,13 +10,11 @@
 
     $mysqli->query($queryUsuario);
     $resultUsuario = $mysqli->affected_rows;
-    
+        
     if ($resultUsuario > 0) {
-        echo "Passou";
         include "msg/sucesso.php";
     }
     else{
-        echo "Não Passou";
         include "msg/erro.php";
     }
 ?>
