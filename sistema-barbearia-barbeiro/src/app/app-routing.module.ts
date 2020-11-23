@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { ServiceRegisterComponent } from './service-register/service-register.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,8 @@ import { MyBarbershopComponent } from './my-barbershop/my-barbershop.component';
 
 
 const routes: Routes = [
-  {path:'' ,component:HomeComponentComponent},
+  {path:'' ,component:HomeComponent},
+  {path:'dashboard' ,component:HomeComponentComponent},
   {path:'minha-barbearia' ,component:MyBarbershopComponent},
   {path:'servicos-agendados' ,component:ScheduleComponent},
   {path:'cadastrar-servicos' ,component:ServiceRegisterComponent},

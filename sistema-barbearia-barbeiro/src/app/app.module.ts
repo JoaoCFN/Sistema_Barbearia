@@ -23,6 +23,8 @@ import { BarbershopProfileComponent } from './barbershop-profile/barbershop-prof
 import { ScheduleComponent } from './schedule/schedule.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ServiceRegisterComponent } from './service-register/service-register.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable/lib/ngx-datatable.module';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -44,6 +46,7 @@ import { ServiceRegisterComponent } from './service-register/service-register.co
     BarbershopProfileComponent,
     ScheduleComponent,
     ServiceRegisterComponent,
+    HomeComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -57,7 +60,8 @@ import { ServiceRegisterComponent } from './service-register/service-register.co
     IonicModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
-    DataTablesModule,
+    //DataTablesModule,
+    //NgxDatatableModule
 
 
   ],

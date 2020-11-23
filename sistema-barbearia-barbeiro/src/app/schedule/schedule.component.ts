@@ -3,26 +3,28 @@ import { faCalendarAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import { Cliente } from '../model/cliente';
 import { ServicoTO } from '../model/sevico';
 
-
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.css']
+  styleUrls: ['./schedule.component.css'],
 })
-
-
-
 export class ScheduleComponent implements OnInit {
+  faCalendar = faCalendarAlt;
+  faClock = faClock;
+  rows = [
+    { name: 'Austin', gender: 'Male', company: 'Swimlane' },
+    { name: 'Dany', gender: 'Male', company: 'KFC' },
+    { name: 'Molly', gender: 'Female', company: 'Burger King' }
+  ];
 
-faCalendar = faCalendarAlt
-faClock = faClock;
+  @Input() cliente: Cliente[];
+  barba_cabalo: ServicoTO = new ServicoTO(1, 'Barba e cabelo', 30, 30);
+  cabelo: ServicoTO = new ServicoTO(1, 'Cabelo', 20, 30);
+  barba: ServicoTO = new ServicoTO(1, 'Barba', 10, 30);
 
+  columns = [{ prop: 'name' }, { name: 'Gender' }, { name: 'Company' }];
 
-@Input() cliente: Cliente[];
-barba_cabalo: ServicoTO = new ServicoTO(1, 'Barba e cabelo', 30, 30);
-cabelo: ServicoTO = new ServicoTO(1, 'Cabelo', 20, 30);
-barba: ServicoTO = new ServicoTO(1, 'Barba', 10, 30);
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.cliente = [
@@ -34,16 +36,23 @@ barba: ServicoTO = new ServicoTO(1, 'Barba', 10, 30);
       new Cliente(6, 'Ali', 23, this.barba_cabalo),
       new Cliente(7, 'Esse', 23, this.barba),
     ];
+
+
+
+/*
+
+    for (let i = 0; i < this.cliente.length; i++) {
+      this.rows.push({id: this.cliente[i],nome: })
+    }*/
   }
 
-
-
-
   dtOptions: DataTables.Settings = {
+    scrollCollapse: true,
+    scrollX: true,
     responsive: true,
     language: {
-  "url":"https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
-    }
+      url:
+        'https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json',
+    },
   };
-
 }

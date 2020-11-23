@@ -25,6 +25,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@ionic/angular": "^5.5.0",
+    "@swimlane/ngx-datatable": "^18.0.0",
     "@types/datatables.net": "^1.10.19",
     "@types/jquery": "^3.5.4",
     "angular-datatables": "^10.0.0",
