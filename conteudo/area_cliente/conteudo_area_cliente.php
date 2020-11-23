@@ -3,42 +3,24 @@
         <!-- Cards Linha 1-->
         <div class="row">
             <?php 
+                include "config/functions.php";
                 $conn = mysqli_connect("localhost", "root", "", "dbtcc");
                 date_default_timezone_set('America/Sao_Paulo');
                 $horarioAtual = date("H:i");
 
-                $queryBarbearias = "CALL PROC_SEL_BARBEARIAS()";
+                $queryBarbearias = "CALL PROC_SEL_CARD_BARBEARIAS()";
                 $resultBarbearias = mysqli_query($conn, $queryBarbearias);
 
                 while ($rowBarbearias = mysqli_fetch_array($resultBarbearias)) {
+                    $statusFuncionamento = getStatus($rowBarbearias[2], $rowBarbearias[3]);
+
                     // Campos
-                    $nomeBarbearia = $rowBarbearias[0];
-                    $horarioAbertura = $rowBarbearias[1];
-                    $horarioFechamento = $rowBarbearias[2];
-                    $telefone = $rowBarbearias[3];
-                    $cidade = $rowBarbearias[4];                 
-
-                    if ($horarioAtual >= $horarioAbertura && $horarioAtual < $horarioFechamento){
-                        $status = "aberto";
-                        $statusText = "Aberto";
-                    }
-                    else{
-                        $status = "fechado";
-                        $statusText = "Fechado";
-                    }
-
-                    $cssStatus = "status-{$status}";  
-
-                    if(strlen($horarioAbertura) == 0 && strlen($horarioFechamento) == 0){
-                        $horarioAberturaConv = "Sem horário cadastrado";
-                        $horarioFechamentoConv = "";
-                    }
-                    else{
-                        // Pega apenas o primeiro dígito do horário de abertura
-                        $horarioAberturaConv = substr($horarioAbertura, 1, 4)." - ";
-                        // Pega apenas o primeiro dígito do horário de fechamento
-                        $horarioFechamentoConv = substr($horarioFechamento, 0, 5);
-                    }
+                    $idBarbearia = $rowBarbearias[0];
+                    $nomeBarbearia = $rowBarbearias[1];
+                    $horarioAbertura = $statusFuncionamento[2];
+                    $horarioFechamento = $statusFuncionamento[3];
+                    $telefone = $rowBarbearias[4];
+                    $cidade = $rowBarbearias[5];                 
 
                     echo "
                         <div class='col-md-3 col-sm-12 mb-4'>
@@ -48,8 +30,8 @@
                                     src='https://i.ibb.co/6cSfrM6/cliente-sem-ft.png' 
                                     alt='Imagem de capa do card'
                                 />
-                                <div class='$cssStatus sb-txt-black sb-w-700'>
-                                    $statusText
+                                <div class='$statusFuncionamento[0] sb-txt-black sb-w-700'>
+                                    $statusFuncionamento[1]
                                 </div>
                                 <div class='card-body sb-txt-white'>
                                     <h5 class='card-title sb-w-700 sb-txt-secondary'>
@@ -59,8 +41,8 @@
                                         <p>
                                             <i class='fa fa-clock-o'></i>
                                             <span class='ml-1'>
-                                                $horarioAberturaConv
-                                                $horarioFechamentoConv
+                                                $horarioAbertura
+                                                $horarioFechamento
                                             </span>
                                         </p>    
                                         <p>
@@ -72,7 +54,7 @@
                                             <span class='ml-1'>$cidade</span>
                                         </p>            
                                     </div>
-                                    <a href='#' class='btn sb-btn-secondary sb-w-700 sb-full-width'>
+                                    <a href='barbearia.php?id=$idBarbearia' class='btn sb-btn-secondary sb-w-700 sb-full-width'>
                                         Agendar
                                     </a>
                                 </div>

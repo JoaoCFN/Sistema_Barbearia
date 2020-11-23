@@ -40,6 +40,11 @@
     height: auto;
 }
 
+.sb-full-screen{
+    width: 100%;
+    height: 100vh;
+}
+
 /* Fonts*/
 .sb-montserrat{
     font-family: 'Montserrat', sans-serif;

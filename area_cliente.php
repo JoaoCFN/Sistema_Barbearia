@@ -1,10 +1,6 @@
 <?php
-
-include('verifica_login.php');
-
+  include('verifica_login.php');
 ?>
-
-
 
 <!doctype html>
 <html lang="pt-br">

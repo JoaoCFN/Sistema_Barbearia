@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item align-self-center">
-                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="#">
+                    <a class="nav-link sb-btn-outline-secondary sb-w-700 pr-3 pl-3" href="logout.php">
                         SAIR 
                     </a>
                 </li>
@@ -59,45 +59,82 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h5 class="sb-txt-white sb-w-500">
-                    Não há agendamentos feitos
-                </h5>
+                <?php 
+                    $conn2 = mysqli_connect("localhost", "root", "", "dbtcc");
 
-                <!-- Card para agendamento marcado -->
-                <!-- Descomentar quando for implementar o back -->
-                <!-- <div class="row">
-                    <div class="col-sm-12 mt-1 mb-1">
-                        <div class="card shadow-sm sb-bg-black">
-                            <div class="card-body">
-                                <h5 class="sb-txt-secondary sb-w-700 mb-2">
-                                    Nome da Barbearia
-                                </h5>
-                                <h6 class="sb-txt-white sb-w-500">
-                                    <i class="fa fa-calendar"></i>
-                                    <span class="ml-1">Data: 01/01/2021</span>
-                                </h6>
-                                <h6 class="sb-txt-white sb-w-500">
-                                    <i class="fa fa-clock-o"></i>
-                                    <span class="ml-1">Horário: 09H30</span>
-                                </h6>
-                                <h6 class="sb-txt-white sb-w-500">
-                                    <i class="fa fa-cut"></i>
-                                    <span class="ml-1">Serviço: Corte de Cabelo</span>
-                                </h6>
-                                <h6 class="sb-w-500 sb-txt-white">
-                                    <i class="fa fa-map-marker"></i>
-                                    <span class="ml-1">
-                                        Rua exemplo | Nº 127 | George Américo
-                                    </span>
-                                </h6>
-                                <h6 class="sb-txt-white sb-w-500">
-                                    <i class="fa fa-phone"></i>
-                                    <span class="ml-1">Telefone: (75) 98888-7777</span>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                    $queryAgendamento = "CALL PROC_AGENDAMENTOS_USUARIO('{$_SESSION["user_id"]}');";
+                    $resultAgendamento = mysqli_query($conn2, $queryAgendamento);
+                    $rowAgendamento = mysqli_num_rows($resultAgendamento);
+
+                    if($rowAgendamento > 0){
+                        while($dadosAgendamento = mysqli_fetch_array($resultAgendamento)){
+
+                            $dataFormat = date("d/m/Y", strtotime($dadosAgendamento["data_agendamento"]));
+                            $horarioFormat = substr($dadosAgendamento["horario_agendamento"], 0, 5);
+                            
+                            echo "
+                                <div class='row'>
+                                    <div class='col-sm-12 mt-1 mb-1'>
+                                        <div class='card shadow-sm sb-bg-black'>
+                                            <div class='card-body'>
+                                                <h5 class='sb-txt-secondary sb-w-700 mb-2'>
+                                                    {$dadosAgendamento["nome_barbearia"]}
+                                                </h5>
+                                                <h6 class='sb-txt-white sb-w-500'>
+                                                    <i class='fa fa-calendar'></i>
+                                                    <span class='ml-1'>
+                                                        Data: {$dataFormat}
+                                                    </span>
+                                                </h6>
+                                                <h6 class='sb-txt-white sb-w-500'>
+                                                    <i class='fa fa-clock-o'></i>
+                                                    <span class='ml-1'>
+                                                        Horário: {$horarioFormat}
+                                                    </span>
+                                                </h6>
+                                                <h6 class='sb-txt-white sb-w-500'>
+                                                    <i class='fa fa-cut'></i>
+                                                    <span class='ml-1'>
+                                                        Serviço: {$dadosAgendamento["nome_servico"]}
+                                                    </span>
+                                                </h6>
+                                                <h6 class='sb-txt-white sb-w-500'>
+                                                    <i class='fa fa-money'></i>
+                                                    <span class='ml-1'>
+                                                        Valor: R$ {$dadosAgendamento["valor_total"]}
+                                                    </span>
+                                                </h6>
+                                                <h6 class='sb-w-500 sb-txt-white'>
+                                                    <i class='fa fa-map-marker'></i>
+                                                    <span class='ml-1'>
+                                                        Endereço:
+                                                        {$dadosAgendamento["rua"]} | 
+                                                        Nº {$dadosAgendamento["num_bar"]} | 
+                                                        {$dadosAgendamento["bairro"]}
+                                                    </span>
+                                                </h6>
+                                                <h6 class='sb-txt-white sb-w-500'>
+                                                    <i class='fa fa-phone'></i>
+                                                    <span class='ml-1'>Telefone: 
+                                                        {$dadosAgendamento["telefone"]}
+                                                    </span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            ";  
+                        }
+                    }
+                    else{
+                        echo "
+                           <h5 class='sb-txt-white sb-w-500'>
+                                Não há agendamentos feitos
+                            </h5>
+                        ";
+                    }
+                ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary sb-w-700" data-dismiss="modal">

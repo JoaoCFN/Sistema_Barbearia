@@ -26,8 +26,16 @@ if(isset($_POST['entrar'])){
             header("Location: area_cliente.php");
             exit();
         }else{
-            header("Location: login.php");
-            exit();
+            echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Email ou senha incorretos'
+                    })
+                </script>
+            ";
         }
     }
 }
@@ -92,7 +100,7 @@ if(isset($_POST['entrar'])){
                                 Entrar
                             </button>
                             
-                            <div class="sb-grid">
+                            <!-- <div class="sb-grid">
                                 <div class="sb-division-line"></div>
                                 <h6 class="form-text sb-txt-white pt-3 pb-2">
                                     Entrar com 
@@ -104,7 +112,7 @@ if(isset($_POST['entrar'])){
                             >
                                 <i class="fa fa-google"></i>
                                 <span class="ml-1">Google</span>
-                            </button>
+                            </button> -->
                         </form>
                     </div>
                 </div>
