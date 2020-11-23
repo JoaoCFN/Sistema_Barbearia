@@ -26,16 +26,7 @@ if(isset($_POST['entrar'])){
             header("Location: area_cliente.php");
             exit();
         }else{
-            echo "
-                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
-                <script>
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Email ou senha incorretos'
-                    })
-                </script>
-            ";
+           require_once "conteudo/login/alert_senha.php";
         }
     }
 }
