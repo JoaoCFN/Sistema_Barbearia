@@ -5,7 +5,7 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title>Área do cliente | Home of Barber</title>
+    <title>Área do cliente | House of Barber</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
