@@ -22,28 +22,14 @@
 
                 $resultServicos = $mysqli->query("CALL PROC_SEL_SERVICOS($idBarbearia)");
                 $rowServicos = $resultServicos->num_rows;
-
-                while($servicos = $resultServicos->fetch_row()){
-                    foreach ($servicos as $key => $value) {
-                        echo "$key: $value <br>";
-                    }
-                }
-                
-                // echo $servicos[2];
-                // $queryServicos = "CALL PROC_SEL_SERVICOS(8)";
-                // $resultServicos = mysqli_query($conn, $queryServicos); 
-                // $rowServicos = mysqli_fetch_array($resultServicos);
-                // foreach ($servicos as $key => $value) {
-                //     echo "$key: $value <br>";
-                // }
-                // $servicos = mysqli_fetch_array($resultServicos);
-                
+              
                 // Montar página da barbearia
                 if($rowBarbearia > 0){
                     $dadosBarbearia = mysqli_fetch_array($resultBarbearia);
 
                     $statusFuncionamento = getStatus($dadosBarbearia["horario_abertura"], $dadosBarbearia["horario_fechamento"]);
 
+                    // Abertura trecho 
                     echo "
                         <button class='btn-whatsapp btn-position-fixed'>
                             <a href='https://api.whatsapp.com/send?phone=55{$dadosBarbearia["telefone"]}' target='_blank'>
@@ -96,9 +82,7 @@
                                 </div> 
                             </div>
                         </div>
-                    ";
 
-                    echo " 
                         <!-- Agendamento -->
                         <div class='agendamento mt-5'>
                             <!--PEN CONTENT     -->
@@ -204,60 +188,43 @@
                                                                 </h3>
                                                                 <div class='multisteps-form__content'>
                                                                     <div class='servicos mt-3'>
-                                                                        <div class='input-container'>
-                                                                            <input 
-                                                                                id='1' 
-                                                                                type='checkbox' 
-                                                                                value='Corte de cabelo'
-                                                                                data-target-title='btn-servico'
-                                                                                onChange='handleCheck(this);'
-                                                                            >
-                                                                            <label for='1'>
-                                                                                <span>
-                                                                                    Corte de cabelo
-                                                                                    <span>
-                                                                                        R$ 17,00
-                                                                                    </span>
-                                                                                </span>
-                                                                            </label>
-                                                                        </div>
-                    
-                                                                        <div class='input-container'>
-                                                                            <input 
-                                                                                id='2' 
-                                                                                type='checkbox' 
-                                                                                value='Corte de barba'
-                                                                                data-target-title='btn-servico'
-                                                                                onChange='handleCheck(this);'
-                                                                            >
-                                                                            <label for='2'>
-                                                                                <span>
-                                                                                    Corte de barba
-                                                                                    <span>
-                                                                                        R$ 10,00
-                                                                                    </span>
-                                                                                </span>
-                                                                            </label>
-                                                                        </div>
-                    
-                                                                        <div class='input-container'>
-                                                                            <input 
-                                                                                id='3' 
-                                                                                type='checkbox' 
-                                                                                value='Cabelo + Barba'
-                                                                                data-target-title='btn-servico'
-                                                                                onChange='handleCheck(this);'
-                                                                            >
-                                                                            <label for='3'>
-                                                                                <span>
-                                                                                    Cabelo + Barba
-                                                                                    <span>
-                                                                                        R$ 30,00
-                                                                                    </span>
-                                                                                </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>                                       
+                    ";
+
+                    // Serviços
+                    if($rowServicos > 0){
+                        while($servicos = $resultServicos->fetch_assoc()){
+                            echo "
+                                <div class='input-container'>
+                                    <input 
+                                        id='{$servicos["id_servico"]}' 
+                                        type='checkbox' 
+                                        value='{$servicos["nome"]}'
+                                        data-target-title='btn-servico'
+                                        onChange='handleCheck(this);'
+                                    >
+                                    <label for='1'>
+                                        <span>
+                                            Corte de cabelo
+                                            <span>
+                                                R$ {$servicos["preco"]}
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            ";
+                        }
+                    }
+                    else{
+                        echo "
+                            <h5 class='sb-txt-white sb-w-500'>
+                                Não há serviços cadastrados pelo estabelecimento                              
+                            </h5>
+                        ";
+                    }
+                                 
+                    // Fechamento trecho
+                    echo " 
+                                                                    <div>                                   
                                                                 </div>
                                                                 <div class='row'>
                                                                     <div class='button-row d-flex mt-4 col-12'>
