@@ -1,3 +1,4 @@
+import { BarbeariaService } from './barbearia.service';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,10 +26,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { ServiceRegisterComponent } from './service-register/service-register.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable/lib/ngx-datatable.module';
 import { HomeComponent } from './home/home.component';
-
-
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -60,16 +58,12 @@ import { HomeComponent } from './home/home.component';
     IonicModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     //DataTablesModule,
     //NgxDatatableModule
-
-
   ],
-  providers: [
-
-  ],
+  providers: [BarbeariaService],
   bootstrap: [AppComponent],
-  exports: [
-  ]
+  exports: [],
 })
-export class AppModule { }
+export class AppModule {}

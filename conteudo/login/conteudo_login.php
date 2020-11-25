@@ -12,7 +12,6 @@ if(isset($_POST['entrar'])){
     }else{
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $senha = md5(mysqli_real_escape_string($conn, $_POST['senha']));
-
         $query = " SELECT * FROM user WHERE email = '$email' and senha = '$senha' ";
 
         $result = mysqli_query($conn, $query);
@@ -26,7 +25,20 @@ if(isset($_POST['entrar'])){
             header("Location: area_cliente.php");
             exit();
         }else{
-           require_once "conteudo/login/alert_senha.php";
+            $query = " SELECT * FROM barbearia WHERE email_dono = '$email' and senha_dono = '$senha' ";
+            $result = mysqli_query($conn, $query);
+            $dadosUsuario = mysqli_fetch_assoc($result);
+            $row = mysqli_num_rows($result);
+            if($row == 1){
+                $id = $dadosUsuario['barbearia_id'];
+                echo "<script>
+                window.location.href = '//localhost:4200';
+                </script>";
+                echo ('Pega o ID: '.$id);
+                exit();
+            }else{
+                require_once "conteudo/login/alert_senha.php";
+            }
         }
     }
 }
