@@ -123,7 +123,7 @@
                                                 <!--form panels-->
                                                 <div class='row'>
                                                     <div class='col-12 col-lg-8 m-auto'>
-                                                        <form class='multisteps-form__form'>
+                                                        <form class='multisteps-form__form' method='post'>
                                                             <!--Dia-->
                                                             <div class='multisteps-form__panel shadow p-4 rounded js-active'>
                                                                 <h3 class='multisteps-form__title sb-txt-white sb-w-900'>
@@ -206,7 +206,7 @@
                                         data-target-title='btn-servico'
                                         onChange='handleCheck(this);'
                                     >
-                                    <label for='1'>
+                                    <label for='{$servicos["id_servico"]}'>
                                         <span>
                                             Corte de cabelo
                                             <span>
@@ -247,34 +247,33 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                    
-                                                            <!--Confirmar Serviço-->
-                                                            <div class='multisteps-form__panel shadow p-4 rounded' data-animation='scaleIn'>
-                                                                <h3 class='multisteps-form__title sb-txt-white sb-w-900'>
-                                                                    Confirmar serviço
-                                                                </h3>
-                                                                <div class='multisteps-form__content'>
-                                                                    <div class='mt-3 mb-3' >
-                                                                        <h5 class='multisteps-form__title sb-txt-white sb-w-500'>
-                                                                            Nome: Teste
-                                                                        </h5>
-                                                                        <div id='confirmar-servico-content'></div>
-                                                                    </div>
-                                                                    <div class='button-row d-flex mt-4'>
-                                                                        <button class='btn sb-btn-secondary-default js-btn-prev sb-w-700' type='button' title='Prev'>
-                                                                            Anterior
-                                                                        </button>
-                                                                        <button class='btn sb-btn-green ml-auto sb-w-700' type='button' title='Send'>
-                                                                            Agendar
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                                                    </div>                                                 
+                                                </div>
+                                                <!--Confirmar Serviço-->
+                                                <div class='multisteps-form__panel shadow p-4 rounded' data-animation='scaleIn'>
+                                                    <h3 class='multisteps-form__title sb-txt-white sb-w-900'>
+                                                        Confirmar serviço
+                                                    </h3>
+                                                    <div class='multisteps-form__content'>
+                                                        <div class='mt-3 mb-3' >
+                                                            <h5 class='multisteps-form__title sb-txt-white sb-w-500'>
+                                                                Nome: Teste
+                                                            </h5>
+                                                            <div id='confirmar-servico-content'></div>
+                                                        </div>
+                                                        <div class='button-row d-flex mt-4'>
+                                                            <button class='btn sb-btn-secondary-default js-btn-prev sb-w-700' type='button' title='Prev'>
+                                                                Anterior
+                                                            </button>
+                                                            <button class='btn sb-btn-green ml-auto sb-w-700' type='submit' title='Send'>
+                                                                Agendar
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </form>
                                             </div>
-                                        </div>
+                                        </div>                                                            
                                     </div>
                                 </div>
                             </div>

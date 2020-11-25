@@ -22,7 +22,7 @@
         min: new Date(2020, mesInvalido, diaAtual),
         disable: [
             1
-        ]
+        ],
     })
 })();
 
