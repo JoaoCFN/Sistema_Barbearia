@@ -19,7 +19,10 @@
             navPrev: 'picker__nav--next',
             navNext: 'picker__nav--prev',
         },
-        min: new Date(2020, mesInvalido, diaAtual)
+        min: new Date(2020, mesInvalido, diaAtual),
+        disable: [
+            1
+        ]
     })
 })();
 

@@ -57,15 +57,24 @@
     <script src="js/barbearia/barbearia_form.js"></script>
     <script src="js/barbearia/barbearia_steps.js"></script>
 
-    <script>
-      // Horário
-      $('.timepicker').pickatime({
-          format: 'H:i',
-          // Delimitador de horas
-          // Modificar quando for implementar o backend
-          min: [8,0],
-          max: [17,30],
-      })
-    </script>
+    <?php 
+        $aberturaFormat = explode(":", $abertura);
+        $fechamentoFormat = explode(":", $fechamento);
+
+        $aberturaFormat[1] = str_replace("-", "", $aberturaFormat[1]);
+        echo $fechamentoFormat[1];
+
+        echo "
+            <script>
+                // Horário
+                $('.timepicker').pickatime({
+                    format: 'H:i',
+                    // Delimitador de horas
+                    min: [$aberturaFormat[0], $aberturaFormat[1]],
+                    max: [$fechamentoFormat[0], $fechamentoFormat[1]]
+                })
+            </script>
+        ";
+    ?>
   </body>
 </html>

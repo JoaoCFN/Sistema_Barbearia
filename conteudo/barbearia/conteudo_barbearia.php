@@ -12,6 +12,8 @@
             include "config/functions.php";
             include "config/config.php";
             $idBarbearia = $_GET["id"];
+            $abertura = 0;
+            $fechamento = 0;
 
             if(isset($idBarbearia)){
                 $conn = mysqli_connect("localhost", "root", "", "dbtcc");
@@ -27,8 +29,10 @@
                 if($rowBarbearia > 0){
                     $dadosBarbearia = mysqli_fetch_array($resultBarbearia);
 
-                    $statusFuncionamento = getStatus($dadosBarbearia["horario_abertura"], $dadosBarbearia["horario_fechamento"]);
+                    $statusFuncionamento = getStatus($dadosBarbearia["horario_abertura"], $dadosBarbearia["horario_fechamento"], $dadosBarbearia["horario_abertura_final_semana"], $dadosBarbearia["horario_fechamento_final_semana"]);
 
+                    $abertura = $statusFuncionamento[2];
+                    $fechamento = $statusFuncionamento[3];
                     // Abertura trecho 
                     echo "
                         <button class='btn-whatsapp btn-position-fixed'>
@@ -275,7 +279,7 @@
                                 </div>
                             </div>
                         </div>
-                    ";
+                    ";                   
                 }
                 else{
                     echo "
