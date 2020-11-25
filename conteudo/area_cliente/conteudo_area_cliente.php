@@ -12,15 +12,15 @@
                 $resultBarbearias = mysqli_query($conn, $queryBarbearias);
 
                 while ($rowBarbearias = mysqli_fetch_array($resultBarbearias)) {
-                    $statusFuncionamento = getStatus($rowBarbearias[2], $rowBarbearias[3]);
+                    $statusFuncionamento = getStatus($rowBarbearias[2], $rowBarbearias[3], $rowBarbearias[4], $rowBarbearias[5]);
 
                     // Campos
                     $idBarbearia = $rowBarbearias[0];
                     $nomeBarbearia = $rowBarbearias[1];
                     $horarioAbertura = $statusFuncionamento[2];
                     $horarioFechamento = $statusFuncionamento[3];
-                    $telefone = $rowBarbearias[4];
-                    $cidade = $rowBarbearias[5];                 
+                    $telefone = $rowBarbearias[6];
+                    $cidade = $rowBarbearias[7];                 
 
                     echo "
                         <div class='col-md-3 col-sm-12 mb-4'>
