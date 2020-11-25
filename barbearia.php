@@ -59,18 +59,8 @@
 
     <?php 
         $abertura = str_replace("-", "", $abertura);
-
         $aberturaFormat = explode(":", $abertura);
         $fechamentoFormat = explode(":", $fechamento);
-
-        $horaAtual = date("H");
-        $minutoAtual = date("i");
-        $diaAtual = date("w");
-        
-        if(($horaAtual >= $aberturaFormat[0] && $horaAtual <= $fechamentoFormat[0]) && ($minutoAtual > $aberturaFormat[1])){
-            $aberturaFormat[0] = $horaAtual;
-            $aberturaFormat[1] = "30";
-        }
         
         echo "
             <script>
