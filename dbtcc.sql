@@ -38,7 +38,7 @@ CREATE TABLE `agendamento` (
   KEY `fk_barbearia_id` (`barbearia`),
   CONSTRAINT `fk_barbearia_id` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`usuario`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'P','2020-11-22 15:08:15');
+INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'P','2020-11-22 15:08:15'),(11,3,8,'2020-11-26','12:00:00',28,'P','2020-11-26 03:56:58');
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `agendamento_servico` (
 
 LOCK TABLES `agendamento_servico` WRITE;
 /*!40000 ALTER TABLE `agendamento_servico` DISABLE KEYS */;
-INSERT INTO `agendamento_servico` VALUES (1,1);
+INSERT INTO `agendamento_servico` VALUES (11,1),(11,2);
 /*!40000 ALTER TABLE `agendamento_servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,6 +102,8 @@ CREATE TABLE `barbearia` (
   `uf` varchar(45) NOT NULL,
   `horario_abertura` time DEFAULT NULL,
   `horario_fechamento` time DEFAULT NULL,
+  `horario_abertura_final_semana` time DEFAULT NULL,
+  `horario_fechamento_final_semana` time DEFAULT NULL,
   PRIMARY KEY (`barbearia_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -112,7 +114,7 @@ CREATE TABLE `barbearia` (
 
 LOCK TABLES `barbearia` WRITE;
 /*!40000 ALTER TABLE `barbearia` DISABLE KEYS */;
-INSERT INTO `barbearia` VALUES (8,'Almeida','111.111.111-11','barbearia_almeida@hotmail.com','b400de1f64beb532d80982347ebb5989','Barbearia Almeida','(75) 98116-6233','44032-568','11.111.111/1111-11','Rua Professora Bertholina Carneiro','353 ','Campo Limpo','Feira de Santana','BA','08:00:00','19:00:00'),(9,'Marcão','222.222.222-22','barbearia_marcao@hotmail.com','131adea421048c8644ed90e41b2fee77','Barbearia Sr. Marcão','(75) 99283-7999','44033-103','22.222.222/2222-22','Rua Desembarque','298','Campo Limpo','Feira de Santana','BA','08:00:00','18:00:00'),(10,'Guto ','333.333.333-33','guto_barbearia@gmail.com','25798ef6bed8c2875edf7121b9fcd18a','Guto Barbearia','(75) 99164-6434','44021-225','33.333.333/3333-33','Rua Arivaldo de Carvalho','54','Sobradinho','Feira de Santana','BA','09:00:00','19:00:00'),(11,'Siqueira','444.444.444-44','siqueira@gmail.com','45d0b1d56f056433c894563d4e20c89f','Barbearia Siqueira','(75) 98143-1976','44050-024','44.444.444/4444-44','Rua Intendente Abdon','7654','Queimadinha','Feira de Santana','BA','09:00:00','18:00:00'),(12,'Matheus','555.555.555-55','matheus_cortes@gmail.com','e56b6eea9b0bc782bbb9ea6098ead641','Matheus Cortes','(75) 98143-7191','44028-279','55.555.555/5555-55','Rua Olhos Verdes','149 ','Gabriela','Feira de Santana','BA','08:00:00','19:20:00'),(13,'Figueredo','666.666.666-66','figueredo@hotmail.com','2fdc2b916cbaac14a0339f076a71111d','Barbearia Figueredo','(75) 98347-1670','44053-654','66.666.666/6666-66','Rua Gérson','11 ','Cidade Nova','Feira de Santana','BA',NULL,NULL),(14,'Primos','777.777.777-77','primos_barbershop@hotmail.com','8b4521bba5f609ca1b20530190f91c52','Primos Barber Shop','(75) 98245-8944','44021-225','77.777.777/7777-77','Rua Arivaldo de Carvalho','1299 ','Sobradinho','Feira de Santana','BA',NULL,NULL),(15,'Dielson','888.888.888-88','dielson@gmail.com','25f9e794323b453885f5181f1b624d0b','Dielson barbearia','(75) 99277-6848','44024-336','88.888.888/8888-88','Rua Paulo Afonso','74','Jardim Cruzeiro','Feira de Santana','BA',NULL,NULL),(16,'Allan','999.999.999-99','allan@hotmail.com','d41222a59835f1805e182164ddf470e1','Barbearia Allabarber','(75) 98120-4535','44059-720','99.999.999/9999-99','Rua Papagaio','80','Papagaio','Feira de Santana','BA',NULL,NULL);
+INSERT INTO `barbearia` VALUES (8,'Almeida','111.111.111-11','barbearia_almeida@hotmail.com','b400de1f64beb532d80982347ebb5989','Barbearia Almeida','(75) 98116-6233','44032-568','11.111.111/1111-11','Rua Professora Bertholina Carneiro','353 ','Campo Limpo','Feira de Santana','BA','08:00:00','19:00:00','08:00:00','19:00:00'),(9,'Marcão','222.222.222-22','barbearia_marcao@hotmail.com','131adea421048c8644ed90e41b2fee77','Barbearia Sr. Marcão','(75) 99283-7999','44033-103','22.222.222/2222-22','Rua Desembarque','298','Campo Limpo','Feira de Santana','BA','08:00:00','18:00:00','08:00:00','18:00:00'),(10,'Guto ','333.333.333-33','guto_barbearia@gmail.com','25798ef6bed8c2875edf7121b9fcd18a','Guto Barbearia','(75) 99164-6434','44021-225','33.333.333/3333-33','Rua Arivaldo de Carvalho','54','Sobradinho','Feira de Santana','BA','09:00:00','19:00:00','09:00:00','19:00:00'),(11,'Siqueira','444.444.444-44','siqueira@gmail.com','45d0b1d56f056433c894563d4e20c89f','Barbearia Siqueira','(75) 98143-1976','44050-024','44.444.444/4444-44','Rua Intendente Abdon','7654','Queimadinha','Feira de Santana','BA','09:00:00','18:00:00','09:00:00','18:00:00'),(12,'Matheus','555.555.555-55','matheus_cortes@gmail.com','e56b6eea9b0bc782bbb9ea6098ead641','Matheus Cortes','(75) 98143-7191','44028-279','55.555.555/5555-55','Rua Olhos Verdes','149 ','Gabriela','Feira de Santana','BA','08:00:00','19:20:00','08:00:00','19:30:00'),(13,'Figueredo','666.666.666-66','figueredo@hotmail.com','2fdc2b916cbaac14a0339f076a71111d','Barbearia Figueredo','(75) 98347-1670','44053-654','66.666.666/6666-66','Rua Gérson','11 ','Cidade Nova','Feira de Santana','BA',NULL,NULL,NULL,NULL),(14,'Primos','777.777.777-77','primos_barbershop@hotmail.com','8b4521bba5f609ca1b20530190f91c52','Primos Barber Shop','(75) 98245-8944','44021-225','77.777.777/7777-77','Rua Arivaldo de Carvalho','1299 ','Sobradinho','Feira de Santana','BA',NULL,NULL,NULL,NULL),(15,'Dielson','888.888.888-88','dielson@gmail.com','25f9e794323b453885f5181f1b624d0b','Dielson barbearia','(75) 99277-6848','44024-336','88.888.888/8888-88','Rua Paulo Afonso','74','Jardim Cruzeiro','Feira de Santana','BA',NULL,NULL,NULL,NULL),(16,'Allan','999.999.999-99','allan@hotmail.com','d41222a59835f1805e182164ddf470e1','Barbearia Allabarber','(75) 98120-4535','44059-720','99.999.999/9999-99','Rua Papagaio','80','Papagaio','Feira de Santana','BA',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `barbearia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,7 +196,7 @@ BEGIN
 		barbearia.nome_barbearia,
 		agendamento.data_agendamento,
 		agendamento.horario_agendamento,
-		servico.nome AS "nome_servico",
+        servico.nome as "nome_servico",
 		agendamento.valor_total,
 		barbearia.rua,
 		barbearia.num_bar,
@@ -208,6 +210,73 @@ BEGIN
 	INNER JOIN servico
 	ON agendamento_servico.servico = servico.id_servico
 	WHERE agendamento.status = 'P' AND agendamento.usuario = usuario;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_INS_AGENDAMENTO` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_INS_AGENDAMENTO`(
+	IN id_usuario INT,
+    IN id_barbearia INT,
+    IN data_agendamento_escolhida DATE,
+    IN horario_agendamento_escolhido TIME,
+    IN valor_total_escolhido DECIMAL
+)
+BEGIN
+	INSERT INTO agendamento (
+		usuario,
+        barbearia,
+        data_agendamento,
+        horario_agendamento,
+        valor_total,
+        status
+    ) VALUES (
+		id_usuario,
+        id_barbearia,
+        data_agendamento_escolhida,
+        horario_agendamento_escolhido,
+        valor_total_escolhido,
+        'P'
+    );
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_INS_AGENDAMENTO_SERVICO` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_INS_AGENDAMENTO_SERVICO`(
+	IN id_agendamento INT,
+    IN servico INT
+)
+BEGIN
+	INSERT INTO agendamento_servico(
+		agendamento,
+        servico
+    ) VALUES (
+		id_agendamento,
+        servico
+    );
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -238,7 +307,9 @@ BEGIN
         uf
         cep, 
         horario_abertura,
-        horario_fechamento
+        horario_fechamento, 
+        horario_abertura_final_semana,
+        horario_fechamento_final_semana
     FROM barbearia WHERE barbearia.barbearia_id = barbearia;
 END ;;
 DELIMITER ;
@@ -263,6 +334,8 @@ BEGIN
 		nome_barbearia,
         horario_abertura,
         horario_fechamento,
+        horario_abertura_final_semana,
+        horario_fechamento_final_semana,
 		telefone,
 		cidade
 	FROM barbearia
@@ -318,6 +391,30 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_SEL_VALOR_SERVICO` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_SEL_VALOR_SERVICO`(
+	IN nome_servico VARCHAR(45),
+    IN id_barbearia INT
+)
+BEGIN
+	SELECT preco
+    FROM servico
+    WHERE nome = nome_servico and barbearia = id_barbearia;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `PROC_UP_USER` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -356,4 +453,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-24  9:06:18
+-- Dump completed on 2020-11-26  1:26:03
