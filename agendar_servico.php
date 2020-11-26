@@ -4,12 +4,6 @@
         include "config/config.php";
         date_default_timezone_set('America/Sao_Paulo');
 
-        // $conn = mysqli_connect("localhost", "root", "", "dbtcc");
-        // echo $_POST['dia-agendamento'];
-        // echo "<br>";
-        // echo $_POST['horario-agendamento'];
-        // echo "<br>";
-
         $idUsuario = $_SESSION["user_id"];
         $idBarbearia = $_GET["id"];
         $data_agendamento = mysqli_real_escape_string($mysqli, $_POST['dia-agendamento']);
@@ -64,8 +58,8 @@
                     $resultAgendamentoServico = $mysqli->query($queryAgendamentoServico);    
                 }
 
+                // Serviço marcado
                 if($mysqli->affected_rows > 0){
-                    echo $mysqli->affected_rows;
                     include "conteudo/barbearia/msg/sucesso.php";
                 }
             }

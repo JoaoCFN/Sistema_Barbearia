@@ -151,7 +151,7 @@
                             </div>
 
                             <!-- Status -->
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
                                     Status
                                 </label>
@@ -162,7 +162,7 @@
                                         <option>Fechado</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                     <div class="modal-footer">
