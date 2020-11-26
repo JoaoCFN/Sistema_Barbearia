@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@media (max-width:600px) {
+    .col-lg-4 {
+        flex: auto !important;
+    }
+}
+
+.subT {
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pad-3 {
+    padding-left: 30px;
+}
+
+.sidebar {
+    padding: 0px;
+}
+
+.home-main {
+    background-color: #f0edeb;
+}
+
+.content {
+    background-color: #f0edeb;
+}
+
+.col-2 {
+    margin: 0% !important;
+    flex: none !important;
+}
+
+.col-2 {
+    max-width: 250px !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.card {
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.card-icon {
+    padding: 25px;
+    text-align: center;
+    background-color: #46A34A;
+}
+
+.headerIcon {
+    text-align: center;
+    background-color: #46A34A;
+    color: white;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.headerIcon>span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.card-category {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.card-data {
+    font-size: 30pt;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 1px;
+}
+
+hr {
+    background: #f7f1f1;
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cd-footer {
+    font-size: medium;
+}
+
+.graph-body {
+    background-color: white;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.graph-body>h3 {
+    margin-left: 15px;
+    margin-bottom: -15px;
+}
+
+.graph-body>h6 {
+    margin-left: 15px;
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin-top: -10px;
+}
+
+.graph {
+    /*float: left;*/
+    background-color: #43A047;
+    display: block;
+    padding-top: 10px;
+    /* margin-left: 12px;*/
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 10px;
+}
