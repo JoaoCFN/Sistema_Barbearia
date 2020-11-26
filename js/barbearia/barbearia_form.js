@@ -13,6 +13,7 @@
     // Data
     $('.datepicker').pickadate({
         formatSubmit: 'yyyy/mm/dd',
+        hiddenName: true,
         hiddenPrefix: 'prefix__',
         hiddenSuffix: '__suffix',
         klass: {

@@ -123,7 +123,7 @@
                                                 <!--form panels-->
                                                 <div class='row'>
                                                     <div class='col-12 col-lg-8 m-auto'>
-                                                        <form class='multisteps-form__form' method='post'>
+                                                        <form class='multisteps-form__form' method='post' action='agendar_servico.php?id={$idBarbearia}'>
                                                             <!--Dia-->
                                                             <div class='multisteps-form__panel shadow p-4 rounded js-active'>
                                                                 <h3 class='multisteps-form__title sb-txt-white sb-w-900'>
@@ -135,6 +135,7 @@
                                                                             class='datepicker sb-form-input sb-full-width pl-3'
                                                                             placeholder='Clique para selecionar o dia'
                                                                             id='dia-agendamento'
+                                                                            name='dia-agendamento'
                                                                             data-target-title='btn-dia'
                                                                             onChange='handleButton(this);'
                                                                     />
@@ -164,6 +165,7 @@
                                                                             class='timepicker sb-form-input sb-full-width pl-3'
                                                                             placeholder='Clique para selecionar o horário'
                                                                             id='horario-agendamento'
+                                                                            name='horario-agendamento'
                                                                             data-target-title='btn-horario'
                                                                             onChange='handleButton(this);'
                                                                     />
@@ -203,12 +205,13 @@
                                         id='{$servicos["id_servico"]}' 
                                         type='checkbox' 
                                         value='{$servicos["nome"]}'
+                                        name='servico-{$servicos["id_servico"]}'
                                         data-target-title='btn-servico'
                                         onChange='handleCheck(this);'
                                     >
                                     <label for='{$servicos["id_servico"]}'>
                                         <span>
-                                            Corte de cabelo
+                                            {$servicos["nome"]}
                                             <span>
                                                 R$ {$servicos["preco"]}
                                             </span>
@@ -257,7 +260,7 @@
                                                     <div class='multisteps-form__content'>
                                                         <div class='mt-3 mb-3' >
                                                             <h5 class='multisteps-form__title sb-txt-white sb-w-500'>
-                                                                Nome: Teste
+                                                                Nome: {$_SESSION['nome']}
                                                             </h5>
                                                             <div id='confirmar-servico-content'></div>
                                                         </div>
