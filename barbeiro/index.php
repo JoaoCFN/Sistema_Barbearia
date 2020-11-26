@@ -39,15 +39,21 @@ $app->get(
 ?>
     <link rel="stylesheet" href="../barbeiro/css/navbar.css">
     <link rel="stylesheet" href="../barbeiro/css/dashboard.css">
+    </head>
 
     <body class="dashboard">
         <?php
         require_once "../barbeiro/conteudo/navbar.php";
         require_once "../barbeiro/conteudo/dashboard.php";
+        require_once "../barbeiro/conteudo/footer.php";
         require_once "../barbeiro/conteudo/scripts.php";
         ?>
         <script src="../barbeiro/js/charts/meus_charts.js"></script>
-    <?php
+    </body>
+
+    </html>
+<?php
+
     }
 );
 

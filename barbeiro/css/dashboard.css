@@ -78,9 +78,16 @@
     line-height: 1px;
 }
 
-hr {
+.hr-card {
     background: #f7f1f1;
     width: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hr-dif {
+    background: #f7f1f1;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
