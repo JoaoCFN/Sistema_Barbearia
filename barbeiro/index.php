@@ -57,6 +57,85 @@ $app->get(
     }
 );
 
+$app->get(
+    '/sistema_barbearia/barbeiro/minha-barbearia/',
+    function () {
+
+
+        require_once "../barbeiro/conteudo/header.php";
+?>
+    <link rel="stylesheet" href="../barbeiro/css/navbar.css">
+    <link rel="stylesheet" href="../barbeiro/css/minha-barbearia.css">
+    </head>
+
+    <body class="minha-barbearia">
+        <?php
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/minha-barbearia.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+    </body>
+
+    </html>
+<?php
+
+    }
+);
+
+$app->get(
+    '/sistema_barbearia/barbeiro/servicos-agendados/',
+    function () {
+
+
+        require_once "../barbeiro/conteudo/header.php";
+?>
+    <link rel="stylesheet" href="../barbeiro/css/navbar.css">
+    <link rel="stylesheet" href="../barbeiro/css/servicos-agendados.css">
+    </head>
+
+    <body class="servicos-agendados">
+        <?php
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/servicos-agendados.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+    </body>
+
+    </html>
+<?php
+
+    }
+);
+
+
+$app->get(
+    '/sistema_barbearia/barbeiro/cadastrar-servicos/',
+    function () {
+
+
+        require_once "../barbeiro/conteudo/header.php";
+?>
+    <link rel="stylesheet" href="../barbeiro/css/navbar.css">
+    <link rel="stylesheet" href="../barbeiro/css/cadastrar-servicos.css">
+    </head>
+
+    <body class="cadastrar-servicos">
+        <?php
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/cadastrar-servicos.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+    </body>
+
+    </html>
+<?php
+
+    }
+);
+
 // POST route
 $app->post(
     '/post',

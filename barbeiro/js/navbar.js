@@ -7,13 +7,15 @@ function setarActive(classe) {
         case 'dashboard':
             $('.nav-Dashboard').attr('class', 'active nav-item nav-Dashboard')
             break
-        case 'my-barber':
-            $('.nav-my-barber').attr('class', 'active nav-item nav-Casos mr-5')
+        case 'minha-barbearia':
+            $('.nav-Minha-Barbearia').attr('class', 'active nav-item nav-Minha-Barbearia')
             break
-        case 'relatorio':
-            $('.nav-Relatorio').attr('class', 'active nav-item nav-Relatorio nav-li  mr-5')
+        case 'servicos-agendados':
+            $('.nav-Servicos-agendados').attr('class', 'active nav-item nav-Servicos-agendados')
             break
-
+        case 'cadastrar-servicos':
+            $('.nav-Cadastrar-servicos').attr('class', 'active nav-item nav-Cadastrar-servicos')
+            break
         default:
             break;
     }
