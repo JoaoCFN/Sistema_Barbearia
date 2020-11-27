@@ -38,7 +38,7 @@ CREATE TABLE `agendamento` (
   KEY `fk_barbearia_id` (`barbearia`),
   CONSTRAINT `fk_barbearia_id` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`usuario`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'P','2020-11-22 15:08:15'),(11,3,8,'2020-11-26','12:00:00',28,'P','2020-11-26 03:56:58');
+INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'P','2020-11-22 15:08:15'),(11,3,8,'2020-11-26','12:00:00',28,'P','2020-11-26 03:56:58'),(12,3,8,'2020-11-26','18:00:00',18,'P','2020-11-26 19:26:34');
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `agendamento_servico` (
 
 LOCK TABLES `agendamento_servico` WRITE;
 /*!40000 ALTER TABLE `agendamento_servico` DISABLE KEYS */;
-INSERT INTO `agendamento_servico` VALUES (11,1),(11,2);
+INSERT INTO `agendamento_servico` VALUES (12,1);
 /*!40000 ALTER TABLE `agendamento_servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +133,7 @@ CREATE TABLE `servico` (
   PRIMARY KEY (`id_servico`),
   KEY `fk_barbearia_servico` (`barbearia`),
   CONSTRAINT `fk_barbearia_servico` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -277,6 +277,30 @@ BEGIN
 		id_agendamento,
         servico
     );
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_INS_SERVICO` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_INS_SERVICO`(
+	IN nome_servico VARCHAR(45),
+    IN preco_servico DECIMAL,
+    IN id_barbearia INT
+)
+BEGIN
+	INSERT INTO servico (nome, preco, barbearia)
+	VALUES (nome_servico, preco_servico, id_barbearia);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -453,4 +477,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-26  1:26:03
+-- Dump completed on 2020-11-26 22:49:52
