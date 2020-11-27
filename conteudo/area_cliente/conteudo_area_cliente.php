@@ -1,7 +1,7 @@
 <section class="gap-to-menu container">
     <div class="area-cliente">
         <!-- Cards Linha 1-->
-        <div class="row">
+        <div class="row" id="cards-barbearias">
             <?php 
                 include "config/functions.php";
                 $conn = mysqli_connect("localhost", "root", "", "dbtcc");
@@ -63,41 +63,6 @@
                     ";
                 }
             ?>
-
-            <!-- <div class="col-md-3 col-sm-12 mb-4">
-                <div class="card area-cliente-card">
-                    <img 
-                        class="card-img-top" 
-                        src="https://i.ibb.co/6cSfrM6/cliente-sem-ft.png" 
-                        alt="Imagem de capa do card"
-                    />
-                    <div class="status-aberto sb-txt-black sb-w-700">
-                        Aberto
-                    </div>
-                    <div class="card-body sb-txt-white">
-                        <h5 class="card-title sb-w-700 sb-txt-secondary">
-                            Nome da barbearia
-                        </h5>
-                        <div class="card-text">
-                            <p>
-                                <i class="fa fa-clock-o"></i>
-                                <span class="ml-1">8H - 18H</span>
-                            </p>    
-                            <p>
-                                <i class="fa fa-phone"></i>
-                                <span class="ml-1">(75) 98888-7777</span>
-                            </p>        
-                            <p>
-                                <i class="fa fa-map-marker"></i>
-                                <span class="ml-1">Feira de Santana - BA</span>
-                            </p>            
-                        </div>
-                        <a href="#" class="btn sb-btn-secondary sb-w-700 sb-full-width">
-                            Agendar
-                        </a>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
         <!-- Modal Pesquisa -->
@@ -122,7 +87,13 @@
                                     Nome
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control sb-form-input" id="inputNome" placeholder="Digite o nome da barbearia">
+                                    <input 
+                                        type="text" 
+                                        class="form-control sb-form-input" 
+                                        id="inputNome" 
+                                        name="nome-barbearia"
+                                        placeholder="Digite o nome da barbearia"
+                                    >
                                 </div>
                             </div>
 
@@ -132,8 +103,9 @@
                                     Cidade
                                 </label>
                                 <div class="col-sm-10">
-                                    <select class="form-control sb-form-input">
+                                    <select class="form-control sb-form-input" name="cidade-barbearia">
                                         <option>Selecione a cidade</option>
+                                        <option>Feira de Santana</option>
                                     </select>
                                 </div>
                             </div>
@@ -144,8 +116,9 @@
                                     Horário
                                 </label>
                                 <div class="col-sm-10">
-                                    <select class="form-control sb-form-input">
+                                    <select class="form-control sb-form-input" name="horario-barbearia">
                                         <option>Selecione o horário desejado</option>
+                                        <option>09:00</option>
                                     </select>
                                 </div>
                             </div>
@@ -166,13 +139,20 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary sb-w-700" data-dismiss="modal">
+                        <button 
+                            type="button" 
+                            class="btn btn-secondary sb-w-700" 
+                            data-dismiss="modal"
+                        >
                             Fechar
                         </button>
                         <button 
                             type="submit" 
                             class="btn sb-btn-secondary sb-w-700"
                             form="form-pesquisa"
+                            name="pesquisar"
+                            data-toggle="modal"
+                             data-target="#modal-resultado-pesquisa"
                         >
                             Pesquisar
                         </button>
@@ -187,3 +167,92 @@
     </button>
 </section>
 
+<div class="container">
+    <div class="row">
+        <?php 
+            include "config/config.php";
+                        
+            if(isset($_GET["pesquisar"])){
+                // $conn = mysqli_connect("localhost", "root", "", "dbtcc");
+
+                $nome = mysqli_real_escape_string($mysqli, $_GET["nome-barbearia"]);
+                $cidade = mysqli_real_escape_string($mysqli, $_GET["cidade-barbearia"]);
+                $horario = mysqli_real_escape_string($mysqli, $_GET["horario-barbearia"]);
+
+                echo "
+                    <script>
+                        const conteudo = document.querySelector('#cards-barbearias');
+                        conteudo.innerHTML = ``;
+                    </script>
+                ";
+
+                $queryPesquisa = "CALL PROC_PESQUISAR_BARBEARIAS('{$nome}', '{$cidade}', '{$horario}');";
+                $resultPesquisa = $mysqli->query($queryPesquisa);
+                $rowPesquisa = $resultPesquisa->num_rows;
+
+                if($rowPesquisa > 0){
+                    while ($rowPesquisa = $resultPesquisa->fetch_assoc()) {
+                        $idBarbearia = $rowPesquisa["barbearia_id"];
+                        $nomeBarbearia = $rowPesquisa["nome_barbearia"];
+                        $horarioAbertura = $rowPesquisa["horario_abertura"];
+                        $horarioFechamento = $rowPesquisa["horario_fechamento"];
+                        $horarioAberturaFinalSemana = $rowPesquisa["horario_abertura_final_semana"];
+                        $horarioFechamentoFinalSemana = $rowPesquisa["horario_fechamento_final_semana"];
+                        $telefone = $rowPesquisa["telefone"];
+                        $cidade = $rowPesquisa["cidade"];
+    
+                        $statusFuncionamento = getStatus($horarioAbertura, $horarioFechamento, $horarioAberturaFinalSemana, $horarioFechamentoFinalSemana);
+    
+                        echo "
+                            <div class='col-md-3 col-sm-12 mb-4'>
+                                <div class='card area-cliente-card'>
+                                    <img 
+                                        class='card-img-top' 
+                                        src='https://i.ibb.co/6cSfrM6/cliente-sem-ft.png' 
+                                        alt='Imagem de capa do card'
+                                    />
+                                    <div class='$statusFuncionamento[0] sb-txt-black sb-w-700'>
+                                        $statusFuncionamento[1]
+                                    </div>
+                                    <div class='card-body sb-txt-white'>
+                                        <h5 class='card-title sb-w-700 sb-txt-secondary'>
+                                            $nomeBarbearia
+                                        </h5>
+                                        <div class='card-text'>
+                                            <p>
+                                                <i class='fa fa-clock-o'></i>
+                                                <span class='ml-1'>
+                                                    $statusFuncionamento[2]
+                                                    $statusFuncionamento[3]
+                                                </span>
+                                            </p>    
+                                            <p>
+                                                <i class='fa fa-phone'></i>
+                                                <span class='ml-1'>$telefone</span>
+                                            </p>        
+                                            <p>
+                                                <i class='fa fa-map-marker'></i>
+                                                <span class='ml-1'>$cidade</span>
+                                            </p>            
+                                        </div>
+                                        <a href='barbearia.php?id=$idBarbearia' class='btn sb-btn-secondary sb-w-700 sb-full-width'>
+                                            Agendar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        ";
+                    }
+                }
+                else{
+                    echo "
+                        <a href='area_cliente.php' class='sb-txt-white'>
+                            <i class='fa fa-arrow-left'></i>
+                            <span class='ml-1'>Nenhum resultado encontrado</span>
+                        </a>
+                    ";
+                }
+            }
+        ?>
+    </div>
+</div>
