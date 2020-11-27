@@ -29,8 +29,8 @@
 
 
         <span class="navbar-text">
-      <a class="nav-link itemNav" href="#" style="font-size: 16pt;">
-      <i class="fas fa-sign-out-alt"></i>
+      <a class="nav-link itemNav" href="../logout.php" style="font-size: 16pt;">
+        <i class="fas fa-sign-out-alt"></i>
       </a>
     </span>
     </div>

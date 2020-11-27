@@ -1,5 +1,4 @@
 <?php 
-session_start();
 $barber_id = $_SESSION['barbearia_id'];
 // print_r($_SESSION);
 // echo "ID BARBEARIA ".$barber_id;

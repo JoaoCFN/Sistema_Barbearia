@@ -1,5 +1,10 @@
 <?php
-$base_url = "../barbeiro/"
+$base_url = "../barbeiro/";
+session_start();
+if(empty($_SESSION)) {
+	header('Location: ../index.php');
+	exit();
+}
 ?>
 
 <!DOCTYPE html>
