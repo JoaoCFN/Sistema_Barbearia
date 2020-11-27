@@ -3,15 +3,6 @@
     .col-lg-4 {
         flex: auto !important;
     }
-    /*.graph {
-        height: 400px !important;
-    }*/
-    /*.graph {
-        height: 500px !important;
-    }*/
-    /* .graph>canvas {
-        height: 200 !important;
-    }*/
 }
 
 .wrapper {
