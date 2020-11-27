@@ -45,22 +45,34 @@
                 include "conteudo/barbearia/msg/erro.php";
             }
             else{
-                $queryAgendamento = "CALL PROC_INS_AGENDAMENTO('{$idUsuario}', '{$idBarbearia}', '{$data_agendamento}', '{$horario_agendamento}', '{$valorTotal}')";
-                $resultAgendamento = $mysqli->query($queryAgendamento);
-                
-                $queryBuscarIdAgendamento = "select id_agendamento from agendamento where data_agendamento = '{$data_agendamento}' and horario_agendamento = '{$horario_agendamento}' and status = 'P'";
-                $resultIdAgendamento = $mysqli->query($queryBuscarIdAgendamento);
-                $rowAgendamento = $resultIdAgendamento->fetch_assoc();
-                $idAgendamento = $rowAgendamento["id_agendamento"];
+                $queryQtdAgendamentos = "select count(*) as 'quantidade' from agendamento where usuario = '{$idUsuario}' and status = 'P' and barbearia = '{$idBarbearia}'";
+                $resultQtdAgendamentos = $mysqli->query($queryQtdAgendamentos);
+                $rowQtdAgendamentos = $resultQtdAgendamentos->fetch_assoc();
+                $QtdAgendamentos = $rowQtdAgendamentos["quantidade"];
 
-                foreach ($servicos as $value){
-                    $queryAgendamentoServico = "CALL PROC_INS_AGENDAMENTO_SERVICO('{$idAgendamento}', '{$value}')";
-                    $resultAgendamentoServico = $mysqli->query($queryAgendamentoServico);    
+                // Número de agendamento excedidos
+                if($rowQtdAgendamentos > 0){
+                    include "conteudo/barbearia/msg/erro_qtd_agendamentos.php";
                 }
+                else{
+                    // FAZ O AGENDAMENTO
+                    $queryAgendamento = "CALL PROC_INS_AGENDAMENTO('{$idUsuario}', '{$idBarbearia}', '{$data_agendamento}', '{$horario_agendamento}', '{$valorTotal}')";
+                    $resultAgendamento = $mysqli->query($queryAgendamento);
+                    
+                    $queryBuscarIdAgendamento = "select id_agendamento from agendamento where data_agendamento = '{$data_agendamento}' and horario_agendamento = '{$horario_agendamento}' and status = 'P'";
+                    $resultIdAgendamento = $mysqli->query($queryBuscarIdAgendamento);
+                    $rowAgendamento = $resultIdAgendamento->fetch_assoc();
+                    $idAgendamento = $rowAgendamento["id_agendamento"];
 
-                // Serviço marcado
-                if($mysqli->affected_rows > 0){
-                    include "conteudo/barbearia/msg/sucesso.php";
+                    foreach ($servicos as $value){
+                        $queryAgendamentoServico = "CALL PROC_INS_AGENDAMENTO_SERVICO('{$idAgendamento}', '{$value}')";
+                        $resultAgendamentoServico = $mysqli->query($queryAgendamentoServico);    
+                    }
+
+                    // Serviço marcado
+                    if($mysqli->affected_rows > 0){
+                        include "conteudo/barbearia/msg/sucesso.php";
+                    }
                 }
             }
         }
