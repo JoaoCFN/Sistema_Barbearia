@@ -89,7 +89,7 @@ var chart = new Chart(ctx2, {
         lineRadius: 10,
         borderWidth: 10,
         datasets: [{
-            label: 'Quantida de chamados no dia',
+            label: 'Lucro mensal do dia:',
             labelColor: '#fff',
             backgroundColor: '#52BE48',
             borderColor: '#fff',
@@ -103,7 +103,7 @@ var chart = new Chart(ctx2, {
             borderWidth: 5,
             lineWidth: 5,
             pointRadius: 5,
-            label: 'Serviços diarios',
+            label: 'Lucro mensal',
         }]
     },
     options: {

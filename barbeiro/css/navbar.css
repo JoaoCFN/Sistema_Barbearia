@@ -49,11 +49,11 @@
     transform-origin: left;
 }
 
-.active>a {
+.active>.itemNav {
     color: #FABD07 !important;
 }
 
-.active>a::before {
+.active>.itemNav::before {
     content: '';
     display: inline-block;
     /* par défaut, pseudo elems sont inline, donc width et height n'ont pas d'effet */

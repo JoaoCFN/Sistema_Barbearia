@@ -43,6 +43,7 @@ $app->get(
 
     <body class="dashboard">
         <?php
+        require_once "../barbeiro/config/config.php";
         require_once "../barbeiro/conteudo/navbar.php";
         require_once "../barbeiro/conteudo/dashboard.php";
         require_once "../barbeiro/conteudo/footer.php";

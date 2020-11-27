@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 ml-5 mr-5  mb-5 ">
+        <div class="col-md-6  mb-5 ">
             <div class="profile-header">
                 <h2>
                     <i class="fas fa-home"></i>DADOS GERAIS
@@ -102,7 +102,7 @@
             </div>
 
         </div>
-        <div class="col-md-5 ml-5">
+        <div class="col-md-6 mb-5">
             <div class="pr-0 mr-0">
                 <div class="profile-header">
                     <h2>

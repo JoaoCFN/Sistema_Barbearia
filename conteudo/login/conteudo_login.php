@@ -30,11 +30,8 @@ if(isset($_POST['entrar'])){
             $dadosUsuario = mysqli_fetch_assoc($result);
             $row = mysqli_num_rows($result);
             if($row == 1){
-                $id = $dadosUsuario['barbearia_id'];
-                echo "<script>
-                window.location.href = '//localhost:4200';
-                </script>";
-                echo ('Pega o ID: '.$id);
+                $_SESSION = $dadosUsuario;
+                header("Location: ./barbeiro");
                 exit();
             }else{
                 require_once "conteudo/login/alert_senha.php";

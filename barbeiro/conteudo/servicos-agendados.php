@@ -1,32 +1,32 @@
-<div class="mr-5 ml-5 pt-5 pb-5">
+<div class="container-fluid pt-5 pb-5">
     <div class="profile-header">
         <h2>
             <fa-icon [icon]="faClock"></fa-icon> Serviços Agendados
         </h2>
     </div>
-    <div class="profile pt-5">
-
-
-        <table class="table " style="text-align: center;">
+    <div class="profile-a pt-5" style="display: block; overflow: auto;">
+        <table id="tabela_servicos_agendados" class="display">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>id</th>
                     <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Serviço</th>
+                    <th>Valor</th>
+                    <th>Tempo</th>
+                    <th>Status</th>
+                    <th>#</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let item of cliente">
+            <tbody>
                 <tr>
-                    <td>{{item.id}}</td>
-                    <td>{{item.nome}}</td>
-                    <td>{{item.idade}}</td>
-                    <td>{{item.servico.nome}}</td>
+                    <td>1</td>
+                    <td>Rafael</td>
+                    <td>25 R$</td>
+                    <td>30 mim</td>
+                    <td>Em aberto</td>
+                    <td>Ações</td>
                 </tr>
+               
             </tbody>
         </table>
-
-
-
     </div>
 </div>

@@ -1,3 +1,13 @@
+<?php 
+session_start();
+$barber_id = $_SESSION['barbearia_id'];
+print_r($_SESSION);
+echo "ID BARBEARIA ".$barber_id;
+$selectServicosDia = "SELECT * FROM agendamento where barbearia = $barber_id";
+$query = $mysqli -> query ($selectServicosDia);
+$row = mysqli_fetch_assoc($query); 
+print_r ($row);
+?>
 <div class="home-main">
     <div class=" container-fluid">
         <div class="row  pt-5 align-items-start">
@@ -97,7 +107,7 @@
             </div>
             <div class="graph-body col-12">
                 <p class="pt-2 ">
-                    <span><i class="fas fa-money-bill-wave"></i> Serviços diarios</span>
+                    <span><i class="fas fa-money-bill-wave"></i> Lucro mensal</span>
                 </p>
                 <hr class="hr-dif">
                 <p class="mt-1 mb-1">
