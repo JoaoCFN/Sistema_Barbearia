@@ -71,13 +71,13 @@
             </div>
         </div>
 
-        <div class="mt-5 mb-5 pb-5 container-fluid row">
-            <div class="graph col-12">
-                <canvas width="700px" height="100px" id="chartServicos">
+        <div class="mt-5 mb-5 pb-5 container-fluid">
+            <div class="graph">
+                <canvas width="1000px" height="300px" id="chartServicos">
                 </canvas>
             </div>
             <div class="graph-body col-12">
-                <p class="pt-2 mt-2">
+                <p class="pt-2">
                     <span><i class="fas fa-money-bill-wave"></i> Serviços diarios</span>
                 </p>
                 <hr class="hr-dif">
@@ -87,13 +87,16 @@
             </div>
         </div>
 
-        <div class="mt-5 pb-5 container-fluid row">
-            <div class="graph col-12">
-                <canvas width="700px" height="100px" id="chartLucros">
+
+        
+        <div class="mt-5 pb-5 container-fluid">
+            
+            <div class="graph">
+                <canvas width="1000px" height="300px"  id="chartLucros">
                 </canvas>
             </div>
             <div class="graph-body col-12">
-                <p class="pt-2 mt-2">
+                <p class="pt-2 ">
                     <span><i class="fas fa-money-bill-wave"></i> Serviços diarios</span>
                 </p>
                 <hr class="hr-dif">

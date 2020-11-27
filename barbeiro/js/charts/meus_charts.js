@@ -2,7 +2,9 @@ var ctx = document.getElementById('chartServicos').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
+    //responsive: 'true',
     // The data for our dataset
+
     data: {
         labels: ['08h', '09h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h', ],
         pointHoverRadius: 10,
@@ -26,8 +28,11 @@ var chart = new Chart(ctx, {
             label: 'Serviços diarios',
         }]
     },
-    options: {
 
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
         layout: {
             padding: {
                 left: 15,
@@ -102,7 +107,8 @@ var chart = new Chart(ctx2, {
         }]
     },
     options: {
-
+        responsive: true,
+        maintainAspectRatio: false,
         layout: {
             padding: {
                 left: 15,
