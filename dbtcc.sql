@@ -47,7 +47,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'P','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'P','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'P','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'P','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'P','2020-11-27 02:12:40');
+INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'F','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'F','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'F','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'P','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'P','2020-11-27 02:12:40');
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -307,6 +307,42 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_PESQUISAR_BARBEARIAS` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_PESQUISAR_BARBEARIAS`(
+	in nome varchar(45),
+    in cidade varchar(45),
+    in horario time
+)
+BEGIN
+	SELECT 
+		barbearia_id,
+		nome_barbearia,
+		horario_abertura,
+		horario_fechamento,
+		horario_abertura_final_semana,
+		horario_fechamento_final_semana,
+		telefone,
+		cidade
+	FROM barbearia
+	WHERE nome_barbearia LIKE concat('%', nome, '%') AND 
+		  cidade  LIKE concat('%', cidade, '%') AND
+		  horario >= horario_abertura AND horario <= horario_fechamento
+	LIMIT 16;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `PROC_SEL_BARBEARIA` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -509,4 +545,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-26 23:36:12
+-- Dump completed on 2020-11-27 19:57:41
