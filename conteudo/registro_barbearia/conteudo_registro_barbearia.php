@@ -8,7 +8,7 @@
                             Registre sua barbearia 
                         </h4>
 
-                        <form class="pt-3" id="form_registro" method="POST" action="conexao.php">
+                        <form class="pt-3" id="form_registro" method="POST" action="">
                             <h6 class="sb-txt-white sb-text-sm pb-2">
                                  Pessoal
                             </h6>
@@ -257,3 +257,17 @@
         </div>
     </div>
 </section>
+<?php
+    require_once "./classes/UsuBarbearia.php";
+    $usuarioBar = new UsuBarbearia();
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $usuarioBar->registrarUsuBarbearia($_POST);
+        $_SESSION['sucess'] = 'Sucesso!!';
+        //echo $_SESSION['sucess'];
+        echo "<script>window.location.replace('./login.php')</script>";
+        
+        
+    }else{
+        
+    }
+?>
