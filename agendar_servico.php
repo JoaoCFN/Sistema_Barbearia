@@ -52,8 +52,6 @@
 
                 // Número de agendamento excedidos
                 if($QtdAgendamentos > 0){
-                    echo $idUsuario;
-                    echo $QtdAgendamentos;
                     include "conteudo/barbearia/msg/erro_qtd_agendamentos.php";
                 }
                 else{
