@@ -38,7 +38,7 @@ CREATE TABLE `agendamento` (
   KEY `fk_barbearia_id` (`barbearia`),
   CONSTRAINT `fk_barbearia_id` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`usuario`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'F','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'F','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'F','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'P','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'P','2020-11-27 02:12:40');
+INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'F','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'F','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'F','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'P','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'P','2020-11-27 02:12:40'),(16,4,8,'2020-12-07','13:00:00',18,'P','2020-12-04 15:16:25');
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `agendamento_servico` (
 
 LOCK TABLES `agendamento_servico` WRITE;
 /*!40000 ALTER TABLE `agendamento_servico` DISABLE KEYS */;
-INSERT INTO `agendamento_servico` VALUES (12,1),(13,1),(13,2),(14,2),(15,2);
+INSERT INTO `agendamento_servico` VALUES (12,1),(13,1),(13,2),(14,2),(15,2),(16,1);
 /*!40000 ALTER TABLE `agendamento_servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,6 +104,7 @@ CREATE TABLE `barbearia` (
   `horario_fechamento` time DEFAULT NULL,
   `horario_abertura_final_semana` time DEFAULT NULL,
   `horario_fechamento_final_semana` time DEFAULT NULL,
+  `imagem_barbearia` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`barbearia_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -114,7 +115,7 @@ CREATE TABLE `barbearia` (
 
 LOCK TABLES `barbearia` WRITE;
 /*!40000 ALTER TABLE `barbearia` DISABLE KEYS */;
-INSERT INTO `barbearia` VALUES (8,'Almeida','111.111.111-11','barbearia_almeida@hotmail.com','b400de1f64beb532d80982347ebb5989','Barbearia Almeida','(75) 98116-6233','44032-568','11.111.111/1111-11','Rua Professora Bertholina Carneiro','353 ','Campo Limpo','Feira de Santana','BA','08:00:00','19:00:00','08:00:00','19:00:00'),(9,'Marcão','222.222.222-22','barbearia_marcao@hotmail.com','131adea421048c8644ed90e41b2fee77','Barbearia Sr. Marcão','(75) 99283-7999','44033-103','22.222.222/2222-22','Rua Desembarque','298','Campo Limpo','Feira de Santana','BA','08:00:00','18:00:00','08:00:00','18:00:00'),(10,'Guto ','333.333.333-33','guto_barbearia@gmail.com','25798ef6bed8c2875edf7121b9fcd18a','Guto Barbearia','(75) 99164-6434','44021-225','33.333.333/3333-33','Rua Arivaldo de Carvalho','54','Sobradinho','Feira de Santana','BA','09:00:00','19:00:00','09:00:00','19:00:00'),(11,'Siqueira','444.444.444-44','siqueira@gmail.com','45d0b1d56f056433c894563d4e20c89f','Barbearia Siqueira','(75) 98143-1976','44050-024','44.444.444/4444-44','Rua Intendente Abdon','7654','Queimadinha','Feira de Santana','BA','09:00:00','18:00:00','09:00:00','18:00:00'),(12,'Matheus','555.555.555-55','matheus_cortes@gmail.com','e56b6eea9b0bc782bbb9ea6098ead641','Matheus Cortes','(75) 98143-7191','44028-279','55.555.555/5555-55','Rua Olhos Verdes','149 ','Gabriela','Feira de Santana','BA','08:00:00','19:20:00','08:00:00','19:30:00'),(13,'Figueredo','666.666.666-66','figueredo@hotmail.com','2fdc2b916cbaac14a0339f076a71111d','Barbearia Figueredo','(75) 98347-1670','44053-654','66.666.666/6666-66','Rua Gérson','11 ','Cidade Nova','Feira de Santana','BA',NULL,NULL,NULL,NULL),(14,'Primos','777.777.777-77','primos_barbershop@hotmail.com','8b4521bba5f609ca1b20530190f91c52','Primos Barber Shop','(75) 98245-8944','44021-225','77.777.777/7777-77','Rua Arivaldo de Carvalho','1299 ','Sobradinho','Feira de Santana','BA',NULL,NULL,NULL,NULL),(15,'Dielson','888.888.888-88','dielson@gmail.com','25f9e794323b453885f5181f1b624d0b','Dielson barbearia','(75) 99277-6848','44024-336','88.888.888/8888-88','Rua Paulo Afonso','74','Jardim Cruzeiro','Feira de Santana','BA',NULL,NULL,NULL,NULL),(16,'Allan','999.999.999-99','allan@hotmail.com','d41222a59835f1805e182164ddf470e1','Barbearia Allabarber','(75) 98120-4535','44059-720','99.999.999/9999-99','Rua Papagaio','80','Papagaio','Feira de Santana','BA',NULL,NULL,NULL,NULL);
+INSERT INTO `barbearia` VALUES (8,'Almeida','111.111.111-11','barbearia_almeida@hotmail.com','b400de1f64beb532d80982347ebb5989','Barbearia Almeida','(75) 98116-6233','44032-568','11.111.111/1111-11','Rua Professora Bertholina Carneiro','353 ','Campo Limpo','Feira de Santana','BA','08:00:00','19:00:00','08:00:00','19:00:00','https://i.ibb.co/FsLkzFB/almeida.png'),(9,'Marcão','222.222.222-22','barbearia_marcao@hotmail.com','131adea421048c8644ed90e41b2fee77','Barbearia Sr. Marcão','(75) 99283-7999','44033-103','22.222.222/2222-22','Rua Desembarque','298','Campo Limpo','Feira de Santana','BA','08:00:00','18:00:00','08:00:00','18:00:00','https://i.ibb.co/6HYjDmG/ddddd.png'),(10,'Guto ','333.333.333-33','guto_barbearia@gmail.com','25798ef6bed8c2875edf7121b9fcd18a','Guto Barbearia','(75) 99164-6434','44021-225','33.333.333/3333-33','Rua Arivaldo de Carvalho','54','Sobradinho','Feira de Santana','BA','09:00:00','19:00:00','09:00:00','19:00:00','https://i.ibb.co/GCwLwCw/guto.png'),(11,'Siqueira','444.444.444-44','siqueira@gmail.com','45d0b1d56f056433c894563d4e20c89f','Barbearia Siqueira','(75) 98143-1976','44050-024','44.444.444/4444-44','Rua Intendente Abdon','7654','Queimadinha','Feira de Santana','BA','09:00:00','18:00:00','09:00:00','18:00:00','https://i.ibb.co/12vLvNq/siqueira.png'),(12,'Matheus','555.555.555-55','matheus_cortes@gmail.com','e56b6eea9b0bc782bbb9ea6098ead641','Matheus Cortes','(75) 98143-7191','44028-279','55.555.555/5555-55','Rua Olhos Verdes','149 ','Gabriela','Feira de Santana','BA','08:00:00','19:20:00','08:00:00','19:30:00','https://i.ibb.co/GcPND7P/matheus-cortes.png'),(13,'Figueredo','666.666.666-66','figueredo@hotmail.com','2fdc2b916cbaac14a0339f076a71111d','Barbearia Figueredo','(75) 98347-1670','44053-654','66.666.666/6666-66','Rua Gérson','11 ','Cidade Nova','Feira de Santana','BA',NULL,NULL,NULL,NULL,NULL),(14,'Primos','777.777.777-77','primos_barbershop@hotmail.com','8b4521bba5f609ca1b20530190f91c52','Primos Barber Shop','(75) 98245-8944','44021-225','77.777.777/7777-77','Rua Arivaldo de Carvalho','1299 ','Sobradinho','Feira de Santana','BA',NULL,NULL,NULL,NULL,NULL),(15,'Dielson','888.888.888-88','dielson@gmail.com','25f9e794323b453885f5181f1b624d0b','Dielson barbearia','(75) 99277-6848','44024-336','88.888.888/8888-88','Rua Paulo Afonso','74','Jardim Cruzeiro','Feira de Santana','BA',NULL,NULL,NULL,NULL,NULL),(16,'Allan','999.999.999-99','allan@hotmail.com','d41222a59835f1805e182164ddf470e1','Barbearia Allabarber','(75) 98120-4535','44059-720','99.999.999/9999-99','Rua Papagaio','80','Papagaio','Feira de Santana','BA',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `barbearia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,7 +163,7 @@ CREATE TABLE `user` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(45) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +172,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'joao','(78) 97897-9878','2000-03-29','324.423.432-43','ewqewqe@asdasd.com','123456789'),(2,'teste','(42) 34234-3243','1999-03-31','343.434.343-43','asdasdsad@ajsdk.com','315eb115d98fcbad39ffc5edebd669c9'),(3,'Admin','(77) 88888-8888','2001-02-28','999.999.999-99','teste@teste.com','17003122b89ccb2a3d7d4970de0d91ae');
+INSERT INTO `user` VALUES (1,'joao','(78) 97897-9878','2000-03-29','324.423.432-43','ewqewqe@asdasd.com','123456789'),(2,'teste','(42) 34234-3243','1999-03-31','343.434.343-43','asdasdsad@ajsdk.com','315eb115d98fcbad39ffc5edebd669c9'),(3,'Admin','(77) 88888-8888','2001-02-28','999.999.999-99','teste@teste.com','17003122b89ccb2a3d7d4970de0d91ae'),(4,'Testador','(75) 98887-7747','2000-07-04','565.656.565-65','testador@gmail.com','25f9e794323b453885f5181f1b624d0b');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -331,7 +332,8 @@ BEGIN
 		horario_abertura_final_semana,
 		horario_fechamento_final_semana,
 		telefone,
-		cidade
+		cidade,
+        imagem_barbearia
 	FROM barbearia
 	WHERE nome_barbearia LIKE concat('%', nome, '%') AND 
 		  cidade  LIKE concat('%', cidade, '%') AND
@@ -397,7 +399,8 @@ BEGIN
         horario_abertura_final_semana,
         horario_fechamento_final_semana,
 		telefone,
-		cidade
+		cidade,
+        imagem_barbearia
 	FROM barbearia
     LIMIT 16;
 END ;;
@@ -545,4 +548,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-27 19:57:41
+-- Dump completed on 2020-12-05 14:30:20

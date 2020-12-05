@@ -7,6 +7,10 @@
     font-size: 22px;
 }
 
+.area-cliente-card .card-img-top{
+    min-height: 176px;
+}
+
 .area-cliente-card{
     width: 100%;
     height: auto;

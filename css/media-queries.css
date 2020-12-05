@@ -29,6 +29,10 @@
         margin-top: 1rem;
         justify-content: center;
     }
+
+    .area-cliente-card .card-img-top{
+        min-height: 100%;
+    }
     
 }
 
@@ -77,6 +81,10 @@
 
     .barbearia .informacoes{
         text-align: center;
+    }
+
+    .area-cliente-card .card-img-top{
+        min-height: 100%;
     }
 
 }

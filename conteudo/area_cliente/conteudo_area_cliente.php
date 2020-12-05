@@ -20,14 +20,22 @@
                     $horarioAbertura = $statusFuncionamento[2];
                     $horarioFechamento = $statusFuncionamento[3];
                     $telefone = $rowBarbearias[6];
-                    $cidade = $rowBarbearias[7];                 
+                    $cidade = $rowBarbearias[7];  
+                    $imagem = $rowBarbearias[8];
+                    $imagemBarbearia = "";
+                    if(strlen($imagem) > 0){
+                        $imagemBarbearia = $imagem;
+                    }
+                    else{
+                        $imagemBarbearia = "assets/images/cliente-sem-ft.png";
+                    }
 
                     echo "
                         <div class='col-md-3 col-sm-12 mb-4'>
                             <div class='card area-cliente-card'>
                                 <img 
                                     class='card-img-top' 
-                                    src='https://i.ibb.co/6cSfrM6/cliente-sem-ft.png' 
+                                    src='{$imagemBarbearia}' 
                                     alt='Imagem de capa do card'
                                 />
                                 <div class='$statusFuncionamento[0] sb-txt-black sb-w-700'>
@@ -226,6 +234,14 @@
                         $horarioFechamentoFinalSemana = $rowPesquisa["horario_fechamento_final_semana"];
                         $telefone = $rowPesquisa["telefone"];
                         $cidade = $rowPesquisa["cidade"];
+                        $imagem = $rowPesquisa["imagem_barbearia"];
+                        $imagemBarbearia = "";
+                        if(strlen($imagem) > 0){
+                            $imagemBarbearia = $imagem;
+                        }
+                        else{
+                            $imagemBarbearia = "assets/images/cliente-sem-ft.png";
+                        }
     
                         $statusFuncionamento = getStatus($horarioAbertura, $horarioFechamento, $horarioAberturaFinalSemana, $horarioFechamentoFinalSemana);
     
@@ -234,7 +250,7 @@
                                 <div class='card area-cliente-card'>
                                     <img 
                                         class='card-img-top' 
-                                        src='https://i.ibb.co/6cSfrM6/cliente-sem-ft.png' 
+                                        src='{$imagemBarbearia}' 
                                         alt='Imagem de capa do card'
                                     />
                                     <div class='$statusFuncionamento[0] sb-txt-black sb-w-700'>
