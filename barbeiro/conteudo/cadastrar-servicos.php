@@ -1,42 +1,45 @@
 <div class="row pt-5" style="margin-right: 0px;margin-left: 0px;">
     <!-- Serviços cadastrados -->
-    <div class="col-md-6 mt-5">
-        <!-- <div class="profile-header">
+    <div class="col-md-6 mt-4 mb-5">
+        <div class="profile-header">
             <h4 class="ml-3 pt-1"> 
             <i class="fas fa-cut"></i> Serviços Cadastrados
             </h4>
         </div>
-        <div class="profile-a ">
-            <form class="example-form">
-                <div class="profile-a pt-5" style="display: block; overflow: auto;">
-                    <table id="tabela_servicos_agendados" class="display">
-                        <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>Nome</th>
-                                <th>Valor</th>
-                                <th>Tempo</th>
-                                <th>#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Rafael</td>
-                                <td>25 R$</td>
-                                <td>30 mim</td>
-                                <td>Ações</td>
-                            </tr>
+        <div class="profile-a">
+            <div class="table-responsive-sm">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Preço (R$)</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <?php 
+                            include "../config/config.php";
 
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-        </div> -->
+                            $servicos = $mysqli->query("CALL PROC_SEL_SERVICOS('{$_SESSION["barbearia_id"]}')");
+                            while($rowServico =  $servicos->fetch_assoc()){
+                                echo "
+                                    <tr>
+                                        <th scope='row'>{$rowServico["id_servico"]}</th>
+                                        <td>{$rowServico["nome"]}</td>
+                                        <td>{$rowServico["preco"]}</td>
+                                    </tr>
+                                ";
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>    
+        </div>
     </div>
 
     <!-- Cadastrar Serviço -->
-    <div class="col-md-6 mt-5">
+    <div class="col-md-6 mt-4 mb-5">
         <div class="profile-header">
             <h5 class="ml-3 pt-1">
             <i class="fas fa-plus"></i> Cadastrar Serviço
