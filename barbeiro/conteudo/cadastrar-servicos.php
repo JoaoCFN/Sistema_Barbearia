@@ -14,6 +14,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Preço (R$)</th>
+                            <th scope="col">Excluir</th>
                         </tr>
                     </thead>
                     
@@ -28,6 +29,14 @@
                                         <th scope='row'>{$rowServico["id_servico"]}</th>
                                         <td>{$rowServico["nome"]}</td>
                                         <td>{$rowServico["preco"]}</td>
+                                        <td>
+                                            <a 
+                                                href='conteudo/servico/deletar-servico.php?id={$rowServico["id_servico"]}' 
+                                                class='btn btn-danger deletar-servico'
+                                            >
+                                                <i class='fa fa-trash'></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 ";
                             }
@@ -46,7 +55,7 @@
             </h5>
         </div>
         <div class="profile-a ">
-            <form class="example-form" method="POST" action="conteudo/inserir-servico/inserir-servico.php" style="text-align: left;">
+            <form class="example-form" method="POST" action="conteudo/servico/inserir-servico.php" style="text-align: left;">
                 <div class="row">
                     <div class="col-md-6">
                         <label>
@@ -82,3 +91,5 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="js/servico/servico.js"></script>
