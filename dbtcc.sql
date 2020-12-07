@@ -38,7 +38,7 @@ CREATE TABLE `agendamento` (
   KEY `fk_barbearia_id` (`barbearia`),
   CONSTRAINT `fk_barbearia_id` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`usuario`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'F','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'F','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'F','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'P','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'P','2020-11-27 02:12:40'),(16,4,8,'2020-12-07','13:00:00',18,'P','2020-12-04 15:16:25');
+INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'F','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'F','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'F','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'P','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'P','2020-11-27 02:12:40'),(16,4,8,'2020-12-07','13:00:00',18,'P','2020-12-04 15:16:25'),(19,5,8,'2020-12-07','17:30:00',25,'P','2020-12-07 18:21:22');
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `agendamento_servico` (
 
 LOCK TABLES `agendamento_servico` WRITE;
 /*!40000 ALTER TABLE `agendamento_servico` DISABLE KEYS */;
-INSERT INTO `agendamento_servico` VALUES (12,1),(13,1),(13,2),(14,2),(15,2),(16,1);
+INSERT INTO `agendamento_servico` VALUES (12,1),(13,1),(13,2),(14,2),(15,2),(16,1),(19,15);
 /*!40000 ALTER TABLE `agendamento_servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `servico` (
   PRIMARY KEY (`id_servico`),
   KEY `fk_barbearia_servico` (`barbearia`),
   CONSTRAINT `fk_barbearia_servico` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +144,7 @@ CREATE TABLE `servico` (
 
 LOCK TABLES `servico` WRITE;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-INSERT INTO `servico` VALUES (1,'Corte de Cabelo',18,8),(2,'Corte de Barba',10,8),(14,'Sombracelha',9,8),(15,'Cabelo e Barba',25,8);
+INSERT INTO `servico` VALUES (1,'Corte de Cabelo',18,8),(2,'Corte de Barba',10,8),(15,'Cabelo e Barba',25,8);
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +164,7 @@ CREATE TABLE `user` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(45) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'joao','(78) 97897-9878','2000-03-29','324.423.432-43','ewqewqe@asdasd.com','123456789'),(2,'teste','(42) 34234-3243','1999-03-31','343.434.343-43','asdasdsad@ajsdk.com','315eb115d98fcbad39ffc5edebd669c9'),(3,'Admin','(77) 88888-8888','2001-02-28','999.999.999-99','teste@teste.com','17003122b89ccb2a3d7d4970de0d91ae'),(4,'Testador','(75) 98887-7747','2000-07-04','565.656.565-65','testador@gmail.com','25f9e794323b453885f5181f1b624d0b');
+INSERT INTO `user` VALUES (1,'joao','(78) 97897-9878','2000-03-29','324.423.432-43','ewqewqe@asdasd.com','123456789'),(2,'teste','(42) 34234-3243','1999-03-31','343.434.343-43','asdasdsad@ajsdk.com','315eb115d98fcbad39ffc5edebd669c9'),(3,'Admin','(77) 88888-8888','2001-02-28','999.999.999-99','teste@teste.com','17003122b89ccb2a3d7d4970de0d91ae'),(4,'Testador','(75) 98887-7747','2000-07-04','565.656.565-65','testador@gmail.com','25f9e794323b453885f5181f1b624d0b'),(5,'Mateus','(23) 21353-4534','1999-12-10','325.454.365-46','mateus@gmail.com','25f9e794323b453885f5181f1b624d0b');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -326,6 +326,32 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_INS_SERVICO`(
 BEGIN
 	INSERT INTO servico (nome, preco, barbearia)
 	VALUES (nome_servico, preco_servico, id_barbearia);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_LUCRO_TOTAL_DIA` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_LUCRO_TOTAL_DIA`(
+	IN data_hoje DATE,
+	IN id_barbearia INT
+)
+BEGIN
+	select 
+		sum(valor_total) as "lucro_total"
+	from agendamento
+	where data_agendamento = data_hoje
+	and agendamento.barbearia = id_barbearia;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -534,6 +560,35 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_TOTAL_SERVICOS_DIA` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_TOTAL_SERVICOS_DIA`(
+	IN data_hoje DATE,
+	IN id_barbearia INT
+)
+BEGIN
+	select 
+		count(servico.nome) as "quantidade"
+	from agendamento_servico
+	inner join agendamento
+	on agendamento_servico.agendamento = agendamento.id_agendamento
+	inner join servico
+	on agendamento_servico.servico = servico.id_servico
+	where data_agendamento = data_hoje and agendamento.barbearia = id_barbearia;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `PROC_UP_USER` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -572,4 +627,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-07 14:58:46
+-- Dump completed on 2020-12-07 18:31:23

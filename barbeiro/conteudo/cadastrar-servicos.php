@@ -44,7 +44,7 @@
                             }
                             else{
                                 echo "
-                                    <h5 class='sb-txt-primary sb-w-500'>
+                                    <h5 class='sb-txt-primary sb-w-500 mb-3'>
                                         Não há serviços cadastrados
                                     </h5>
                                 ";
@@ -59,9 +59,9 @@
     <!-- Cadastrar Serviço -->
     <div class="col-md-6 mt-4 mb-5">
         <div class="profile-header">
-            <h5 class="ml-3 pt-1">
+            <h4 class="ml-3 pt-1">
             <i class="fas fa-plus"></i> Cadastrar Serviço
-            </h5>
+            </h4>
         </div>
         <div class="profile-a ">
             <form class="example-form" method="POST" action="conteudo/servico/inserir-servico.php" style="text-align: left;">

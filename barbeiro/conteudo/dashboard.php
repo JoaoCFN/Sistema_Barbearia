@@ -1,12 +1,10 @@
 <?php 
-$barber_id = $_SESSION['barbearia_id'];
-// print_r($_SESSION);
-// echo "ID BARBEARIA ".$barber_id;
-$selectServicosDia = "SELECT * FROM agendamento where barbearia = $barber_id";
-$query = $mysqli -> query ($selectServicosDia);
-$row = mysqli_fetch_assoc($query); 
-// print_r ($row);
+    include "../config/config.php";
+    date_default_timezone_set('America/Sao_Paulo');
+    $idBarbearia = $_SESSION["barbearia_id"];
+    $diaSemana = date("Y-m-d");
 ?>
+
 <div class="home-main">
     <div class=" container-fluid">
         <div class="row pt-5 align-items-start">
@@ -20,7 +18,12 @@ $row = mysqli_fetch_assoc($query);
                                 Total de serviços
                             </p>
                             <p class="card-data">
-                                21
+                                <?php  
+                                    $resultTotServicos = $mysqli->query("CALL PROC_TOTAL_SERVICOS_DIA('{$diaSemana}', '{$idBarbearia}')");
+                                    $rowTotServicos = $resultTotServicos->fetch_assoc();
+                                    echo $rowTotServicos["quantidade"];
+                                    $mysqli->next_result();
+                                ?>
                             </p>
                         </div>
                         <hr class="hr-card">
@@ -43,7 +46,18 @@ $row = mysqli_fetch_assoc($query);
                             Lucro total
                         </p>
                         <p class="card-data">
-                            R$ 812
+                            <?php     
+                                $resultLucroDiario = $mysqli->query("CALL PROC_LUCRO_TOTAL_DIA('{$diaSemana}', '{$idBarbearia}')");
+                                
+                                if($mysqli->affected_rows > 0){
+                                    $rowLucroDiario = $resultLucroDiario->fetch_assoc();
+                                    echo "R$ {$rowLucroDiario["lucro_total"]}";
+                                }
+                                else{
+                                    echo "R$ 0,00";
+                                }
+                                $mysqli->next_result();
+                            ?>
                         </p>
                     </div>
                     <hr class="hr-card">
@@ -67,7 +81,17 @@ $row = mysqli_fetch_assoc($query);
                             Serviço
                         </p>
                         <p class="card-data">
-                            Barba e Cabelo
+                            <?php     
+                                $resultLucroDiario = $mysqli->query("CALL PROC_SERVICO_MAIS_REQUISITADO('{$diaSemana}', '{$idBarbearia}')");
+                                if($mysqli->affected_rows > 0){
+                                    $rowLucroDiario = $resultLucroDiario->fetch_assoc();
+                                    echo $rowLucroDiario["nome"];
+                                }
+                                else{
+                                    echo "Sem dados";
+                                }
+                                $mysqli->next_result();
+                            ?>
                         </p>
                     </div>
                     <hr class="hr-card">
@@ -88,13 +112,13 @@ $row = mysqli_fetch_assoc($query);
                 </canvas>
             </div>
             <div class="graph-body col-12">
-                <p class="pt-2">
+                <p class="pt-2 pb-2">
                     <span><i class="fas fa-money-bill-wave"></i> Serviços diarios</span>
                 </p>
-                <hr class="hr-dif">
+                <!-- <hr class="hr-dif">
                 <p class="mt-1 mb-1">
                     <i class="fas fa-clock"></i> Atualizado a x minutos atras
-                </p>
+                </p> -->
             </div>
         </div>
 
@@ -107,13 +131,13 @@ $row = mysqli_fetch_assoc($query);
                 </canvas>
             </div>
             <div class="graph-body col-12">
-                <p class="pt-2 ">
+                <p class="pt-2 pb-2">
                     <span><i class="fas fa-money-bill-wave"></i> Lucro mensal</span>
                 </p>
-                <hr class="hr-dif">
+                <!-- <hr class="hr-dif">
                 <p class="mt-1 mb-1">
                     <i class="fas fa-clock"></i> Atualizado a x minutos atras
-                </p>
+                </p> -->
             </div>
         </div>
 
