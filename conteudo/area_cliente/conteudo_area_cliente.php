@@ -153,23 +153,17 @@
                                         <option>19:00</option>
                                         <option>19:30</option>
                                         <option>20:00</option>
+                                        <option>20:30</option>
+                                        <option>21:00</option>
+                                        <option>21:30</option>
+                                        <option>22:00</option>
+                                        <option>22:30</option>
+                                        <option>23:00</option>
+                                        <option>23:30</option>
+                                        <option>24:00</option>
                                     </select>
                                 </div>
                             </div>
-
-                            <!-- Status -->
-                            <!-- <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label sb-txt-white">
-                                    Status
-                                </label>
-                                <div class="col-sm-10">
-                                    <select class="form-control sb-form-input" value="Selecione o status">
-                                        <option>Selecione o status de funcionamento</option>
-                                        <option>Aberto</option>
-                                        <option>Fechado</option>
-                                    </select>
-                                </div>
-                            </div> -->
                         </form>
                     </div>
                     <div class="modal-footer">

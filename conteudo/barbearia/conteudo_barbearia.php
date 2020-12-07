@@ -212,6 +212,7 @@
                                     <label for='{$servicos["id_servico"]}'>
                                         <span>
                                             {$servicos["nome"]}
+                                            <br>
                                             <span>
                                                 R$ {$servicos["preco"]}
                                             </span>
