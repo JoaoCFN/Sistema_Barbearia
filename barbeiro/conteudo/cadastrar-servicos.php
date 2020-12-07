@@ -23,21 +23,30 @@
                             include "../config/config.php";
 
                             $servicos = $mysqli->query("CALL PROC_SEL_SERVICOS('{$_SESSION["barbearia_id"]}')");
-                            while($rowServico =  $servicos->fetch_assoc()){
+                            if($servicos->num_rows > 0){
+                                while($rowServico =  $servicos->fetch_assoc()){
+                                    echo "
+                                        <tr>
+                                            <th scope='row'>{$rowServico["id_servico"]}</th>
+                                            <td>{$rowServico["nome"]}</td>
+                                            <td>{$rowServico["preco"]}</td>
+                                            <td>
+                                                <a 
+                                                    href='conteudo/servico/deletar-servico.php?id={$rowServico["id_servico"]}' 
+                                                    class='btn btn-danger deletar-servico'
+                                                >
+                                                    <i class='fa fa-trash'></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    ";
+                                }
+                            }
+                            else{
                                 echo "
-                                    <tr>
-                                        <th scope='row'>{$rowServico["id_servico"]}</th>
-                                        <td>{$rowServico["nome"]}</td>
-                                        <td>{$rowServico["preco"]}</td>
-                                        <td>
-                                            <a 
-                                                href='conteudo/servico/deletar-servico.php?id={$rowServico["id_servico"]}' 
-                                                class='btn btn-danger deletar-servico'
-                                            >
-                                                <i class='fa fa-trash'></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <h5 class='sb-txt-primary sb-w-500'>
+                                        Não há serviços cadastrados
+                                    </h5>
                                 ";
                             }
                         ?>

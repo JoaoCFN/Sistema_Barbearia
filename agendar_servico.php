@@ -18,7 +18,7 @@
 
         foreach ($_POST as $key => $value){
             if (preg_match("/{$pesquisaServico}/", strval($key))){
-                $id = substr($key, -1);
+                $id = substr($key, 8);
                 array_push($servicos, $id);
             }
         }

@@ -20,38 +20,38 @@ $row = mysqli_fetch_assoc($query);
                                 Total de serviços
                             </p>
                             <p class="card-data">
-                                42
+                                21
                             </p>
                         </div>
                         <hr class="hr-card">
-                        <div class="col-md-12 cd-footer mb-3">
-                            <p>
+                        <div class="col-md-12 cd-footer mb-3 pb-2">
+                            <a href="servicos-agendados" class="text-dark mb-3">
                                 <i class="fas fa-eye"></i>
-                                Visualizar os serviços diarios.
-                            </p>
-                    </div>
+                                Visualizar os serviços agendadados
+                            </a>
+                        </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
                 <div class="bg-white">
                     <div class="col-12 headerIcon pt-3 pb-3">
-                        <span><i class="fas fa-money-bill-wave"></i> Lucro diario</span>
+                        <span><i class="fas fa-money-bill-wave"></i> Lucro diário</span>
                     </div>
                     <div class="col-12 text-right mt-2">
                         <p class="card-category">
                             Lucro total
                         </p>
                         <p class="card-data">
-                            1.456 R$
+                            R$ 812
                         </p>
                     </div>
                     <hr class="hr-card">
-                    <div class="col-md-12 cd-footer mb-3">
-                        <p>
+                    <div class="col-md-12 cd-footer mb-3 pb-2">
+                        <a href="servicos-agendados" class="text-dark mb-3">
                             <i class="fas fa-eye"></i>
-                            Visualizar os serviços diarios.
-                        </p>
+                            Visualizar os serviços agendadados
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,8 @@ $row = mysqli_fetch_assoc($query);
             <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
                 <div class="bg-white">
                     <div class="col-12 headerIcon pt-3 pb-3">
-                        <span><i class="fas fa-clock"></i> Serviço mais requisitado</span>
+                        <i class="fas fa-clock"></i>
+                        <span>Serviço mais requisitado do dia</span>
                     </div>
                     <div class="col-12 text-right mt-2">
                         <p class="card-category">
@@ -70,11 +71,11 @@ $row = mysqli_fetch_assoc($query);
                         </p>
                     </div>
                     <hr class="hr-card">
-                    <div class="col-md-12 cd-footer mb-3">
-                        <p>
+                    <div class="col-md-12 cd-footer mb-3 pb-2">
+                        <a href="servicos-agendados" class="text-dark mb-3">
                             <i class="fas fa-eye"></i>
-                            Visualizar os serviços diarios.
-                        </p>
+                            Visualizar os serviços agendadados
+                        </a>
                     </div>
                 </div>
             </div>
