@@ -1,9 +1,8 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "dbtcc");
-$select = ("SELECT * from agendamento WHERE barbearia='$_SESSION[barbearia_id]'");
-$query = $conn->query($select);
-$bar = mysqli_fetch_assoc($query);
-print_r($bar);
+$query = ("SELECT * from agendamento WHERE barbearia='$_SESSION[barbearia_id]'");
+$result = mysqli_query($conn, $query);
+print_r($result);
     
 ?>
 <div class="container-fluid pt-5 pb-5">
@@ -18,9 +17,6 @@ print_r($bar);
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>Data criação</th>
-                    <th>Data agendamento</th>
-                    <th>Horario agendamento</th>
                     <th>Nome</th>
                     <th>Valor</th>
                     <th>Tempo</th>
@@ -30,10 +26,7 @@ print_r($bar);
             </thead>
             </div>
             <tbody id="agend">
-                <?php 
-$dados = mysqli_fetch_all($query);
-
-                ?>
+                
                
             </tbody>
             
