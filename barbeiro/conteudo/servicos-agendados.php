@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "dbtcc");
-$select = ("SELECT * from agendamento WHERE barbearia='$_SESSION[barbearia_id]'");
+$select = ("CALL PROC_AGENDAMENTOS_BARBEARIA('{$_SESSION['barbearia_id']}')");
 $query = $conn->query($select);
 ?>
 <div class="container-fluid pt-5 pb-5">
@@ -9,16 +9,16 @@ $query = $conn->query($select);
             <fa-icon [icon]="faClock"></fa-icon> Serviços Agendados
         </h2>
     </div>
-    <div class="profile-a pt-5" style="display: block; overflow: auto;">
+    <div class="profile-a" style="display: block; overflow: auto;">
         <table style="text-align: center;" id="tabela_servicos_agendados" class="display">
             <div>
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>Data criação</th>
                         <th>Data agendamento</th>
                         <th>Horario agendamento</th>
-                        <th>Nome</th>
+                        <th>Serviços solicitados</th>
+                        <th>Nome do cliente</th>
                         <th>Valor</th>
                         <th>Status</th>
                         <th>#</th>
@@ -28,20 +28,13 @@ $query = $conn->query($select);
             <tbody id="agend">
                 <?php
                 while ($dados = mysqli_fetch_assoc($query)) {
-                //print_r($dados);
-                    echo ('<br>');
-                    $usu = $dados['usuario'];
-                    $user = "SELECT nome FROM user where user_id = '$usu'";
-                    $usu_query = $conn->query($user);
-                    $usuario = mysqli_fetch_assoc($usu_query);
-                    #print_r($usuario)
                 ?>
                     <tr>
                         <td><?php echo $dados['id_agendamento'] ?></td>
-                        <td><?php echo date('Y/m/d', strtotime($dados['data_criacao'])) ?></td>
                         <td><?php echo date('Y/m/d', strtotime($dados['data_agendamento'])) ?></td>
                         <td><?php echo $dados['horario_agendamento'] ?></td>
-                        <td><?php echo $usuario['nome'] ?></td>
+                        <td><?php echo $dados['nome_servico'] ?></td>
+                        <td><?php echo $dados['nome_usuario'] ?></td>
                         <td><?php echo $dados['valor_total'] ?>R$</td>
                         <?php if (strtolower($dados['status']) == 'p') {
                         ?>
@@ -62,6 +55,7 @@ $query = $conn->query($select);
                 <?php
 
                 }
+                $conn->next_result();
                 ?>
             </tbody>
         </table>

@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-12 text-right mt-2">
                             <p class="card-category">
-                                Total de serviços
+                                Total de agendamentos
                             </p>
                             <p class="card-data">
                                 <?php  
@@ -96,9 +96,9 @@
                     </div>
                     <hr class="hr-card">
                     <div class="col-md-12 cd-footer mb-3 pb-2">
-                        <a href="servicos-agendados" class="text-dark mb-3">
+                        <a href="cadastrar-servicos" class="text-dark mb-3">
                             <i class="fas fa-eye"></i>
-                            Visualizar os serviços agendadados
+                            Visualizar os serviços cadastrados
                         </a>
                     </div>
                 </div>

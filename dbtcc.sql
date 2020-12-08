@@ -38,7 +38,7 @@ CREATE TABLE `agendamento` (
   KEY `fk_barbearia_id` (`barbearia`),
   CONSTRAINT `fk_barbearia_id` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`usuario`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'F','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'F','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'F','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'P','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'P','2020-11-27 02:12:40'),(16,4,8,'2020-12-07','13:00:00',18,'P','2020-12-04 15:16:25'),(19,5,8,'2020-12-07','17:30:00',25,'P','2020-12-07 18:21:22');
+INSERT INTO `agendamento` VALUES (1,3,8,'2020-11-22','14:00:00',18,'F','2020-11-22 15:08:15'),(12,3,8,'2020-11-26','18:00:00',18,'F','2020-11-26 19:26:34'),(13,3,8,'2020-11-27','10:00:00',28,'F','2020-11-27 02:05:00'),(14,3,8,'2020-11-27','12:30:00',10,'F','2020-11-27 02:05:14'),(15,3,8,'2020-11-27','13:30:00',10,'F','2020-11-27 02:12:40'),(16,4,8,'2020-12-07','13:00:00',18,'F','2020-12-04 15:16:25'),(19,5,8,'2020-12-07','17:30:00',25,'F','2020-12-07 18:21:22'),(20,3,8,'2020-12-08','18:00:00',34,'P','2020-12-08 12:59:19');
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `agendamento_servico` (
 
 LOCK TABLES `agendamento_servico` WRITE;
 /*!40000 ALTER TABLE `agendamento_servico` DISABLE KEYS */;
-INSERT INTO `agendamento_servico` VALUES (12,1),(13,1),(13,2),(14,2),(15,2),(16,1),(19,15);
+INSERT INTO `agendamento_servico` VALUES (12,1),(13,1),(13,2),(14,2),(15,2),(16,1),(19,15),(20,15),(20,17);
 /*!40000 ALTER TABLE `agendamento_servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `servico` (
   PRIMARY KEY (`id_servico`),
   KEY `fk_barbearia_servico` (`barbearia`),
   CONSTRAINT `fk_barbearia_servico` FOREIGN KEY (`barbearia`) REFERENCES `barbearia` (`barbearia_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +144,7 @@ CREATE TABLE `servico` (
 
 LOCK TABLES `servico` WRITE;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-INSERT INTO `servico` VALUES (1,'Corte de Cabelo',18,8),(2,'Corte de Barba',10,8),(15,'Cabelo e Barba',25,8);
+INSERT INTO `servico` VALUES (1,'Corte de Cabelo',18,8),(2,'Corte de Barba',10,8),(15,'Cabelo e Barba',25,8),(17,'Sombracelha',9,8);
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,6 +180,45 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'dbtcc'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_AGENDAMENTOS_BARBEARIA` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_AGENDAMENTOS_BARBEARIA`(
+	IN id_barbearia INT
+)
+BEGIN
+	select 
+		agendamento.id_agendamento,
+		agendamento.barbearia,
+		agendamento.data_agendamento, 
+		agendamento.horario_agendamento,
+		agendamento.valor_total,
+		agendamento.status,
+		agendamento.data_criacao,
+		group_concat(concat(" ", servico.nome)) as "nome_servico",
+		user.nome as "nome_usuario"
+	from agendamento_servico
+	inner join agendamento
+	on agendamento_servico.agendamento = agendamento.id_agendamento
+	inner join servico
+	on agendamento_servico.servico = servico.id_servico
+	inner join user
+	on agendamento.usuario = user.user_id
+	where agendamento.barbearia=id_barbearia
+	group by agendamento.id_agendamento;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `PROC_AGENDAMENTOS_USUARIO` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -198,7 +237,7 @@ BEGIN
 		barbearia.nome_barbearia,
 		agendamento.data_agendamento,
 		agendamento.horario_agendamento,
-        servico.nome as "nome_servico",
+		group_concat(concat(" ", servico.nome)) as "nome_servico",
 		agendamento.valor_total,
 		barbearia.rua,
 		barbearia.num_bar,
@@ -211,7 +250,8 @@ BEGIN
 	ON agendamento.barbearia = barbearia.barbearia_id
 	INNER JOIN servico
 	ON agendamento_servico.servico = servico.id_servico
-	WHERE agendamento.status = 'P' AND agendamento.usuario = usuario;
+	WHERE agendamento.status = 'P' AND agendamento.usuario = usuario
+    GROUP BY barbearia.nome_barbearia;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -575,13 +615,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_TOTAL_SERVICOS_DIA`(
 	IN id_barbearia INT
 )
 BEGIN
-	select 
-		count(servico.nome) as "quantidade"
-	from agendamento_servico
-	inner join agendamento
-	on agendamento_servico.agendamento = agendamento.id_agendamento
-	inner join servico
-	on agendamento_servico.servico = servico.id_servico
+    select 
+		count(*) as "quantidade"
+	from agendamento
 	where data_agendamento = data_hoje and agendamento.barbearia = id_barbearia;
 END ;;
 DELIMITER ;
@@ -627,4 +663,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-07 18:31:23
+-- Dump completed on 2020-12-08 11:44:04
