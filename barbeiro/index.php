@@ -195,19 +195,11 @@ $app->post(
 
         }
         
-?>
-<?php
+
     }
 );
 
-    <body class="cadastrar-servicos">
-        <?php
-        require_once "../barbeiro/conteudo/navbar.php";
-        require_once "../barbeiro/conteudo/cadastrar-servicos.php";
-        require_once "../barbeiro/conteudo/footer.php";
-        require_once "../barbeiro/conteudo/scripts.php";
-        ?>
-    </body>
+
 
 $app->post(
     '/sistema_barbearia/barbeiro/minha-barbearia/teste',
