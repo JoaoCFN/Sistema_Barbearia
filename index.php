@@ -1,42 +1,219 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <title>House of Barber</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font awesome CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+<?php
 
-    <div id="root" class="index sb-bg-black">
-        <?php require_once "conteudo/navbar.php"; ?>
+/**
+ * Step 1: Require the Slim Framework
+ *
+ * If you are not using Composer, you need to require the
+ * Slim Framework and register its PSR-0 autoloader.
+ *
+ * If you are using Composer, you can skip this step.
+ */
+require 'Slim/Slim.php';
+\Slim\Slim::registerAutoloader();
 
-        <?php require_once "conteudo/index/header.php"; ?>
+/**
+ * Step 2: Instantiate a Slim application
+ *
+ * This example instantiates a Slim application using
+ * its default settings. However, you will usually configure
+ * your Slim application now by passing an associative array
+ * of setting names and values into the application constructor.
+ */
+$app = new \Slim\Slim();
 
-        <?php require_once "conteudo/index/conteudo_index.php"; ?>
+/**
+ * Step 3: Define the Slim application routes
+ *
+ * Here we define several Slim application routes that respond
+ * to appropriate HTTP request methods. In this example, the second
+ * argument for `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
+ * is an anonymous function.
+ */
 
-        <?php require_once "conteudo/footer.php"; ?>
-    </div>
+// GET route
+$app->get(
+    '/',
+    function () {
+        require_once "../barbeiro/conteudo/header.php";
+?>
+    <link rel="stylesheet" href="../barbeiro/css/navbar.css">
+    <link rel="stylesheet" href="../barbeiro/css/dashboard.css">
+    </head>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- Ionic Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
-    <!-- JS -->
-    <!-- SWEET ALERT -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="js/anima_rolagem.js"></script>
-  </body>
-</html>
+    <body class="dashboard">
+        <?php
+        require_once "../barbeiro/config/config.php";
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/dashboard.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+        <script src="../barbeiro/js/charts/meus_charts.js"></script>
+    </body>
+
+    </html>
+<?php
+
+    }
+);
+
+$app->get(
+    '/sistema_barbearia/barbeiro/minha-barbearia/',
+    function () {
+
+
+        require_once "../barbeiro/conteudo/header.php";
+?>
+    <link rel="stylesheet" href="../barbeiro/css/navbar.css">
+    <link rel="stylesheet" href="../barbeiro/css/minha-barbearia.css">
+    </head>
+
+    <body class="minha-barbearia">
+        <?php
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/minha-barbearia.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+    </body>
+
+    </html>
+<?php
+
+    }
+);
+
+$app->get(
+    '/sistema_barbearia/barbeiro/servicos-agendados/',
+    function () {
+        require_once "../barbeiro/conteudo/header.php";
+?>
+    <link rel="stylesheet" href="../barbeiro/css/navbar.css">
+    <link rel="stylesheet" href="../barbeiro/css/servicos-agendados.css">
+    </head>
+
+    <body class="servicos-agendados">
+        <?php
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/servicos-agendados.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+    </body>
+
+    </html>
+<?php
+
+    }
+);
+
+
+$app->get(
+    '/sistema_barbearia/barbeiro/cadastrar-servicos/',
+    function () {
+
+
+        require_once "../barbeiro/conteudo/header.php";
+?>
+<?php
+
+}
+);
+
+
+$app->post(
+'/sistema_barbearia/barbeiro/minha-barbearia',
+function () {
+    if(isset($_POST['salvar'])){
+        $cep = $_POST['cep'];
+        $nome_dono = $_POST['nome_dono'];
+        $nome_barbearia = $_POST['nome_barbearia'];
+        $email_dono = $_POST['email_dono'];
+        $uf = $_POST['uf'];
+        $cidade=$_POST['cidade'];
+        $bairro=$_POST['bairro'];
+        $number=$_POST['number'];
+        $id = $_POST['id'];
+
+        
+        $conn = mysqli_connect("localhost", "root", "", "dbtcc");
+        $update = "UPDATE barbearia SET nome_dono='$nome_dono', nome_barbearia='$nome_barbearia', email_dono='$email_dono', uf='$uf', cidade='$cidade', cep='$cep', bairro='$bairro', num_bar='$number' WHERE barbearia_id='$id'";
+        $result = $conn->query($update);
+    }
+
+    if(isset($_POST['sobre'])){
+        $id = $_POST['id'];
+        $cep = $_POST['cep'];
+
+        $conn = mysqli_connect("localhost", "root", "", "dbtcc");
+        $update = "UPDATE barbearia SET sobre_barber='$_POST[sobreBarber]' WHERE barbearia_id='$id'";
+        $result = mysqli_query($conn, $update);
+    }
+
+    if(isset($_POST['aplicar'])){
+        echo 'entrou if';
+        $id = $_POST['aplicar'];
+
+        $conn = mysqli_connect("localhost", "root", "", "dbtcc");
+        $update = "UPDATE barbearia SET horario_abertura='$_POST[horario_abertura]', horario_fechamento='$_POST[horario_fechamento]', horario_abertura_final_semana='$_POST[horario_abertura_final_semana]', horario_fechamento_final_semana='$_POST[horario_fechamento_final_semana]' WHERE barbearia_id='$id'";
+        $result = mysqli_query($conn, $update);
+    
+    }
+
+    header('location:./minha-barbearia');
+    exit;
+    
+
+    }
+);
+
+
+$app->post(
+    '/sistema_barbearia/barbeiro/minha-barbearia/teste',
+    function () {    
+?>
+   
+<?php
+
+    }
+);
+
+// POST route
+    
+
+$app->post(
+    '/sistema_barbearia/barbeiro/teste',
+    function () {
+        echo 'This is a POST route';
+        echo "oieeeee";
+    }
+);
+
+// PUT route
+$app->put(
+    '/put',
+    function () {
+        echo 'This is a PUT route';
+    }
+);
+
+// PATCH route
+$app->patch('/patch', function () {
+    echo 'This is a PATCH route';
+});
+
+// DELETE route
+$app->delete(
+    '/delete',
+    function () {
+        echo 'This is a DELETE route';
+    }
+);
+
+/**
+ * Step 4: Run the Slim application
+ *
+ * This method should be called last. This executes the Slim application
+ * and returns the HTTP response to the HTTP client.
+ */
+$app->run();
