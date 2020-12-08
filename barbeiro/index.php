@@ -86,6 +86,8 @@ $app->get(
 $app->get(
     '/sistema_barbearia/barbeiro/servicos-agendados/',
     function () {
+
+
         require_once "../barbeiro/conteudo/header.php";
 ?>
     <link rel="stylesheet" href="../barbeiro/css/navbar.css">
@@ -115,77 +117,30 @@ $app->get(
 
         require_once "../barbeiro/conteudo/header.php";
 ?>
-<?php
+    <link rel="stylesheet" href="../barbeiro/css/navbar.css">
+    <link rel="stylesheet" href="../barbeiro/css/cadastrar-servicos.css">
+    </head>
 
-}
-);
+    <body class="cadastrar-servicos">
+        <?php
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/cadastrar-servicos.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+    </body>
 
-
-$app->post(
-'/sistema_barbearia/barbeiro/minha-barbearia',
-function () {
-    if(isset($_POST['salvar'])){
-        $cep = $_POST['cep'];
-        $nome_dono = $_POST['nome_dono'];
-        $nome_barbearia = $_POST['nome_barbearia'];
-        $email_dono = $_POST['email_dono'];
-        $uf = $_POST['uf'];
-        $cidade=$_POST['cidade'];
-        $bairro=$_POST['bairro'];
-        $number=$_POST['number'];
-        $id = $_POST['id'];
-
-        
-        $conn = mysqli_connect("localhost", "root", "", "dbtcc");
-        $update = "UPDATE barbearia SET nome_dono='$nome_dono', nome_barbearia='$nome_barbearia', email_dono='$email_dono', uf='$uf', cidade='$cidade', cep='$cep', bairro='$bairro', num_bar='$number' WHERE barbearia_id='$id'";
-        $result = $conn->query($update);
-    }
-
-    if(isset($_POST['sobre'])){
-        $id = $_POST['id'];
-        $cep = $_POST['cep'];
-
-        $conn = mysqli_connect("localhost", "root", "", "dbtcc");
-        $update = "UPDATE barbearia SET sobre_barber='$_POST[sobreBarber]' WHERE barbearia_id='$id'";
-        $result = mysqli_query($conn, $update);
-    }
-
-    if(isset($_POST['aplicar'])){
-        echo 'entrou if';
-        $id = $_POST['aplicar'];
-
-        $conn = mysqli_connect("localhost", "root", "", "dbtcc");
-        $update = "UPDATE barbearia SET horario_abertura='$_POST[horario_abertura]', horario_fechamento='$_POST[horario_fechamento]', horario_abertura_final_semana='$_POST[horario_abertura_final_semana]', horario_fechamento_final_semana='$_POST[horario_fechamento_final_semana]' WHERE barbearia_id='$id'";
-        $result = mysqli_query($conn, $update);
-    
-    }
-
-    header('location:./minha-barbearia');
-    exit;
-    
-
-    }
-);
-
-
-$app->post(
-    '/sistema_barbearia/barbeiro/minha-barbearia/teste',
-    function () {    
-?>
-   
+    </html>
 <?php
 
     }
 );
 
 // POST route
-    
-
 $app->post(
-    '/sistema_barbearia/barbeiro/teste',
+    '/post',
     function () {
         echo 'This is a POST route';
-        echo "oieeeee";
     }
 );
 
