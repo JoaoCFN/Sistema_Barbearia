@@ -57,11 +57,7 @@ $bar = mysqli_fetch_assoc($result);
                 </h2>
             </div>
             <div class="profile-a">
-<<<<<<< HEAD
                 <form method="post" action="./minha-barbearia" class="example-form">
-=======
-                <form class="example-form" action="./minha-barbearia/teste" method="post">
->>>>>>> 4dada035faff26a082aa7bc49d1a9cdc78febfa7
                     <div class="row pt-1 pb-1 mb-2">
                         <div class="col-md-4" style="text-align: center;">
                             <label>Nome estabelecimento</label>
@@ -118,11 +114,7 @@ $bar = mysqli_fetch_assoc($result);
                     <input name="id" style=" visibility: hidden;" type="text" value="<?php echo $bar['barbearia_id'] ?>">
 
                     <div style="text-align: end;">
-<<<<<<< HEAD
                         <button name="salvar" id="editar" onclick="editarInfo();" type="button" class="btn btn-primary" style="width: 33%;">
-=======
-                        <button id="editar" name="editar" onclick="editarInfo();" type="submit" class="btn btn-primary" style="width: 33%;">
->>>>>>> 4dada035faff26a082aa7bc49d1a9cdc78febfa7
                             Editar
                         </button>
                     </div>
