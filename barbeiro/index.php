@@ -86,6 +86,8 @@ $app->get(
 $app->get(
     '/sistema_barbearia/barbeiro/servicos-agendados/',
     function () {
+
+
         require_once "../barbeiro/conteudo/header.php";
 ?>
     <link rel="stylesheet" href="../barbeiro/css/navbar.css">
@@ -129,17 +131,6 @@ $app->get(
     </body>
 
     </html>
-<?php
-
-    }
-);
-
-
-$app->post(
-    '/sistema_barbearia/barbeiro/minha-barbearia/teste',
-    function () {    
-?>
-   
 <?php
 
     }

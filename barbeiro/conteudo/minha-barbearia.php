@@ -48,7 +48,7 @@
                 </h2>
             </div>
             <div class="profile-a">
-                <form class="example-form" action="./minha-barbearia/teste" method="post">
+                <form class="example-form">
                     <div class="row pt-1 pb-1 mb-2">
                         <div class="col-md-4" style="text-align: center;">
                             <label>Nome estabelecimento</label>
@@ -104,7 +104,7 @@
                     </div>
 
                     <div style="text-align: end;">
-                        <button id="editar" name="editar" onclick="editarInfo();" type="submit" class="btn btn-primary" style="width: 33%;">
+                        <button id="editar" onclick="editarInfo();" type="button" class="btn btn-primary" style="width: 33%;">
                             Editar
                         </button>
                     </div>
