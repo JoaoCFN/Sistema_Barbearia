@@ -86,6 +86,8 @@ $app->get(
 $app->get(
     '/sistema_barbearia/barbeiro/servicos-agendados/',
     function () {
+
+
         require_once "../barbeiro/conteudo/header.php";
 ?>
     <link rel="stylesheet" href="../barbeiro/css/navbar.css">
@@ -198,6 +200,14 @@ $app->post(
     }
 );
 
+    <body class="cadastrar-servicos">
+        <?php
+        require_once "../barbeiro/conteudo/navbar.php";
+        require_once "../barbeiro/conteudo/cadastrar-servicos.php";
+        require_once "../barbeiro/conteudo/footer.php";
+        require_once "../barbeiro/conteudo/scripts.php";
+        ?>
+    </body>
 
 $app->post(
     '/sistema_barbearia/barbeiro/minha-barbearia/teste',
@@ -213,10 +223,9 @@ $app->post(
 
 
 $app->post(
-    '/sistema_barbearia/barbeiro/teste',
+    '/post',
     function () {
         echo 'This is a POST route';
-        echo "oieeeee";
     }
 );
 
