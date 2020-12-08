@@ -1,6 +1,6 @@
 <nav class="sb-navbar navbar navbar-expand-lg sb-bg-black fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="area_cliente.php">
             <img 
                 src="assets/images/logo-invertida.png" 
                 alt="logo"
