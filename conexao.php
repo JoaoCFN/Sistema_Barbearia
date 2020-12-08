@@ -15,7 +15,7 @@
     if ($rowCpf == 1 || $rowEmail == 1) {
         echo "<script>window.alert('Houve algum erro no seu Cadastro.');</script>";
     }else{
-        $insert = "INSERT INTO barbearia (nome_dono, email_dono, senha_dono, nome_barbearia, cpf_dono, telefone, cnpj, rua, num_bar, bairro, uf, cep, cidade) VALUES ('$nome', '$email', '$senha', '$nameBar', '$cpf', '$telefone', '$cnpjBar', '$ruaBar', '$nBar', '$bairroBar', '$ufBar', '$cepBar', '$cidadeBar')";
+        $insert = "INSERT INTO barbearia (nome_dono, email_dono, senha_dono, nome_barbearia, cpf_dono, telefone, cnpj, rua, num_bar, bairro, uf, cep, cidade) VALUES ('$usuario', '$email', '$senha', '$nameBar', '$cpf', '$telBar', '$cnpjBar', '$ruaBar', '$nBar', '$bairroBar', '$ufBar', '$cepBar', '$cidadeBar')";
 
         $run_insert = mysqli_query($conn, $insert);
         require_once "conteudo/registro/sucesso.php";
