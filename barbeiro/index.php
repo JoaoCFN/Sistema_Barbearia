@@ -185,7 +185,7 @@ $app->post(
     function () {
         $conn = mysqli_connect("localhost", "root", "", "dbtcc");
         $id = $_POST['gg'];
-        $update = "UPDATE `agendamento` SET `status`= `F` WHERE id_agendamento = $id";
+        $update = "UPDATE agendamento SET `status`= 'F' WHERE id_agendamento = '$id'";
         $query = $conn->query($update);
         if ($query){
             header('location:./servicos-agendados');

@@ -188,15 +188,6 @@ function editarInfo(){
     }
     
 }
-
-function enviarPost(){
-
-}
 </script>
-<?php
 
-// $conn = mysqli_connect("localhost", "root", "", "dbtcc");
-// $update = "UPDATE barbearia SET sobre_barber='Teste sobre da barber', nome_dono='$_SESSION[nome_dono]', nome_barbearia='$_SESSION[nome_barbearia]', email_dono='$_SESSION[email_dono]', cidade='$_SESSION[cidade]', num_bar='$_SESSION[num_bar]', bairro='$_SESSION[bairro]', cep='$_SESSION[cep]', rua='$_SESSION[rua]' WHERE barbearia_id='$_SESSION[barbearia_id]'";
-// $result = mysqli_query($conn, $update);
-?>
 
